@@ -1,0 +1,28 @@
+﻿@using Alb.Omdehsara.Common.Product;
+@using Alb.Omdehsara.UI.MVC.Api.Models;
+@model ProductTypeViewModel
+<div class="divProductItem">
+    <div class="divProductImage">
+        <img src="@Model.Product.MainImageUrl" />
+    </div>
+    <div class="divProductInfo">
+        <div class="divProductInfo">
+            <p class="pProductName">
+                <a href="@Model.Product.ProductUrl">
+                    @Model.Product.ProductTitle - @Model.Product.BrandName
+                </a>
+            </p>
+            @if (Model.Product.PreviousPrice > 0)
+            {
+                <span class="Strike">
+                    <p class="pDiscountedPrice">@Model.Product.PreviousPrice  تومان</p>
+                </span>
+            }
+            <p class="pPrice">@Model.Product.Price  تومان</p>
+        </div>
+    </div>
+    <input name="btnAddToCart" class="btnAddToCart" ng-click="addToCart(@Model.Product.ID)" value="" type="button">
+    <a name="btnMoreInfo" class="btnMoreInfo" href="@Model.Product.ProductUrl">
+        اطلاعات بیشتر
+    </a>
+</div>

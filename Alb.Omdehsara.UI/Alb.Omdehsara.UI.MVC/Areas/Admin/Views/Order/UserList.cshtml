@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "لیست کاربران دارای سفارش ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.Common.Orders
+@using Alb.Tools.UI.MVC.BootstrapHelper
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models
+@model UserListViewModel
+@using (Html.BeginForm("UserList", "Order", FormMethod.Get, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label for="UserName" class="control-label col-sm-3 col-xs-12">نام یا ایمیل کاربر</label>
+        <div class="col-xs-12 col-sm-5">
+           <input type="text" name="UserName" value="@ViewBag.UserName" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <input type="submit" value="جستجو" class="btn btn-primary" />
+        </div>
+    </div>
+}
+    <table class="table table-striped">
+        <tr>
+            <th>
+                کد کاربر
+            </th>
+            <th>
+                نام کاربر
+            </th>
+            <th>
+                تلفن کاربر
+            </th>
+            <th>
+                سفارشات
+            </th>
+        </tr>
+        @foreach (var u in Model.Users)
+    {
+            <tr>
+                <td>@u.ID</td>
+                <td>@(u.FirstName + " " + u.LastActivityDate)</td>
+                <td>@u.Phone</td>
+                <td>@Html.ActionLink("لیست سفارشات", "list", new { userId = u.ID })</td>
+            </tr>
+    }
+    </table>
+    @Html.Pager(Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)

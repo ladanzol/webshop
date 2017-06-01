@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "افزایش اعتبار";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Models
+@model PaymentViewModel
+<div style="padding:20px;">
+    <div style="margin:auto;border:3px solid#d1c8c8;max-width:500px;padding:10px;">
+        @using (Html.BeginForm("addpayment", "payment", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+                    <label class="col-sm-3" for="Amount">مبلغ</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(m => m.Payment.Price, new {@class="form-control" })
+                    </div>
+            </div>
+            <div class="form-group center">
+                <div class="col-xs-12">
+                    <a class="btn btn-primary" id="onlinePaymentLink" href="">پرداخت آنلاین از طریق درگاه بانک</a>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>در صورتی که از پرداخت آنلاین استفاده نکرده اید لطفا فرم زیر را تکمیل نمایید</h4>
+            </div>
+        </div>
+      <div class="form-group">
+          <label class="col-xs-12 col-sm-4" for="Payment.PaymentTypeID">
+              روش پرداخت
+          </label>
+                <div class="col-xs-12 col-sm-8">
+                    <select class="form-control" id="Payment_PaymentTypeID" name="Payment.PaymentTypeID">
+                        <option selected="selected">لطفا انتخاب کنید</option>
+                        <option value="2">کارت به کارت</option>
+                        <option value="3">واریز حساب</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-12 col-sm-4" for="Payment.BankID">
+                    نام بانک
+                </label>
+                <div class="col-xs-12 col-sm-8">
+                    @Html.DropDownListFor(m => m.Payment.BankID, Model.Banks, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-12 col-sm-4" for="Payment.Paymentref">
+                    شماره پیگیری
+                </label>
+                <div class="col-xs-12 col-sm-8">
+                    @Html.TextBoxFor(m => m.Payment.PaymentRef, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12" style="text-align:center">
+                    <input type="submit" value="ثبت" class="btn btn-primary" />
+                </div>
+            </div>
+            <hr />
+       
+   }
+        <div class="row">
+            <h3>
+                شماره کارت
+            </h3>
+            <table>
+                <tr>
+                    <th>نام بانک</th>
+                    <th>شماره حساب</th>
+                    <th>صاحب حساب</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+
+        <div class="row">
+            <h3>
+                شماره کارت ها
+            </h3>
+            <table>
+                <tr>
+                    <th>نام بانک</th>
+                    <th>شماره کارت</th>
+                    <th>صاحب حساب</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+<script>
+    $(document).ready(function () {
+        $('#Payment_Price').change(function () {
+            console.log($("#Payment_Price").val());
+            $("#onlinePaymentLink").attr("href", '@Url.Content("~/paybank/index?amount=")' + $("#Payment_Price").val());
+        });
+    })
+
+    </script>
+}

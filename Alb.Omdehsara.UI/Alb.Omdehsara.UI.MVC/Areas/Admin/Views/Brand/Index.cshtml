@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = " برندها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.Common.Product;
+@model BrandViewModel
+@using (Html.BeginForm("AddBrand", "Brand", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m=>m.Brand.ID)
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">نام برند</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Brand.BrandName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ImageUrl" class="control-label col-sm-3 col-xs-12">آدرس عکس URl</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Brand.ImageUrl, new { @class = "form-control", style = "direction:ltr" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">لیست گروه ها</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.CheckBoxListFor(model => model.PostedCategories,
+                        model => model.Cateogries,
+                        cat => cat.ID,
+                        cat => cat.CategoryName,
+                        model => model.SelectedCategories, MvcCheckBoxList.Model.Position.Horizontal)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="ثبت" style="width:150px;" class="btn btn-primary">
+        </div>
+    </div>
+    
+
+}
+
+<hr />
+<table class="table">
+    <tr>
+        <th>عکس</th>
+        <th>نام برند</th>
+        <th>ویرایش</th>
+        <th>حذف</th>
+    </tr>
+@foreach (TblBrand brand in Model.Brands)
+{
+    <tr>
+        <td>
+            @if (!string.IsNullOrEmpty(brand.ImageUrl))
+            {
+                <img src="@Url.Content(brand.ImageUrl)">
+            }
+        </td>
+        <td>@brand.BrandName</td>
+        <td><a class="btn btn-primary" href="@Url.Action("Index", new {Id=brand.ID })">ویرایش</a></td>
+        <td><a class="btn btn-danger" href="@Url.Action("Delete", new {Id=brand.ID })">حذف</a></td>
+    </tr>
+}
+</table>

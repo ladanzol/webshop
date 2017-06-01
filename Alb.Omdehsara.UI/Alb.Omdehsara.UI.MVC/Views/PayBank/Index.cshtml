@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<div style="min-height:200px;">
+    @if (ViewBag.ValueToPost != null)
+    {
+        <script language="javascript" type="text/javascript">
+            function postRefId(refIdValue) {
+                var form = document.createElement("form");
+                form.setAttribute("method", "POST");
+                form.setAttribute("action", "@Helper.Payment.PgwSite");
+                form.setAttribute("target", "_self");
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("name", "RefId");
+                hiddenField.setAttribute("value", refIdValue);
+                form.appendChild(hiddenField);
+                document.body.appendChild(form);
+                form.submit();
+                document.body.removeChild(form);
+            }
+            postRefId("@ViewBag.ValueToPost");
+        </script>
+    }
+    else
+    {
+        if (ViewBag.RefId != null)
+        {
+            <div style="max-width:300px;margin:auto;">
+                <h4>
+                    پرداخت با موفقیت انجام شد. شماره پیگیری :
+                    @ViewBag.RefId
+                </h4>
+                <br />
+                <a href="/payment/paymentreport">گزارش موجودی شما</a>
+            </div>
+        }
+        else
+        {
+            <div class="error"><h4>@ViewBag.ErrorMessage </h4></div>
+        }
+    }
+</div>

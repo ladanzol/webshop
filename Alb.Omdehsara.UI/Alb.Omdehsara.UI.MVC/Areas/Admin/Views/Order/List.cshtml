@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "لیست سفارشات ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.Common.Orders
+@using Alb.Tools.UI.MVC.BootstrapHelper
+
+@model OrderListViewModel
+@using (Html.BeginForm("List", "Order", FormMethod.Get, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label for="Status" class="control-label col-sm-3 col-xs-12">وضعیت</label>
+        <div class="col-xs-12 col-sm-5">
+            <select class="form-control" id="Status" name="Status">
+                <option>لطفاانتخاب کنید</option>
+                <option value="1" selected="@(Model.Status == OrderStatus.Created)">تعیین وضعیت</option>
+                <option value="2" selected="@(Model.Status == OrderStatus.Confirmed)">تایید</option>
+                <option value="3" selected="@(Model.Status == OrderStatus.Shipped)">ارسال</option>
+                <option value="4" selected="@(Model.Status == OrderStatus.Recieved)">رسیده به مقصد</option>
+                <option value="5" selected="@(Model.Status == OrderStatus.Canceled)">لغو</option>
+            </select>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <input type="submit" value="جستجو" class="btn btn-primary" />
+        </div>
+    </div>
+}
+@foreach (var o in Model.Orders)
+{
+    <div style="padding:20px 10px 40px 10px; ">
+        @Html.Partial("_SingleOrder", o)
+        <div style="padding:10px;max-width:500px">
+            @using (Html.BeginForm("ChangeStatus", "Order", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+            {
+                <input type="hidden" name="OrderID" value="@o.ID" />
+                <div class="form-group">
+                    @if ((OrderStatus)o.Status != OrderStatus.Canceled)
+                    {
+                        <label for="Title" class="control-label col-sm-3 col-xs-12">وضعیت</label>
+                        <div class="col-xs-12 col-sm-5">
+                            <select class="form-control" id="Status" name="Status">
+                                <option value="1" selected="@(o.Status == 1)">تعیین وضعیت</option>
+                                <option value="2" selected="@(o.Status == 2)">تایید</option>
+                                <option value="3" selected="@(o.Status == 3)">ارسال</option>
+                                <option value="4" selected="@(o.Status == 4)">رسیده به مقصد</option>
+                                <option value="5" selected="@(o.Status == 5)">لغو</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <input type="submit" value="ثبت" class="btn btn-primary" />
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
+@Html.Pager(Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)

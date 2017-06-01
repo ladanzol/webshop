@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "لیست نظرات کاربران";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.Common;
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Tools.UI.MVC.BootstrapHelper;
+@using Alb.Tools.UI.MVC;
+@model UserCommentsViewModel
+
+<h2>تعداد: @Model.TotalRecords </h2>
+
+@foreach (var comment in Model.UserComments)
+{
+    <div>نام: @comment.UserName</div>
+    <div>ایمیل: @comment.Email</div>
+    <div>@comment.Comment</div>
+    <div>@comment.InsertDate</div>
+    <hr />
+}
+@Html.Pager((int)Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)
+

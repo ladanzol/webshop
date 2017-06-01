@@ -1,0 +1,12 @@
+﻿@model Alb.Omdehsara.Common.Product.ProductView
+
+@{
+    ViewBag.Title = "Barcode";
+    Layout = "~/Areas/Product/Views/Shared/_ProductLayout.cshtml";
+}
+
+<h2>@Model.ProductTitle</h2>
+<h2>کد @Model.ID</h2>
+<a href="@Url.Content(Model.BarCodeUrl)">
+    <img style="margin:5px;" src="@Url.Content(Model.BarCodeUrl)" />
+</a>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "واحد کالاها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Areas.Polling.Models;
+@using Alb.Omdehsara.Common.Polling;
+@model OptionViewModel
+@using (Html.BeginForm("AddOption", "Option", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.Option.ID)
+    @Html.HiddenFor(m => m.Option.QuestionID)
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">متن گزینه</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Option.OptionText, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="ثبت" style="width:150px;" class="btn btn-primary">
+        </div>
+    </div>
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>کد</th>
+        <th>متن</th>
+    </tr>
+@foreach (TblOption option in Model.Options)
+{
+   <tr>
+       <td>@option.ID</td>
+       <td>@option.OptionText</td>
+       <td><a class="btn btn-primary" href="@Url.Action("Index", new { Id = option.ID, questionID = Model.Option.QuestionID })">ویرایش</a></td>
+       <td><a class="btn btn-danger" href="@Url.Action("Delete", new {Id=option.ID })">حذف</a></td>
+   </tr>
+}
+</table>
+@section scripts{
+<script>
+</script>
+}

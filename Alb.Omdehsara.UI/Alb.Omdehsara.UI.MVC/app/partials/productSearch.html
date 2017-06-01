@@ -1,0 +1,95 @@
+﻿
+<div class=" ">
+    <div class="divRight ">
+        <div class="divProductFilters">
+            <div class="search-item">
+                <p>انتخاب برند</p>
+                <div>
+                    <ul>
+                        <li ng-repeat="brand in brands">
+                            <label>
+                                <input type="checkbox" checklist-model="productModel.SelectedBrands" ng-change="searchChanged()" checklist-value="brand.ID" />
+                                <img src="{{brand.ImageUrl}}" title="{{brand.BrandName}}" style="max-width:60px;" />
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-if="colors.length>0" class="search-item rtl">
+                <p>انتخاب رنگ</p>
+                <div>
+                    <ul>
+                        <li ng-repeat="color in colors">
+                            <label>
+                                <input type="checkbox" checklist-model="productModel.SelectedColors" ng-change="searchChanged()" checklist-value="color.ID"> 
+                                {{color.ColorName}}
+                            </label>
+                            <div style="height:3px;" ng-style="{'background-color': '#'+color.ColorCode }">&nbsp;</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div ng-if="sizes.length>0" class="search-item">
+                <p>سایز بندی</p>
+                <div>
+                    <ul>
+                        <li ng-repeat="size in sizes">
+                            <label>
+                                <input type="checkbox" checklist-model="productModel.SelectedSizes" ng-change="searchChanged()" checklist-value="size.ID"> {{brand.BrandName}}
+                                {{size.SizeName}}
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-repeat="prop in categories[categories.length-1].CategoryProperties" class="search-item rtl">
+                <p>انتخاب {{prop.PropertyName + ((prop.Unit!=null)? "("+prop.Unit+")":"")}}</p>
+                <div>
+                    <input type="text" ng-if="prop.PropertyType == 'TextBox'" class="form-control" id="{{prop.PropertyName}}" ng-model="productModel.ProductProperties[$index].PropertyValue">
+                    <div ng-if="prop.PropertyType == 'ListBox'">
+                        <ul>
+                            <li ng-repeat="c in prop.ConstantList">
+                                <label>
+                                    <input type="checkbox" checklist-model="productModel.ProductProperties[$parent.$index].SelectedConstants" ng-change="searchChanged()" checklist-value="c"> {{c.Text}}
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="checkbox" ng-if="prop.PropertyType == 'CheckBox'" class="form-control" id="{{prop.PropertyName}}" ng-model="productModel.ProductProperties[$index].PropertyValue" ng-change="searchChanged()" ng-true-value=" 1" ng-false-value="0">
+                </div>
+            </div>
+            <div class="search-item">
+                <p>قیمت</p>
+                <div style="height:60px;margin-top:5px;padding:4px;">
+                    <rzslider rz-slider-floor="priceSlider.floor"
+                              rz-slider-ceil="priceSlider.ceil"
+                              rz-slider-model="productModel.FromPrice"
+                              rz-slider-high="productModel.ToPrice"
+                              rz-slider-translate="translate"
+                              rz-slider-step="{{priceSlider.step}}"></rzslider>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="divLeft">
+        <div class="divProductTopOptions"></div>
+        <div class=" divProducts">
+            <!--<div class="row" ng-show="!userSearches">
+                @foreach (ProductTypeViewModel product in Model.ProductList)
+                {
+                @Html.Partial("_SingleProductType", product);
+                }
+            </div>-->
+            <ul>
+                <li ng-repeat="item in productList" class="repeated-item" detect-last-item>
+                    <div class="single-product-type" single-product-type model="item"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div infinite-scroll="loadNextProducts()" infinite-scroll-distance="0"></div>
+</div>
+<br class="clear">
+<!--<pre dir="ltr">{{productModel | json }}</pre>-->

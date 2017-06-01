@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "مدیریت قفسه های انبار";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<input id="store" style="width: 400px" />
+
+
+<br />
+<br />
+<input type="button" class="btn btn-primary" value="Search" id="Search" />
+<br />
+<br />
+<br />
+    <div id="grid"></div>
+
+<br />
+<br />
+@*<input type="button" class="btn btn-primary" value="Load Child" onclick="loadChild()" />*@
+ @section scripts
+{
+        <script>
+            $(document).ready(function () {
+                $("#store").kendoDropDownList({
+                    dataTextField: "Title",
+                    dataValueField: "ID",
+                    //dataSource: {
+                    //    transport: {
+                    //        read: {
+                    //            url: tools.ajax.apiBaseUrl + "admin/store/?pageSize=20",
+                    //            dataType: "json"
+                    //        }
+                    //        //read: function (options) {
+                    //        //    tools.ajax.get(tools.ajax.apiBaseUrl + "admin/store/?pageSize=20" ).then(function (data) {
+                    //        //        options.success(data);
+                    //        //    });
+                    //        //}
+                    //    }
+                    //}
+                });
+                var ddl = $('#store').data("kendoDropDownList");
+                $.ajax({
+                    url: tools.ajax.apiBaseUrl + "admin/store/?pageSize=20",
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        ddl.setDataSource(data.Data);
+                    },
+                    error: function (x, y, z) {
+                        
+                    }
+                });
+                var crudServiceBaseUrl = tools.ajax.apiBaseUrl,
+                    dataSource = new kendo.data.DataSource({
+                        pageSize: 50,
+                        transport: {
+                            read: function (options) {
+                                tools.ajax.get(crudServiceBaseUrl + "admin/shelf/?pageSize=" + options.data.pageSize + "&pageIndex=" + options.data.page + "&store=" + $("#store").data("kendoDropDownList").value()).then(function (data) {
+                                    options.success(data);
+                                });
+                            },
+                            update: function (options) {
+                                $.ajax({
+                                    url: crudServiceBaseUrl + "admin/shelf/edit",
+                                    type: "PUT",
+                                    data: options.data.models[0],
+                                    success: function (result) {
+                                        options.success(result);
+                                    },
+                                    error: function (result) {
+                                        options.error(result);
+                                    }
+                                })
+                            },
+                            destroy: function (options) {
+                                $.ajax({
+                                    url: crudServiceBaseUrl + "admin/shelf/delete",
+                                    type: "DELETE",
+                                    data: options.data.models[0],
+                                    success: function (result) {
+                                        options.success(result);
+                                    },
+                                    error: function (result) {
+                                        options.error(result);
+                                    }
+                                })
+                            },
+                            create: function (options) {
+                                options.data.models[0].StoreID = $("#store").data("kendoDropDownList").value();
+                                $.ajax({
+                                    url: crudServiceBaseUrl + "admin/shelf/create?store=",
+                                    type: "POST",
+                                    data: options.data.models[0],
+                                    success: function (result) {
+                                        options.success(result);
+                                    },
+                                    error: function (result) {
+                                        options.error(result);
+                                    }
+                                })
+                            }
+                            //,
+                            //parameterMap: function (options, operation) {
+                            //    if (operation !== "read" && options.models) {
+                            //        return   options.models[0] ;
+                            //    }
+                            //    if (operation === "update") {
+                            //        options.StoreID = $("#store").data("kendoDropDownList").value();
+                            //        alert($("#store").data("kendoDropDownList").value());
+                            //        return kendo.data.transports.odata.parameterMap(options, operation);
+                            //    }
+                            //}
+                        },
+                        batch: true,
+                        serverPaging: true,
+                        serverSorting: true,
+                        schema: {
+                            data: 'Data',
+                            total: function(response) {
+                                return response.TotalCount;
+                            },
+                            model: {
+                                id: "ID",
+                                fields: {
+                                    ID: { editable: false, nullable: false },
+                                    Code: { validation: { required: true } },
+                                    Rows: { validation: { required: true } },
+                                    Columns: { validation: { required: true } }
+                                }
+                            }
+                        }
+                    });
+
+                $("#grid").kendoGrid({
+                    dataSource: dataSource,
+                    filterable: false,
+                    sortable: true,
+                    pageable: true,
+                    height: 2550,
+                    toolbar: ["create"],
+                    scrollable: false, 
+                    selectable: "single",
+                    navigatable: true,
+                    columns: [
+                        { field: "ID", title: "کد", width: "100px" },
+                        { field: "Code", title: "نام قفسه", width: "120px" },
+                        { field: "Rows", title: "تعداد ردیف", width: "150px" },
+                        { field: "Columns", title: "تعداد ستون", width: "150px"},
+                        { command: ["edit", "destroy"], title: "&nbsp;", width: "200px" }],
+                    editable: "inline",
+                    change: function (e) {
+                        var selectedRows = this.select();
+                        var selectedDataItems = [];
+                        for (var i = 0; i < selectedRows.length; i++) {
+                            var dataItem = this.dataItem(selectedRows[i]);
+                            selectedDataItems.push(dataItem);
+                        }
+                        //$("#grid").data("kendoGrid").dataSource.read();
+                    }
+                });
+            });
+
+            loadChild = function () {
+                var entityGrid = $("#grid").data("kendoGrid");
+                var selectedItem = entityGrid.dataItem(entityGrid.select());
+                if (selectedItem != null) {
+                }
+            }
+            $("#Search").click(function () {
+                var grid = $("#grid").data("kendoGrid");
+                grid.dataSource.read();
+            });
+                </script>
+    }

@@ -1,0 +1,14 @@
+﻿D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\AutoMapper.Net4.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Alb.DataAccess.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Alb.DataAccess.pdb
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Alb.Common.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Tools.Common.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Tools.DataAccess.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Alb.Common.pdb
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Tools.Common.pdb
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Alb.Tools.DataAccess.pdb
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\bin\Debug\Microsoft.Web.Infrastructure.xml
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\obj\Debug\Alb.Alb.DataAccess.csprojResolveAssemblyReference.cache
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\obj\Debug\Alb.Alb.DataAccess.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.DataAccess\obj\Debug\Alb.Alb.DataAccess.pdb

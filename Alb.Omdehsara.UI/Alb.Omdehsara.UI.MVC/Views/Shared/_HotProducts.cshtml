@@ -1,0 +1,15 @@
+﻿@using Alb.Omdehsara.Common.Product;
+@using Alb.Omdehsara.UI.MVC.Api.Models;
+@model IEnumerable<ProductTypeViewModel>
+<div class="divProductRotator" ng-controller="MainPageController">
+    <div class="divProductRotatorInner">
+        <ul>
+            @foreach (ProductTypeViewModel product in Model)
+            {
+                <li>
+                    @Html.Partial("_SingleProductType", product)
+                </li>
+            }
+        </ul>
+    </div>
+</div>

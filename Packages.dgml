@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Alb.Common\Alb.Common.DataAccess" Label="Alb.Common.DataAccess" Category="Project" />
+    <Node Id="EnterpriseLibrary.Common 6.0.1304.0" Label="EnterpriseLibrary.Common 6.0.1304.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Data 6.0.1304.0" Label="EnterpriseLibrary.Data 6.0.1304.0" Category="Package" />
+    <Node Id="Alb.Common\Alb.Common.UI.MVC" Label="Alb.Common.UI.MVC" Category="Project" />
+    <Node Id="Microsoft.AspNet.Mvc 5.1.1" Label="Microsoft.AspNet.Mvc 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 3.1.1" Label="Microsoft.AspNet.Razor 3.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 3.1.1" Label="Microsoft.AspNet.WebPages 3.1.1" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Label="Alb.Omdehsara.UI.MVC" Category="Project" />
+    <Node Id="Antlr 3.4.1.9004" Label="Antlr 3.4.1.9004" Category="Package" />
+    <Node Id="AutoMapper 3.2.1" Label="AutoMapper 3.2.1" Category="Package" />
+    <Node Id="bootstrap 3.0.3" Label="bootstrap 3.0.3" Category="Package" />
+    <Node Id="bootstrap-select 1.4.1" Label="bootstrap-select 1.4.1" Category="Package" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="Package" />
+    <Node Id="FontAwesome 4.1.0" Label="FontAwesome 4.1.0" Category="Package" />
+    <Node Id="jQuery 2.1.0" Label="jQuery 2.1.0" Category="Package" />
+    <Node Id="jQuery.UI.Combined 1.10.4" Label="jQuery.UI.Combined 1.10.4" Category="Package" />
+    <Node Id="jQuery.Validation 1.11.1" Label="jQuery.Validation 1.11.1" Category="Package" />
+    <Node Id="knockoutjs 3.1.0" Label="knockoutjs 3.1.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Cors 5.1.1" Label="Microsoft.AspNet.Cors 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 5.1.1" Label="Microsoft.AspNet.Mvc 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.Core 2.0.0" Label="Microsoft.AspNet.Providers.Core 2.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.LocalDB 2.0.0" Label="Microsoft.AspNet.Providers.LocalDB 2.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 3.1.1" Label="Microsoft.AspNet.Razor 3.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.1.3" Label="Microsoft.AspNet.Web.Optimization 1.1.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi 5.1.1" Label="Microsoft.AspNet.WebApi 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.1.1" Label="Microsoft.AspNet.WebApi.Client 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.1.1" Label="Microsoft.AspNet.WebApi.Core 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Cors 5.1.1" Label="Microsoft.AspNet.WebApi.Cors 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.1.1" Label="Microsoft.AspNet.WebApi.WebHost 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 3.1.1" Label="Microsoft.AspNet.WebPages 3.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages.Data 3.1.1" Label="Microsoft.AspNet.WebPages.Data 3.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages.WebData 3.1.1" Label="Microsoft.AspNet.WebPages.WebData 3.1.1" Category="Package" />
+    <Node Id="Microsoft.Bcl 1.1.6" Label="Microsoft.Bcl 1.1.6" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.13" Label="Microsoft.Bcl.Build 1.0.13" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Label="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Label="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.18" Label="Microsoft.Net.Http 2.2.18" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Modernizr 2.7.2" Label="Modernizr 2.7.2" Category="Package" />
+    <Node Id="Newtonsoft.Json 5.0.8" Label="Newtonsoft.Json 5.0.8" Category="Package" />
+    <Node Id="TinyMCE 4.1.2" Label="TinyMCE 4.1.2" Category="Package" />
+    <Node Id="toastr 2.0.3" Label="toastr 2.0.3" Category="Package" />
+    <Node Id="Twitter.Bootstrap 3.0.1.1" Label="Twitter.Bootstrap 3.0.1.1" Category="Package" />
+    <Node Id="Twitter.Bootstrap.RTL 3.0.0" Label="Twitter.Bootstrap.RTL 3.0.0" Category="Package" />
+    <Node Id="WebGrease 1.5.2" Label="WebGrease 1.5.2" Category="Package" />
+    <Node Id="Alb.Omdehsara\Alb.Omdehsara.DataAccess" Label="Alb.Omdehsara.DataAccess" Category="Project" />
+    <Node Id="AutoMapper 3.2.1" Label="AutoMapper 3.2.1" Category="Package" />
+    <Node Id="EnterpriseLibrary.Common 6.0.1304.0" Label="EnterpriseLibrary.Common 6.0.1304.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Data 6.0.1304.0" Label="EnterpriseLibrary.Data 6.0.1304.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 5.1.1" Label="Microsoft.AspNet.Mvc 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 3.1.1" Label="Microsoft.AspNet.Razor 3.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 3.1.1" Label="Microsoft.AspNet.WebPages 3.1.1" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Alb.Omdehsara\Alb.Omdehsara.Common" Label="Alb.Omdehsara.Common" Category="Project" />
+    <Node Id="Microsoft.AspNet.Mvc 5.1.1" Label="Microsoft.AspNet.Mvc 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 3.1.1" Label="Microsoft.AspNet.Razor 3.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 3.1.1" Label="Microsoft.AspNet.WebPages 3.1.1" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Alb.Tools\Alb.Tools.UI.MVC" Label="Alb.Tools.UI.MVC" Category="Project" />
+    <Node Id="Antlr 3.4.1.9004" Label="Antlr 3.4.1.9004" Category="Package" />
+    <Node Id="AutoMapper 3.2.1" Label="AutoMapper 3.2.1" Category="Package" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="Package" />
+    <Node Id="jQuery 2.1.0" Label="jQuery 2.1.0" Category="Package" />
+    <Node Id="jQuery.UI.Combined 1.10.4" Label="jQuery.UI.Combined 1.10.4" Category="Package" />
+    <Node Id="jQuery.Validation 1.11.1" Label="jQuery.Validation 1.11.1" Category="Package" />
+    <Node Id="knockoutjs 3.1.0" Label="knockoutjs 3.1.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 5.1.1" Label="Microsoft.AspNet.Mvc 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.Core 2.0.0" Label="Microsoft.AspNet.Providers.Core 2.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.LocalDB 2.0.0" Label="Microsoft.AspNet.Providers.LocalDB 2.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 3.1.1" Label="Microsoft.AspNet.Razor 3.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.1.3" Label="Microsoft.AspNet.Web.Optimization 1.1.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi 5.1.1" Label="Microsoft.AspNet.WebApi 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.1.1" Label="Microsoft.AspNet.WebApi.Client 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.1.1" Label="Microsoft.AspNet.WebApi.Core 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.HelpPage 5.1.1" Label="Microsoft.AspNet.WebApi.HelpPage 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Tracing 5.1.1" Label="Microsoft.AspNet.WebApi.Tracing 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.1.1" Label="Microsoft.AspNet.WebApi.WebHost 5.1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 3.1.1" Label="Microsoft.AspNet.WebPages 3.1.1" Category="Package" />
+    <Node Id="Microsoft.Data.Edm 5.6.1" Label="Microsoft.Data.Edm 5.6.1" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Label="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Label="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Modernizr 2.6.2" Label="Modernizr 2.6.2" Category="Package" />
+    <Node Id="Newtonsoft.Json 5.0.8" Label="Newtonsoft.Json 5.0.8" Category="Package" />
+    <Node Id="System.Spatial 5.6.1" Label="System.Spatial 5.6.1" Category="Package" />
+    <Node Id="WebGrease 1.5.2" Label="WebGrease 1.5.2" Category="Package" />
+    <Node Id="Alb.Tools\Alb.Tools.Utility" Label="Alb.Tools.Utility" Category="Project" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.1.1" Label="Microsoft.AspNet.WebApi.Client 5.1.1" Category="Package" />
+    <Node Id="Newtonsoft.Json 5.0.8" Label="Newtonsoft.Json 5.0.8" Category="Package" />
+    <Node Id="Alb.Tools\Alb.Tools.DataAccess" Label="Alb.Tools.DataAccess" Category="Project" />
+    <Node Id="Dapper 1.13" Label="Dapper 1.13" Category="Package" />
+    <Node Id="Dapper.Contrib 1.0" Label="Dapper.Contrib 1.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Common 6.0.1304.0" Label="EnterpriseLibrary.Common 6.0.1304.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Data 6.0.1304.0" Label="EnterpriseLibrary.Data 6.0.1304.0" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="EnterpriseLibrary.Data 6.0.1304.0" Target="EnterpriseLibrary.Common 6.0.1304.0" Category="Package Dependency" />
+    <Link Source="Alb.Common\Alb.Common.DataAccess" Target="EnterpriseLibrary.Data 6.0.1304.0" Category="Installed Package" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.WebPages 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Alb.Common\Alb.Common.UI.MVC" Target="Microsoft.AspNet.Mvc 5.1.1" Category="Installed Package" />
+    <Link Source="bootstrap 3.0.3" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="bootstrap-select 1.4.1" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="jQuery.UI.Combined 1.10.4" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="jQuery.Validation 1.11.1" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.WebPages 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Target="Microsoft.AspNet.Mvc 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Providers.Core 2.0.0" Target="EntityFramework 6.0.2" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Providers.LocalDB 2.0.0" Target="Microsoft.AspNet.Providers.Core 2.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="WebGrease 1.5.2" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi 5.1.1" Target="Microsoft.AspNet.WebApi.WebHost 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.1.1" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.1.1" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.1.1" Target="Microsoft.Net.Http 2.2.18" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.1.1" Target="Microsoft.AspNet.WebApi.Client 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Cors 5.1.1" Target="Microsoft.AspNet.WebApi.Core 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Cors 5.1.1" Target="Microsoft.AspNet.Cors 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.1.1" Target="Microsoft.AspNet.WebApi.Core 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages.WebData 3.1.1" Target="Microsoft.AspNet.WebPages.Data 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Bcl 1.1.6" Target="Microsoft.Bcl.Build 1.0.13" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Target="jQuery.Validation 1.11.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.18" Target="Microsoft.Bcl 1.1.6" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.18" Target="Microsoft.Bcl.Build 1.0.13" Category="Package Dependency" />
+    <Link Source="toastr 2.0.3" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="Twitter.Bootstrap 3.0.1.1" Target="bootstrap 3.0.3" Category="Package Dependency" />
+    <Link Source="Twitter.Bootstrap.RTL 3.0.0" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="WebGrease 1.5.2" Target="Antlr 3.4.1.9004" Category="Package Dependency" />
+    <Link Source="WebGrease 1.5.2" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="AutoMapper 3.2.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="bootstrap-select 1.4.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="FontAwesome 4.1.0" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="jQuery.UI.Combined 1.10.4" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="knockoutjs 3.1.0" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.AspNet.Providers.LocalDB 2.0.0" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.AspNet.Web.Optimization 1.1.3" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.AspNet.WebApi 5.1.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.AspNet.WebApi.Cors 5.1.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.AspNet.WebPages.WebData 3.1.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Modernizr 2.7.2" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="TinyMCE 4.1.2" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="toastr 2.0.3" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Twitter.Bootstrap 3.0.1.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.UI.MVC" Target="Twitter.Bootstrap.RTL 3.0.0" Category="Installed Package" />
+    <Link Source="EnterpriseLibrary.Data 6.0.1304.0" Target="EnterpriseLibrary.Common 6.0.1304.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.WebPages 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.DataAccess" Target="AutoMapper 3.2.1" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.DataAccess" Target="EnterpriseLibrary.Data 6.0.1304.0" Category="Installed Package" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.DataAccess" Target="Microsoft.AspNet.Mvc 5.1.1" Category="Installed Package" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.WebPages 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Alb.Omdehsara\Alb.Omdehsara.Common" Target="Microsoft.AspNet.Mvc 5.1.1" Category="Installed Package" />
+    <Link Source="jQuery.UI.Combined 1.10.4" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="jQuery.Validation 1.11.1" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.WebPages 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 5.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Target="Microsoft.AspNet.Mvc 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Providers.Core 2.0.0" Target="EntityFramework 6.0.2" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Providers.LocalDB 2.0.0" Target="Microsoft.AspNet.Providers.Core 2.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="WebGrease 1.5.2" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi 5.1.1" Target="Microsoft.AspNet.WebApi.WebHost 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.1.1" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.1.1" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.1.1" Target="Microsoft.AspNet.WebApi.Client 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.1.1" Target="Microsoft.AspNet.WebApi.WebHost 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.1.1" Target="Microsoft.AspNet.Mvc 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Tracing 5.1.1" Target="Microsoft.AspNet.WebApi.Core 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.1.1" Target="Microsoft.AspNet.WebApi.Core 5.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 3.1.1" Target="Microsoft.AspNet.Razor 3.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Target="jQuery 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Target="jQuery.Validation 1.11.1" Category="Package Dependency" />
+    <Link Source="WebGrease 1.5.2" Target="Antlr 3.4.1.9004" Category="Package Dependency" />
+    <Link Source="WebGrease 1.5.2" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="AutoMapper 3.2.1" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="jQuery.UI.Combined 1.10.4" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="knockoutjs 3.1.0" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.AspNet.Providers.LocalDB 2.0.0" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.AspNet.Web.Optimization 1.1.3" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.AspNet.WebApi 5.1.1" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.AspNet.WebApi.HelpPage 5.1.1" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.AspNet.WebApi.Tracing 5.1.1" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.Data.Edm 5.6.1" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.jQuery.Unobtrusive.Ajax 3.1.1" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Microsoft.jQuery.Unobtrusive.Validation 3.1.1" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="Modernizr 2.6.2" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.UI.MVC" Target="System.Spatial 5.6.1" Category="Installed Package" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.1.1" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.1.1" Target="Newtonsoft.Json 5.0.8" Category="Package Dependency" />
+    <Link Source="Alb.Tools\Alb.Tools.Utility" Target="Microsoft.AspNet.WebApi.Client 5.1.1" Category="Installed Package" />
+    <Link Source="Dapper.Contrib 1.0" Target="Dapper 1.13" Category="Package Dependency" />
+    <Link Source="EnterpriseLibrary.Data 6.0.1304.0" Target="EnterpriseLibrary.Common 6.0.1304.0" Category="Package Dependency" />
+    <Link Source="Alb.Tools\Alb.Tools.DataAccess" Target="Dapper.Contrib 1.0" Category="Installed Package" />
+    <Link Source="Alb.Tools\Alb.Tools.DataAccess" Target="EnterpriseLibrary.Data 6.0.1304.0" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

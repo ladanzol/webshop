@@ -1,0 +1,130 @@
+﻿@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.UI.MVC.Models;
+@model MainPageBrandsViewModel
+<div class="divAdv">
+    <div id="divAdv1" class="divContainer hover">
+        <div class="divCard">
+            <div class="front divAdvInner">
+                <a href="@Model.Url1_1">
+                    <img src="@Model.Img1_1_Url">
+                </a>
+</div>
+            @if (!string.IsNullOrEmpty(@Model.Img1_2_Url))
+            {
+                <div class="back divAdvInner center">
+                    <a href="@Model.Url1_2">
+                        <img src="@Model.Img1_2_Url">
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="divAdvContainer">
+        <div id="divAdv2" class="divContainer">
+            <div class="divCard">
+                <div class="front divAdvInner">
+                    <a href="@Model.Url2_1">
+                        <img src="@Model.Img2_1_Url">
+                    </a>
+                </div>
+                @if (!string.IsNullOrEmpty(@Model.Img2_2_Url))
+                {
+                    <div class="back divAdvInner center">
+                        <a href="@Model.Url2_2">
+                            <img src="@Model.Img2_2_Url">
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div id="divAdv3" class="divContainer hover">
+            <div class="divCard">
+                <div class="front divAdvInner">
+                    <a href="@Model.Url3_1">
+                        <img src="@Model.Img3_1_Url">
+                    </a>
+                </div>
+                @if (!string.IsNullOrEmpty(@Model.Img3_2_Url))
+                {
+                    <div class="back divAdvInner center">
+                        <a href="@Model.Url3_2">
+                            <img src="@Model.Img3_2_Url">
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div id="divAdv4" class="divContainer hover">
+            <div class="divCard">
+                <div class="front divAdvInner">
+                    <a href="@Model.Url4_1">
+                        <img src="@Model.Img4_1_Url">
+                    </a>
+                </div>
+                @if (!string.IsNullOrEmpty(@Model.Img4_2_Url))
+                {
+                    <div class="back divAdvInner center">
+                        <a href="@Model.Url4_2">
+                            <img src="@Model.Img4_2_Url">
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <div id="divAdv5" class="divContainer hover">
+        <div class="divCard">
+            <div class="front divAdvInner">
+                <a href="@Model.Url5_1">
+                    <img src="@Model.Img5_1_Url">
+                </a>
+            </div>
+            @if (!string.IsNullOrEmpty(@Model.Img5_2_Url))
+            {
+                <div class="back divAdvInner center">
+                    <a href="@Model.Url5_2">
+                        <img src="@Model.Img5_2_Url">
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    <div id="divAdv6" class="divContainer">
+        <div class="divCard">
+            <div class="front divAdvInner">
+                <a href="@Model.Url6_1">
+                    <img src="@Model.Img6_1_Url">
+                </a>
+            </div>
+            @if (!string.IsNullOrEmpty(@Model.Img6_2_Url))
+            {
+                <div class="back divAdvInner center">
+                    <a href="@Model.Url6_2">
+                        <img src="@Model.Img6_2_Url">
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    <div id="divAdv7" class="divContainer">
+        <div class="divCard">
+            <div class="front divAdvInner">
+                <a href="@Model.Url7_1">
+                    <img src="@Model.Img7_1_Url">
+                </a>
+            </div>
+            @if (!string.IsNullOrEmpty(@Model.Img7_2_Url))
+            {
+                <div class="back divAdvInner center">
+                    <a href="@Model.Url7_2">
+                        <img src="@Model.Img7_2_Url">
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

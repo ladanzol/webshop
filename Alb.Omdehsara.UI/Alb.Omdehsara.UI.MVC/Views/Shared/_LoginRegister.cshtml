@@ -1,0 +1,27 @@
+﻿@if (!HttpContext.Current.Request.LogonUserIdentity.IsAuthenticated)
+{
+    <span class="dropdown  login-dropdown">
+        <div data-toggle="dropdown" class="btn btnLogin" >ورود/ثبت نام</div>
+        <ul class="dropdown-menu  pull-left login-tabs">
+            <li>
+
+                <tabset>
+                    <tab heading="ورود به عمده سرا">
+                        @Html.Partial("_login")
+                    </tab>
+                    <tab heading="ثبت نام">
+                        @Html.Partial("_register", new Alb.Common.Common.TblUser())
+                    </tab>
+                </tabset>
+            </li>
+        </ul>
+    </span>
+}
+else
+{
+    <div class="btn btnLogin" >
+        <a href="@Url.Content("~/profile/index")">
+            خوش آمدید!
+        </a>
+    </div>
+}

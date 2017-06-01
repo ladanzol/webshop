@@ -1,0 +1,1576 @@
+﻿@font-face {
+    font-family: "RobotoCondensed-Light";
+    src: url("Fonts/RobotoCondensed-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Yekan';
+    src: url('Fonts/BYekan.eot'); /* IE9 Compat Modes */
+    src: local('Yekan'), url('Fonts/BYekan.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('Fonts/BYekan.woff') format('woff'), /* Modern Browsers */ url('Fonts/BYekan.ttf') format('truetype'), /* Safari, Android, iOS */ url('Fonts/Yekan.svg#Yekan') format('svg'); /* Legacy iOS */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    font-family: RobotoCondensed-Light,Yekan !important;
+    background-color: #ffffff;
+}
+h1, h2, h3, h4, h5{
+    font-family: RobotoCondensed-Light,Yekan !important;
+}
+.divMain {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+    .divMain .divTopMenu {
+        height: 20px;
+        background-color: #E40E58;
+    }
+
+        .divMain .divTopMenu ul {
+            margin: auto;
+            width: 70%;
+            text-align: center;
+            list-style: none;
+        }
+
+        .divMain .divTopMenu li {
+            /*float: right;*/
+            font-size: 13px;
+            margin: 0 10px;
+            color: white;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+            .divMain .divTopMenu li:hover {
+                color: black;
+            }
+
+    .divMain .divHeader {
+        height: 84px;
+        background: -webkit-linear-gradient(#f6f6f6, #eaeaea); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#f6f6f6, #eaeaea); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#f6f6f6, #eaeaea); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#f6f6f6, #eaeaea); /* Standard syntax (must be last) */
+        border-bottom: 1px solid #c8c8c8;
+        -webkit-box-shadow: 0px 4px 5px #888888;
+        -ms-box-shadow: 0px 4px 5px #888888;
+        box-shadow: 0px 4px 5px #888888;
+    }
+
+        .divMain .divHeader .divHeaderInner {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+            .divMain .divHeader .divHeaderInner .divLogo {
+                float: right;
+                width: 268px;
+                height: 84px;
+                background: url("Images/Logo.png") no-repeat left center;
+                /*clear: right;*/
+            }
+
+            .divMain .divHeader .divHeaderInner .divMenu {
+                float: right;
+                width: 564px;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+                .divMain .divHeader .divHeaderInner .divMenu .divImageMenu1 {
+                    background: url("Images/Shirt.png") center 3px no-repeat;
+                    /*height: 30px;*/
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divMenu .divImageMenu1:hover {
+                        background: url("Images/Shirt-H.png") center 3px no-repeat;
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                        color: #e40d58 !important;
+                    }
+
+                .divMain .divHeader .divHeaderInner .divMenu .divImageMenu2 {
+                    background: url("Images/Shoes.png") center 3px no-repeat;
+                    /*height: 30px;*/
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divMenu .divImageMenu2:hover {
+                        background: url("Images/Shoes-H.png") center 3px no-repeat;
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                        color: #e40d58 !important;
+                    }
+
+                .divMain .divHeader .divHeaderInner .divMenu .divImageMenu3 {
+                    background: url("Images/Socks.png") center 3px no-repeat;
+                    /*height: 30px;*/
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divMenu .divImageMenu3:hover {
+                        background: url("Images/Socks-H.png") center 3px no-repeat;
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                        color: #e40d58 !important;
+                    }
+
+                .divMain .divHeader .divHeaderInner .divMenu .divImageMenu4 {
+                    background: url("Images/Kitchen.png") center 3px no-repeat;
+                    /*height: 30px;*/
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divMenu .divImageMenu4:hover {
+                        background: url("Images/Kitchen-H.png") center 3px;
+                        background-repeat: no-repeat; 
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                        color: #e40d58 !important;
+                    }
+
+                .divMain .divHeader .divHeaderInner .divMenu .divImageMenu5 {
+                    background: url("Images/Decoration.png") center 3px no-repeat;
+                    /*height: 30px;*/
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divMenu .divImageMenu5:hover {
+                        background: url("Images/Decoration-H.png") center 3px no-repeat;
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                        color: #e40d58 !important;
+                    }
+
+                .divMain .divHeader .divHeaderInner .divMenu ul {
+                    margin: auto;
+                    text-align: center;
+                    list-style: none;
+                    padding-top: 24px;
+                }
+
+                .divMain .divHeader .divHeaderInner .divMenu li {
+                    font-size: 13px;
+                    margin: 0 15px;
+                    color: #333333;
+                    cursor: pointer;
+                    display: inline-block;
+                    vertical-align: middle;
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                    position: relative;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li:hover {
+                        /*color: #e40d58 !important;*/
+                        /*background:url("Images/arrow.png") center bottom no-repeat;*/
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                    }
+                    /*.divMain .divHeader .divHeaderInner .divMenu li img {
+                        display: none;
+                    }
+                    .divMain .divHeader .divHeaderInner .divMenu li:hover img {
+                        display: block;
+                    }*/
+
+                    .divMain .divHeader .divHeaderInner .divMenu li p {
+                        margin-top: 12px;
+                    }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li a {
+                        text-decoration: none !important;
+                        color: #333333;
+                    }
+
+                   .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu {
+                        /*display: none;*/
+                        position: absolute;
+                        z-index: 10000;
+                        cursor: default;
+                        -ms-opacity: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        background-repeat: no-repeat;
+                        background-color: #fff;
+                        background-color: rgba(255,255,255,0.9);
+                        height: 240px;
+                        top: 60px;
+                        width: 1000px;
+                        color: #0d7ce4;
+                        text-align: right;
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                    }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li:hover .divSubMenu {
+                        /*display: block;*/
+                        /*background: url("Images/backSubMenu.png") right center;*/
+                        background-repeat: no-repeat;
+                        background-color: #fff;
+                        background-color: rgba(255,255,255,0.9);
+                        height: 240px;
+                        width: 1000px;
+                        color: #0d7ce4;
+                        text-align: right;
+                        -ms-opacity: 1;
+                        opacity: 1;
+                        visibility: visible;
+                        -webkit-transition: all 0.8s ease;
+                        -moz-transition: all 0.8s ease;
+                        -ms-transition: all 0.8s ease;
+                        -o-transition: all 0.8s ease;
+                        transition: all 0.8s ease;
+                    }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu .divRight {
+                        width: 40px;
+                        float: right;
+                        height: 100%;
+                    }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu .divCenter {
+                        width: 500px;
+                        height: 100%;
+                        float: right;
+                        -webkit-column-count: 3;
+                        -moz-column-count: 3;
+                        -ms-column-count: 3;
+                        -o-column-count: 3;
+                        column-count: 3;
+                    }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu .divLeft {
+                        width: 360px;
+                        height: 100%;
+                        float: left;
+                    }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu ul p {
+                        margin: 0px 0 0 0;
+                        margin-right: 13px;
+                    }
+                   .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu ul p a{
+                       color:#E3135C;
+                    }
+                    .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu ul {
+                        text-align: right;
+                    }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu li {
+                        font-size: 11px;
+                        display: block;
+                        /*text-align: right;*/
+                        line-height: 25px;
+                    }
+
+                        .divMain .divHeader .divHeaderInner .divMenu li .divSubMenu li:hover {
+                            color: #ea2067;
+                        }
+            /*.divMain .divHeader .divHeaderInner .divMenu li .divSubMenu .divSubMenuTitle {
+                            background-color: #000;
+                            background-color: rgba(0,0,0,0.9);
+                            
+                            width: 80px;
+                            height: 100%;
+                            float: right;
+                        }
+
+                    .divMain .divHeader .divHeaderInner .divMenu li ul li {
+                        clear: both;
+                    }*/
+
+            .divMain .divHeader .divHeaderInner .divNotificationArea {
+                float: right;
+                width: 268px;
+                height: 100%;
+            }
+
+                .divMain .divHeader .divHeaderInner .divNotificationArea .divCart {
+                    padding-top: 10px;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divNotificationArea .divCart .btnLogin {
+                        width: 111px;
+                        height: 33px;
+                        background: #ea2067 url("Images/btnLogin.png") 90px center no-repeat;
+                        color: white;
+                        font-family: Yekan;
+                        font-size: 13px;
+                        border: none;
+                        vertical-align: middle;
+                        text-indent: 23px;
+                        text-align: right;
+                        cursor: pointer;
+                        border-radius:0px;
+                    }
+
+                        .divMain .divHeader .divHeaderInner .divNotificationArea .divCart .btnLogin:hover {
+                            background: #e10250 url("Images/btnLogin.png") 90px center no-repeat;
+                        }
+
+                    .divMain .divHeader .divHeaderInner .divNotificationArea .divCart .btnCart {
+                        width: 39px;
+                        height: 33px;
+                        font-size:24px;
+                        line-height:27px;
+                        background: url("Images/btnCart.png") center center no-repeat #0da5e4;
+                        border: none;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        border-radius:0px;
+                    }
+
+                        .divMain .divHeader .divHeaderInner .divNotificationArea .divCart .btnCart:hover {
+                            background: url("Images/btnCart.png") center center no-repeat #0298d4;
+                        }
+
+                    .divMain .divHeader .divHeaderInner .divNotificationArea .divCart .txtCart {
+                        font-family: Yekan;
+                        width: 112px;
+                        height: 31px;
+                        border: none;
+                        background-color: white;
+                        color: black;
+                        text-align: right;
+                        vertical-align: middle;
+                        text-indent: 3px;
+                        font-size: 13px;
+                    }
+
+                .divMain .divHeader .divHeaderInner .divNotificationArea .divSearch {
+                    padding-top: 5px;
+                }
+
+                    .divMain .divHeader .divHeaderInner .divNotificationArea .divSearch .btnSearch {
+                        width: 29px;
+                        height: 28px;
+                        background: url("Images/btnSearch.png") center center no-repeat #05b880!important;
+                        border: none;
+                        vertical-align: middle;
+                        cursor: pointer;
+                    }
+
+                        .divMain .divHeader .divHeaderInner .divNotificationArea .divSearch .btnSearch:hover {
+                            background: url("Images/btnSearch.png") center center no-repeat #00a873!important;
+                        }
+
+                    .divMain .divHeader .divHeaderInner .divNotificationArea .divSearch .txtSearch {
+                        font-family: Yekan;
+                        width: 237px;
+                        height: 26px;
+                        border: none;
+                        background-color: white;
+                        color: #a2a2a2;
+                        text-align: right;
+                        vertical-align: middle;
+                        text-indent: 3px;
+                        font-size: 13px;
+                    }
+
+    .divMain .divCenterFrameContainer {
+        width: 100%;
+        position: absolute;
+        top: 105px;
+        z-index: 2;
+        /*padding-bottom: 195px;*/
+    }
+
+    .divMain .divCenterFrame {
+        width: 1100px;
+        margin: 0 auto;
+        margin-top: 2px;
+        background-color: white;
+        -webkit-box-shadow: 5px 3px 5px #888888,-5px 3px 5px #888888;
+        -ms-box-shadow: 5px 3px 5px #888888,-5px 3px 5px #888888;
+        box-shadow: 5px 3px 5px #888888,-5px 3px 5px #888888;
+    }
+
+        .divMain .divCenterFrame .divSliderNews {
+            height: 500px;
+            background-color: #eeeeee;
+        }
+
+            .divMain .divCenterFrame .divSliderNews .divNews {
+                width: 322px;
+                height: 484px;
+                margin: 8px 8px 8px 5px;
+                background-color: white;
+                float: right;
+            }
+
+                .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner {
+                    width: 100%;
+                    max-height: 384px;
+                }
+
+                    .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner ul {
+                        margin: 0;
+                        list-style: none;
+                        padding: 0 5px;
+                    }
+
+                    .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner li {
+                        font-size: 13px;
+                        color: #333333;
+                    }
+
+                        .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner li p {
+                            margin: 0px;
+                            text-align: justify;
+                        }
+
+                        .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner li a {
+                            text-decoration: none !important;
+                            color: #E40D70;
+                        }
+
+                    .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner .divNewsItem {
+                        padding-top: 5px;
+                        height: 80px;
+                        background: url("Images/newsLine.png") center bottom no-repeat;
+                    }
+
+                        .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner .divNewsItem .divNewsImage {
+                            width: 70px;
+                            height: 70px;
+                            float: right;
+                        }
+                       .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner .divNewsItem .divNewsImage img {
+                            max-width: 70px;
+                            max-height: 70px;
+                        }
+                        .divMain .divCenterFrame .divSliderNews .divNews .divNewsInner .divNewsItem .divNewsText {
+                            width: 235px;
+                            height: 70px;
+                            float: right;
+                            padding-right: 5px;
+                        }
+
+                .divMain .divCenterFrame .divSliderNews .divNews .divNewsTitle {
+                    height: 50px;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 50px;
+                    vertical-align: middle;
+                    color: #e40d58;
+                }
+
+                .divMain .divCenterFrame .divSliderNews .divNews .divNewsMoreTitle {
+                    height: 50px;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 50px;
+                    vertical-align: middle;
+                    color: #e40d58;
+                }
+
+            .divMain .divCenterFrame .divSliderNews .divSlider {
+                width: 757px;
+                height: 484px;
+                margin: 8px 0px 8px 8px;
+                background-color: white;
+                float: right;
+            }
+
+        .divMain .divCenterFrame .divMagenta {
+            margin: 0 auto;
+            height: 130px;
+            background-color: #e40e58;
+        }
+
+            .divMain .divCenterFrame .divMagenta .divMidMenu1 {
+                background: url("Images/Rules.png") center top no-repeat;
+                /*height: 30px;*/
+                -webkit-transition: all 0.8s ease;
+                -moz-transition: all 0.8s ease;
+                -ms-transition: all 0.8s ease;
+                -o-transition: all 0.8s ease;
+                transition: all 0.8s ease;
+                padding-top: 40px;
+            }
+
+                .divMain .divCenterFrame .divMagenta .divMidMenu1:hover {
+                    background: url("Images/Rules-H.png") center top no-repeat;
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                    color: #edf340 !important;
+                }
+
+            .divMain .divCenterFrame .divMagenta .divMidMenu2 {
+                background: url("Images/QA.png") center top no-repeat;
+                /*height: 30px;*/
+                -webkit-transition: all 0.8s ease;
+                -moz-transition: all 0.8s ease;
+                -ms-transition: all 0.8s ease;
+                -o-transition: all 0.8s ease;
+                transition: all 0.8s ease;
+                padding-top: 40px;
+            }
+
+                .divMain .divCenterFrame .divMagenta .divMidMenu2:hover {
+                    background: url("Images/QA-H.png") center top no-repeat;
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                    color: #edf340 !important;
+                }
+
+            .divMain .divCenterFrame .divMagenta .divMidMenu3 {
+                background: url("Images/Transport.png") center top no-repeat;
+                /*height: 30px;*/
+                -webkit-transition: all 0.8s ease;
+                -moz-transition: all 0.8s ease;
+                -ms-transition: all 0.8s ease;
+                -o-transition: all 0.8s ease;
+                transition: all 0.8s ease;
+                padding-top: 40px;
+            }
+
+                .divMain .divCenterFrame .divMagenta .divMidMenu3:hover {
+                    background: url("Images/Transport-H.png") center top no-repeat;
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                    color: #edf340 !important;
+                }
+
+            .divMain .divCenterFrame .divMagenta .divMidMenu4 {
+                background: url("Images/Newsletter.png") center top no-repeat;
+                /*height: 30px;*/
+                -webkit-transition: all 0.8s ease;
+                -moz-transition: all 0.8s ease;
+                -ms-transition: all 0.8s ease;
+                -o-transition: all 0.8s ease;
+                transition: all 0.8s ease;
+                padding-top: 40px;
+            }
+
+                .divMain .divCenterFrame .divMagenta .divMidMenu4:hover {
+                    background: url("Images/Newsletter-H.png") center top no-repeat;
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                    color: #edf340 !important;
+                }
+
+            .divMain .divCenterFrame .divMagenta ul {
+                margin: auto;
+                text-align: center;
+                list-style: none;
+                padding-top: 10px;
+            }
+
+            .divMain .divCenterFrame .divMagenta li {
+                font-size: 13px;
+                margin: 0 45px;
+                color: #333333;
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: middle;
+                -webkit-transition: all 0.8s ease;
+                -moz-transition: all 0.8s ease;
+                -ms-transition: all 0.8s ease;
+                -o-transition: all 0.8s ease;
+                transition: all 0.8s ease;
+            }
+
+                .divMain .divCenterFrame .divMagenta li:hover {
+                    /*color: #e40d58 !important;*/
+                    -webkit-transition: all 0.8s ease;
+                    -moz-transition: all 0.8s ease;
+                    -ms-transition: all 0.8s ease;
+                    -o-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                }
+
+                .divMain .divCenterFrame .divMagenta li .pTitle {
+                    margin-top: 12px;
+                    font-weight: bold;
+                    margin-bottom: 0 !important;
+                }
+
+                .divMain .divCenterFrame .divMagenta li .pText {
+                    margin-top: 0 !important;
+                }
+
+                .divMain .divCenterFrame .divMagenta li a {
+                    text-decoration: none !important;
+                    color: #ffffff;
+                }
+
+
+        .divMain .divCenterFrame .divAdv {
+            height: 270px;
+            background-color: #eeeeee;
+            padding: 5px;
+        }
+
+            .divMain .divCenterFrame .divAdv img {
+                width: 100%;
+                height: 100%;
+                /*-ms-opacity: 0.8;
+                opacity: 0.8;*/
+                /*border: 0px solid #eee;*/
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+            }
+
+                .divMain .divCenterFrame .divAdv img:hover {
+                    /*-ms-opacity: 1;
+                    opacity: 1;*/
+                    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+                    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+                    box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+                    cursor: pointer;
+                }
+
+            .divMain .divCenterFrame .divAdv .divContainer {
+                position: relative;
+                z-index: 1;
+                -webkit-perspective: 1000;
+                -moz-perspective: 1000;
+                -ms-perspective: 1000;
+                -o-perspective: 1000;
+                perspective: 1000;
+            }
+
+            .divMain .divCenterFrame .divAdv .divCard {
+                width: 100%;
+                height: 100%;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                -webkit-transition: all 1.5s linear;
+                -moz-transition: all 1.5s linear;
+                -ms-transition: all 1.5s linear;
+                -o-transition: all 1.5s linear;
+                transition: all 1.5s linear;
+            }
+
+            .divMain .divCenterFrame .divAdv .divContainer.hover .divCard {
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+                -ms-transform: rotateY(180deg);
+                -o-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+            }
+
+            .divMain .divCenterFrame .divAdv .divAdvInner {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -ms-backface-visibility: hidden;
+                -o-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+                .divMain .divCenterFrame .divAdv .divAdvInner.back {
+                    display: block;
+                    -webkit-transform: rotateY(180deg);
+                    -moz-transform: rotateY(180deg);
+                    -ms-transform: rotateY(180deg);
+                    -o-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    /*padding: 10px;*/
+                    color: white;
+                    text-align: center;
+                    background-color: #aaa;
+                }
+
+            .divMain .divCenterFrame .divAdv #divAdv1 {
+                width: 215px;
+                height: 270px;
+                float: right;
+                padding-left: 5px;
+            }
+
+            .divMain .divCenterFrame .divAdv .divAdvContainer {
+                width: 325px;
+                height: 270px;
+                float: right;
+                padding-left: 5px;
+            }
+
+                .divMain .divCenterFrame .divAdv .divAdvContainer #divAdv2 {
+                    float: right;
+                    width: 160px;
+                    height: 135px;
+                    padding-left: 5px;
+                    padding-bottom: 5px;
+                }
+
+                .divMain .divCenterFrame .divAdv .divAdvContainer #divAdv3 {
+                    float: right;
+                    width: 160px;
+                    height: 130px;
+                }
+
+                .divMain .divCenterFrame .divAdv .divAdvContainer #divAdv4 {
+                    float: right;
+                    width: 100%;
+                    height: 130px;
+                    clear: right;
+                }
+
+            .divMain .divCenterFrame .divAdv #divAdv5 {
+                float: right;
+                width: 215px;
+                height: 270px;
+                padding-left: 5px;
+            }
+
+            .divMain .divCenterFrame .divAdv #divAdv6 {
+                float: left;
+                width: 320px;
+                height: 135px;
+                padding-bottom: 5px;
+            }
+
+            .divMain .divCenterFrame .divAdv #divAdv7 {
+                float: left;
+                width: 320px;
+                height: 130px;
+            }
+
+        .divMain .divCenterFrame .divProductRotator {
+            /*height: 350px;*/
+            background-color: white;
+        }
+
+            .divMain .divCenterFrame .divProductRotator .divProductRotatorInner {
+                height: 292px;
+                background: #f9f9f9;
+                border: 1px solid #dadada;
+                -ms-border-radius: 5px;
+                border-radius: 5px;
+                margin: 17px 10px;
+            }
+
+                .divMain .divCenterFrame .divProductRotator .divProductRotatorInner ul {
+                    /*margin: auto;*/
+                    text-align: center;
+                    list-style: none;
+                    padding-top: 15px;
+                    padding-right: 0;
+                }
+
+                .divMain .divCenterFrame .divProductRotator .divProductRotatorInner li {
+                    font-size: 13px;
+                    margin: 0 0px;
+                    color: #333333;
+                    display: inline-block;
+                    vertical-align: middle;
+                    background: url("Images/productSeprator.png") left center no-repeat;
+                }
+
+                    .divMain .divCenterFrame .divProductRotator .divProductRotatorInner li:last-child {
+                        background: none;
+                    }
+
+                .divProductItem {
+                    width: 200px;
+                }
+
+                     .divProductItem .divProductImage {
+                        height: 150px;
+                    }
+
+                        .divProductItem .divProductImage img {
+                            height: 150px;
+                        }
+
+                    .divProductItem .divProductInfo {
+                        height: 78px;
+                    }
+
+                    .divProductItem .pProductName {
+                        color: #525252;
+                        font-size: 12px;
+                        margin: 0 !important;
+                    }
+                    .divProductItem .pProductName a{
+                        color: #525252;
+                        text-decoration:none;
+                    }
+                    .divProductItem .pPrice {
+                        color: #525252;
+                        font-size: 11px;
+                        margin: 0 !important;
+                    }
+
+                    .divProductItem .Strike {
+                        text-decoration: line-through;
+                        color: red;
+                    }
+
+                    .divProductItem .pDiscountedPrice {
+                        color: #525252;
+                        font-size: 11px;
+                        margin: 0 !important;
+                    }
+
+                    .divProductItem .btnAddToCart {
+                        width: 38px;
+                        height: 34px;
+                        background: url("Images/btnAddToCart.png") center center no-repeat #0da5e4!important;
+                        border: none;
+                        vertical-align: middle;
+                        cursor: pointer;
+                    }
+
+                         .divProductItem .btnAddToCart:hover {
+                            background: url("Images/btnAddToCart.png") center center no-repeat #0298d4!important;
+                        }
+
+                   .divProductItem .btnMoreInfo {
+
+                        padding:8px;
+                        background: #ea2067;
+                        color: white;
+                        font-family: Yekan;
+                        font-size: 12px;
+                        border: none;
+                        vertical-align: middle;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+
+                         .divProductItem .btnMoreInfo:hover {
+                            background: #e10250;
+                            text-decoration:none;
+                        }
+
+        .divMain .divCenterFrame .divSpace {
+            height: 8px;
+            background-color: #eeeeee;
+        }
+
+    .divMain .divFooter {
+        width: 100%;
+        height: 380px;
+        background: #e7e7e7;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+
+        .divMain .divFooter .divFooterInner {
+            width: 1100px;
+            height: 170px;
+            margin: 0 auto;
+            margin-top: 167px;
+        }
+
+            .divMain .divFooter .divFooterInner .divRight {
+                width: 450px;
+                height: 100%;
+                float: right;
+            }
+
+                .divMain .divFooter .divFooterInner .divRight .divFooterMenu {
+                    color: #a53450;
+                    height: 117px;
+                    font-size: 13px;
+                }
+
+                    .divMain .divFooter .divFooterInner .divRight .divFooterMenu ul {
+                        padding-right: 10px;
+                        margin: 0;
+                    }
+
+                    .divMain .divFooter .divFooterInner .divRight .divFooterMenu li {
+                        font-size: 11px;
+                    }
+
+                    .divMain .divFooter .divFooterInner .divRight .divFooterMenu a {
+                        text-decoration: none;
+                        color: #a53450 !important;
+                    }
+
+                    .divMain .divFooter .divFooterInner .divRight .divFooterMenu .divRight {
+                        width: 50%;
+                        height: 100%;
+                    }
+
+                    .divMain .divFooter .divFooterInner .divRight .divFooterMenu .divLeft {
+                        width: 50%;
+                        height: 100%;
+                    }
+
+                .divMain .divFooter .divFooterInner .divRight .divSocial {
+                    height: 33px;
+                }
+
+                    .divMain .divFooter .divFooterInner .divRight .divSocial img {
+                        border: none;
+                    }
+
+                .divMain .divFooter .divFooterInner .divRight .divFaraweb {
+                    height: 20px;
+                    color: #444444;
+                    font-size: 13px;
+                }
+
+                    .divMain .divFooter .divFooterInner .divRight .divFaraweb a {
+                        text-decoration: none !important;
+                        color: #ce340b !important;
+                    }
+
+            .divMain .divFooter .divFooterInner .divCenter {
+                width: 200px;
+                height: 100%;
+                float: right;
+                color: #444444;
+                text-align: center;
+                font-size: 12px;
+            }
+
+                .divMain .divFooter .divFooterInner .divCenter p {
+                    margin-top: 140px;
+                    margin-bottom: 0;
+                }
+
+            .divMain .divFooter .divFooterInner .divLeft {
+                width: 450px;
+                height: 100%;
+                float: right;
+            }
+
+                .divMain .divFooter .divFooterInner .divLeft .divBank {
+                    width: 100px;
+                    text-align: center;
+                    float: right;
+                    padding-right: 50px;
+                }
+
+                    .divMain .divFooter .divFooterInner .divLeft .divBank p {
+                        margin-bottom: 0;
+                        margin-top: 30px;
+                    }
+
+                .divMain .divFooter .divFooterInner .divLeft .divPoll {
+                    width: 250px;
+                    float: right;
+                    padding-right: 50px;
+                    font-size: 12px;
+                    color: #a2304c;
+                }
+
+                    .divMain .divFooter .divFooterInner .divLeft .divPoll .pPollTitle {
+                        margin: 0;
+                        color: #a5344f;
+                        font-size: 13px;
+                        text-align: center;
+                    }
+
+                    .divMain .divFooter .divFooterInner .divLeft .divPoll .pPollQuestion {
+                        margin: 0;
+                        color: #444444;
+                        font-size: 13px;
+                    }
+
+
+/********************************
+Products Page
+********************************/
+.clear {
+    clear: both;
+}
+
+.divMain .divCenterFrameContainer .divCenterFrame .divRight {
+    width: 275px;
+    float: right;
+}
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divRight .divSiteMap {
+        height: 26px;
+        background: #eae9e9;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divRight .divSpace {
+        height: 10px;
+        background: #eae9e9;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters {
+        width: 265px;
+        margin: 3px auto;
+        background: #eae9e9;
+        border: solid 2px #cac8c8;
+        /*margin-top: 3px;*/
+        text-align: right;
+        padding:2px;
+    }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters .divSeprator {
+            height: 5px;
+            background: transparent url("Images/productFilterSeprator.png") center center no-repeat;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters p {
+            margin: 0;
+            font-size: 13px;
+            color: #434343;
+            text-align: right;
+            text-indent: 5px;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters label {
+            font-size: 12px;
+            color: #434343;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters .divItems {
+            width: 257px;
+            margin: 0 auto;
+            padding:5px;
+            background: #fafafa;
+            /*height: 200px;*/
+            border: 1px solid #d1d1d1;
+            text-align:right;
+        }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters .divItems ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                padding-top: 5px;
+            }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters .divItems li {
+                display: inline-block;
+                float: right;
+                padding: 2px;
+            }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters .divItems .imgColor {
+                display: block;
+                padding-right: 4px;
+            }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters .divItems .divColor {
+                height: 18px;
+            }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divRight .divProductFilters .divItems .divBrand {
+                height: 32px;
+                line-height: 32px;
+                vertical-align: bottom;
+            }
+
+.divMain .divCenterFrameContainer .divCenterFrame .divLeft {
+    width: 825px;
+    float: right;
+}
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divLeft .divProductTopOptions {
+        height: 50px;
+        background: #eae9e9;
+    }
+
+    .divProducts {
+    }
+
+
+       .divProducts ul {
+            /*margin: auto;*/
+            text-align: left;
+            list-style: none;
+            padding-right: 0;
+            margin-top: 0;
+        }
+
+        .divProducts li {
+            font-size: 13px;
+            margin: 0 0px;
+            color: #333333;
+            display: inline-block;
+            vertical-align: middle;
+            background: url("Images/productSeprator.png") left center no-repeat;
+            padding-top: 20px;
+        }
+
+             .divProducts li:nth-child(4n+0) {
+                background: none;
+            }
+
+            .divProducts li:last-child {
+                background: none;
+            }
+
+        .divProductItem {
+            width: 200px;
+        }
+
+            .divProductItem .divProductImage {
+                height: 150px;
+            }
+
+               .divProductItem .divProductImage img {
+                    height: 150px;
+                }
+
+            .divProductItem .divProductInfo {
+                height: 78px;
+            }
+
+            .divProductItem .pProductName {
+                color: #525252;
+                font-size: 12px;
+                margin: 0 !important;
+            }
+
+             .divProductItem .pPrice {
+                color: #525252;
+                font-size: 11px;
+                margin: 0 !important;
+            }
+
+            .divProductItem .Strike {
+                text-decoration: line-through;
+                color: red;
+            }
+
+            .divProductItem .pDiscountedPrice {
+                color: #525252;
+                font-size: 11px;
+                margin: 0 !important;
+            }
+
+             .divProductItem .btnAddToCart {
+                width: 38px;
+                height: 34px;
+                background: url("Images/btnAddToCart.png") center center no-repeat #0da5e4;
+                border: none;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+
+                 .divProductItem .btnAddToCart:hover {
+                    background: url("Images/btnAddToCart.png") center center no-repeat #0298d4;
+                }
+
+            .divProductItem .btnMoreInfo {
+                padding:8px;
+                background: #ea2067;
+                color: white;
+                font-family: Yekan;
+                font-size: 12px;
+                border: none;
+                vertical-align: middle;
+                text-align: center;
+                cursor: pointer;
+            }
+
+                .divProductItem .btnMoreInfo:hover {
+                    background: #e10250;
+                }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divLeft .divProductsPager {
+        height: 30px;
+        margin: 0;
+        background: #eae9e9;
+    }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divLeft .divProductsPager a {
+            text-decoration: none;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divLeft .divProductsPager .divPageNumber {
+            text-align: center;
+            background: url("Images/backProductPaging.png") center center no-repeat;
+            width: 23px;
+            height: 23px;
+            font-size: 13px;
+            font-family: Yekan;
+            margin: 3px;
+            float: left;
+            color: #707070;
+        }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divLeft .divProductsPager .divPageNumber:hover {
+                background: url("Images/backProductPaging-H.png") center center no-repeat;
+                color: #fff;
+            }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divLeft .divProductsPager .divPreviousPage {
+            background: url("Images/previousPage.png") center center no-repeat;
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin: 2px;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divLeft .divProductsPager .divNextPage {
+            background: url("Images/nextPage.png") center center no-repeat;
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin: 2px;
+        }
+
+
+/********************************
+Product Details Page
+********************************/
+.divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsTitleContainer {
+    height: 60px;
+    background: #eae8e9;
+}
+
+.divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo {
+    width: 50%;
+    float: right;
+    padding-top:5px;
+}
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox {
+        width: 520px;
+        height: 45px;
+        background: #fbfbfb;
+        border: 1px solid #ececec;
+        margin: 5px auto;
+        padding: 0 5px;
+    }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .pTitle {
+            color: #e40e58;
+            font-size: 13px;
+            line-height: 45px;
+            vertical-align: middle;
+            font-family: Yekan;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .pText {
+            color: #292929;
+            font-size: 13px;
+            line-height: 45px;
+            vertical-align: middle;
+            font-family: Yekan;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox img {
+            float: left;
+            line-height: 45px;
+            vertical-align: middle;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox a {
+            text-decoration: none;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divTitle {
+            float: right;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSize {
+            float: right;
+        }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSize ul {
+                list-style: none;
+                margin: 9px 5px;
+                padding: 0;
+                text-align: center;
+            }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSize li {
+                display: inline-block;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSize .divSizeItem {
+                min-width: 28px;
+                max-width : 32px;
+                height: 25px;
+                background: #f1f1f1;
+                border: 1px solid #f5f5f5;
+                -ms-border-radius: 5px;
+                border-radius: 5px;
+                color: #333333;
+                text-align: center;
+                float: right;
+                margin: 0 2px;
+            }
+
+                .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSize .divSizeItem:hover {
+                    background: #0c326a;
+                    color: whitesmoke;
+                }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSize .divColorItem {
+                width: 34px;
+                height: 20px;
+                background: #f1f1f1;
+                border: 1px solid #cccccc;
+                float: right;
+                margin: 0 2px;
+            }
+
+                .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSize .divColorItem .divColorItemInner {
+                    width: 28px;
+                    height: 14px;
+                    margin: 2px;
+                }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox .divSizeText {
+            float: left;
+            width: 125px;
+            height: 45px;
+            font-size: 13px;
+            text-align: center;
+            word-wrap: normal;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox #btnIncrease {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            border: none;
+            background: url("Images/btnIncrease.png") center center no-repeat;
+            cursor: pointer;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox #btnDecrease {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            border: none;
+            background: url("Images/btnDecrease.png") center center no-repeat;
+            cursor: pointer;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divInfoBox #txtCount {
+            width: 42px;
+            height: 25px;
+            text-align: center;
+            -ms-border-radius: 3px;
+            border-radius: 3px;
+            vertical-align: middle;
+            font-size: 18px;
+            font-family: Yekan;
+            border: 1px solid #e1e1e1;
+            background: #eeeeee;
+            color: #333333;
+        }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divOrderContainer {
+        width: 530px;
+        height: 98px;
+        background: #fbfbfb;
+        margin: 5px auto;
+    }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divOrderContainer .btnOrder {
+            width: 220px;
+            height: 50px;
+            background: #ea2067 url("Images/btnAddToCart.png") 180px center no-repeat;
+            color: white;
+            font-family: Yekan;
+            font-size: 18px;
+            border: none;
+            vertical-align: middle;
+            text-indent: 40px;
+            text-align: right;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+            .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsInfo .divOrderContainer .btnOrder:hover {
+                background: #e10250 url("Images/btnAddToCart.png") 180px center no-repeat;
+            }
+
+.divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsGallery {
+    width: 50%;
+    float: right;
+}
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsGallery .divMainImage {
+        width: 540px;
+        height: 440px;
+        border: 1px solid #dcdcdc;
+        margin-top: 5px;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsGallery ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsGallery li {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsGallery li .divThumbnail{
+            width: 69px;
+            height: 65px;
+            border: 1px solid #d9d9d9;
+            margin: 5px 2px;
+        }
+        .divMain .divCenterFrameContainer .divCenterFrame .divProductDetailsGallery li .divThumbnail img{
+            max-height:65px;
+        }
+.divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo {
+    padding:10px;
+    height: 220px;
+    background: #f1f1f1;
+    clear: both;
+    font-size: 13px;
+    line-height:26px;
+}
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divLongText {
+        float: right;
+        height: 85px;
+        width: 785px;
+        color: #3f3f3f;
+        font-size: 13px;
+        font-family: Yekan;
+        margin-right: 15px;
+        padding-top: 10px;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divSizeGuide {
+        float: left;
+        width: 300px;
+        height: 100%;
+        background: url("Images/backSizeGuide.jpg") left center no-repeat;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divMaterial {
+        float: right;
+        height: 125px;
+        width: 385px;
+        margin-right: 15px;
+        background: url("Images/backMaterial.jpg") right bottom no-repeat;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divTitle {
+        height: 25px;
+        color: #1787b7;
+        font-size: 13px;
+        font-family: Yekan;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divMaterial .divText {
+        height: 100px;
+        color: #3f3f3f;
+        font-size: 13px;
+        font-family: Yekan;
+        float: left;
+        width: 290px;
+    }
+
+    .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divSpecifications {
+        float: right;
+        height: 125px;
+        width: 400px;
+    }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divSpecifications .pTitle {
+            color: #e40e58;
+            font-size: 13px;
+            line-height: 25px;
+            vertical-align: middle;
+            font-family: Yekan;
+        }
+
+        .divMain .divCenterFrameContainer .divCenterFrame .divMoreInfo .divSpecifications .pText {
+            color: #292929;
+            font-size: 13px;
+            line-height: 25px;
+            vertical-align: middle;
+            font-family: Yekan;
+        }
+
+.divMain .divCenterFrameContainer .divCenterFrame .divMaintenance {
+    height: 240px;
+    background: #fff;
+}
+
+.divMain .divCenterFrameContainer .divCenterFrame .divComments {
+    height: 220px;
+    background: #f1f1f1;
+}
+
+
+.divProducts li{
+    text-align:center;
+}

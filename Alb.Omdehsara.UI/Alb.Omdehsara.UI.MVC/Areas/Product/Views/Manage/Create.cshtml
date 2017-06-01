@@ -1,0 +1,23 @@
+﻿@{
+   
+    Layout = "~/Areas/Product/Views/Shared/_ProductLayout.cshtml";
+    
+}
+@section scripts{
+    <script src="~/app/services/mainService.js" type="text/javascript"></script>
+    <script src="~/app/controllers/productController.js"></script>
+    <script src="~/app/controllers/productTypeController.js"></script>
+    <script src="~/app/controllers/productTypeListController.js"></script>
+    <script src="~/app/directives/directives.js" type="text/javascript"></script>
+    <script src="~/app/services/locService.js" type="text/javascript"></script>
+    <script src="~/app/controllers/productBaseController.js"></script>
+    <script src="~/app/services/utilService.js"></script>
+    <script src="~/app/controllers/controllerBase.js"></script>
+    }
+<link href="~/Content/chosen.min.css" rel="stylesheet" />
+<br />
+<br />
+
+    <div ng-view></div>
+
+

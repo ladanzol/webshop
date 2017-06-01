@@ -1,0 +1,23 @@
+﻿@using Alb.Omdehsara.Common
+@using Alb.Omdehsara.UI.MVC.Areas.Amlak.Models;
+@using Alb.Tools.UI.MVC.BootstrapHelper;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Controllers;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Models;
+@model PageLinksViewModel
+
+<div class="row title article">
+    <h3>مطالب خواندنی املاک</h3>
+</div>
+<div class="article-box">
+    <ul>
+        @foreach (var page in Model.Pages)
+        {
+            <li>
+                <a href="@Helper.GetCmsPageUrl(Url,page.ID,page.Title)">@page.Title</a>
+            </li>
+        }
+    </ul>
+    <div style="border-top:1px solid #8ECB59;padding:3px 10px 0 0">
+        @Html.ActionLink(">> مطالب بیشتر", "Archive", new { category = Model.CategoryId })
+    </div>
+</div>

@@ -1,0 +1,90 @@
+﻿@using Alb.Omdehsara.Common
+@using Alb.Omdehsara.UI.MVC
+@using Alb.Tools.Utility
+@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.UI.MVC.Areas.Product.Models
+@using Alb.Omdehsara.UI.MVC.Api.Models
+@using Alb.Omdehsara.Common.Product
+@model ProductTypeViewModel
+@if (Model != null && Model.ProductImages != null && Model.ProductImages.Count() > 0)
+{
+    <div class="image-slider " id='@("slider" + Model.Product.ID)' style="position: relative; top: 0px; left: 0px; width: 540px; height: 540px;background-color:#EAE8E9;text-align:center;margin-top:10px;">
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 540px; height: 540px;overflow: hidden;">
+            @foreach (string img in Model.ProductImages)    
+            {
+                <div>
+                    <div style="display:table-cell;vertical-align:middle;height:540px;width: 540px;">
+                        <img u="image" src="@Url.Content(img)" style="margin:auto;max-width:540px;" />
+                    </div>
+                    <img u="thumb" src="@Url.Content(Helper.GetProductImageUrl(img, ImageSize.Medium))" />
+                </div>
+            }
+        </div>
+        <span u="arrowleft" class="jssora03l" style="width: 55px; height: 55px; top: 200px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora03r" style="width: 55px; height: 55px; top: 200px; right: 8px; ">
+        </span>
+
+        <div u="thumbnavigator" class="jssort01" style="position: absolute; width: 540px; height: 100px; left:0px; bottom: 0px;">
+            <!-- Thumbnail Item Skin Begin -->
+            <style>
+                /* jssor slider thumbnail navigator skin 01 css */
+                /*
+                .jssort01 .p           (normal)
+                .jssort01 .p:hover     (normal mouseover)
+                .jssort01 .pav           (active)
+                .jssort01 .pav:hover     (active mouseover)
+                .jssort01 .pdn           (mousedown)
+                */
+                .jssort01 .w {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .jssort01 .c {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 72px;
+                    height: 72px;
+                    border: #000 2px solid;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
+                    background: url(@Url.Content("~/Content/jssor/img/t01.png")) center center;
+                    border-width: 0px;
+                    top: 2px;
+                    left: 2px;
+                    width: 68px;
+                    height: 68px;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c {
+                    top: 0px;
+                    left: 0px;
+                    width: 72px;
+                    height: 72px;
+                    border: #fff 1px solid;
+                }
+            </style>
+            <div u="slides" style="cursor: move;">
+                <div u="prototype" class="p" style="position: absolute; width: 72px; height: 72px; top: 0; left: 0;">
+                    <div class=w><div u="thumbnailtemplate" style=" width: 100%; height: 100%; border: none;position:absolute; top: 0; left: 0;"></div></div>
+                    <div class=c>
+                    </div>
+                </div>
+            </div>
+            <!-- Thumbnail Item Skin End -->
+        </div>
+        <!-- Thumbnail Navigator Skin End -->
+    </div>
+    <!-- Jssor Slider End -->
+
+}
+
+

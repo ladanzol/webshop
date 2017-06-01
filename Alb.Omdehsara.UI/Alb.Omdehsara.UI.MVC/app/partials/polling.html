@@ -1,0 +1,20 @@
+﻿
+<div class="polling">
+    <div style="text-align:center">
+        نظرسنجی
+    </div>
+    <div class="polling-header">
+        {{question.Question}}
+    </div>
+    <ol>
+        <li ng-repeat="option in options">
+            <label>
+                <input type="radio" ng-model="answer.value" ng-value="option.ID" />
+                {{option.OptionText}}
+            </label>
+        </li>
+    </ol>
+    <div>
+        <input type="button" class="polling-btn" value="ثبت نظر" ng-click="submitPolling()" />
+    </div>
+</div>

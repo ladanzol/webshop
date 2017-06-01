@@ -1,0 +1,62 @@
+﻿<span ng-controller="ShoppingController">
+    <span class="dropdown keep-open shopping-dropdown">
+        <div data-toggle="dropdown" class="btn btnCart" ng-class="{'green-cart': enoughOrder()}" title="سبد خرید شما"></div>
+        <ul class="dropdown-menu pull-left" ng-click="$event.stopPropagation()">
+            <li ng-show="orderDetails.length==0"> 
+                <div class="no-item-basket">
+                       شما هیچ کالایی را به سبد خرید خود اضافه نکرده اید.
+                </div>
+            </li>
+            <li ng-show="orderDetails.length>0">
+                <div class="items-basket">
+                    <div class="row">
+                        <div class="col-sm-5">عنوان کالا </div>
+                        <div class="col-sm-2">
+                            تعداد
+                        </div>
+                        <div class="col-sm-2">
+                            قیمت 
+                        </div>
+                        <div class="col-sm-1">
+                            رنگ
+                        </div>
+                        <div class="col-sm-1">
+                            اندازه
+                        </div>
+                        <div class="col-sm-1">
+
+                        </div>
+
+                    </div>
+                    <div ng-repeat="orderDetail in orderDetails" class="row">
+                        <div class="col-sm-5">{{orderDetail.ProductTitle}} - {{orderDetail.BrandName}} </div>
+                        <div class="col-sm-2">
+                            <select class="form-control" id="orderDetail.Quantity" ng-model="orderDetail.Quantity" ng-change="orderQuantityChanged(orderDetail)">
+                                <option ng-repeat="q in [] | range:getQuantityRange(orderDetail)" value="{{q+1}}" ng-selected="(orderDetail.Quantity == (q+1))">{{q+1}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            {{orderDetail.Price}}
+                        </div>
+                        <div class="col-sm-1">
+                            {{orderDetail.ColorName}}
+                        </div>
+                        <div class="col-sm-1">
+                            {{orderDetail.SizeName}}
+                        </div>
+                        <div class="col-sm-1">
+                            <div ng-click="removeOrderDetail(orderDetail)">
+                                <i class="fa fa-remove "></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+          
+            <li ng-show="orderDetails.length!=0" style="padding:5px;">
+                <input type="button" class="btn btn-primary" value="ثبت سفارش" ng-click="completeOrder()" />
+            </li>
+        </ul>
+    </span>
+    <input type="text" id="txtCart" class="txtCart" readonly placeholder="{{orderProductCount()}} محصول اضافه شده" />
+</span>

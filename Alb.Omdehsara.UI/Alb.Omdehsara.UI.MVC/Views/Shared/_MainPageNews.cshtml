@@ -1,0 +1,35 @@
+﻿@using Alb.Omdehsara.Common
+@model IEnumerable<TblPage> 
+<div class="divNews">
+    <div class="divNewsTitle">آخرین اخبار</div>
+    <div class="divNewsInner">
+        <ul>
+            @foreach (var news in Model)
+            {
+                <li>
+                    <div class="divNewsItem">
+                        <div class="divNewsImage">
+                            @if (!string.IsNullOrEmpty(news.MainImageUrl))
+                            {
+                                <img src="@Url.Content(news.MainImageUrl)">
+                            }
+                        </div>
+                        <div class="divNewsText">
+                            <a href="@Url.Content(Helper.GetCmsPageUrl(Url,news.ID,news.Title))">
+                                @news.Title
+                            </a>
+                            <br />
+                            <p>
+                                @news.Introduction...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div class="divNewsMoreTitle">
+        آرشیو مطالب
+    </div>
+    </div>

@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "رنگ کالاها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.Common.Product;
+@model ColorViewModel
+@using (Html.BeginForm("AddColor", "Color", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m=>m.Color.ID)
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">نام رنگ</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Color.ColorName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">کدرنگ</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Color.ColorCode, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="ثبت" style="width:150px;" class="btn btn-primary">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">لیست گروه ها</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.CheckBoxListFor(model =>model.PostedCategories,
+                        model => model.Cateogries,
+                        cat=>cat.ID,
+                        cat=>cat.CategoryName,
+                        model => model.SelectedCategories, MvcCheckBoxList.Model.Position.Horizontal)
+        </div>
+    </div>
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>نام رنگ</th>
+        <th>کد</th>
+    </tr>
+@foreach (TblColor color in Model.Colors)
+{
+   <tr>
+       <td>@color.ColorCode</td>
+       <td>@color.ColorName</td>
+       <td><a class="btn btn-primary" href="@Url.Action("Index", new {Id=color.ID })">ویرایش</a></td>
+       <td><a class="btn btn-danger" href="@Url.Action("Delete", new {Id=color.ID })">حذف</a></td>
+   </tr>
+}
+</table>
+@section scripts{
+<script>
+    
+    </script>
+}

@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "انواع ارسال کالا";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+    <div id="grid"></div>
+
+<br />
+<br />
+ @section scripts
+{
+        <script>
+            $(document).ready(function () {
+                var crudServiceBaseUrl = tools.ajax.apiBaseUrl,
+                    dataSource = new kendo.data.DataSource({
+                        pageSize: 10,
+                        transport: {
+                            read: function (options) {
+                                tools.ajax.get(tools.ajax.apiBaseUrl + "admin/transporttype").then(function (data) {
+                                    options.success(data);
+                                });
+                            },
+                            update: function (options) {
+                                $.ajax({
+                                    url: crudServiceBaseUrl + "admin/TransportType/edit",
+                                    type: "PUT",
+                                    data: options.data.models[0],
+                                    success: function (result) {
+                                        options.success(result);
+                                    },
+                                    error: function (result) {
+                                        options.error(result);
+                                    }
+                                })
+                            },
+                            destroy: function (options) {
+                                $.ajax({
+                                    url: crudServiceBaseUrl + "admin/TransportType/delete",
+                                    type: "DELETE",
+                                    data: options.data.models[0],
+                                    success: function (result) {
+                                        options.success(result);
+                                    },
+                                    error: function (result) {
+                                        options.error(result);
+                                    }
+                                })
+                            },
+                            create: function (options) {
+                                $.ajax({
+                                    url: crudServiceBaseUrl + "admin/TransportType/create",
+                                    type: "POST",
+                                    data: options.data.models[0],
+                                    success: function (result) {
+                                        options.success(result);
+                                    },
+                                    error: function (result) {
+                                        options.error(result);
+                                    }
+                                })
+                            },
+                            parameterMap: function (options, operation) {
+                                if (operation !== "read" && options.models) {
+                                    return   options.models[0] ;
+                                }
+                            }
+                        },
+                        batch: true,
+                        serverPaging: true,
+                        serverSorting: true,
+                        schema: {
+                            data: 'Data',
+                            total: function(response) {
+                                return response.TotalCount;
+                            },
+                            model: {
+                                id: "ID",
+                                fields: {
+                                    ID: { editable: false, nullable: false },
+                                    Name: { validation: { required: true } },
+                                    Tehran: { validation: { required: true } },
+                                    OtherCity: { validation: { required: true } },
+                                    TehranPrice: { validation: { required: true } },
+                                    OtherPrice: { validation: { required: false } },
+                                }
+                            }
+                        }
+                    });
+
+                $("#grid").kendoGrid({
+                    dataSource: dataSource,
+                    filterable: false,
+                    sortable: true,
+                    pageable: true,
+                    height: 550,
+                    toolbar: ["create"],
+                    scrollable: false,
+                    selectable: "single",
+                    navigatable: true,
+                    columns: [
+                        { field: "ID", title: "ID", width: "50px" },
+                        { field: "Name", title: "نام", width: "90px" },
+                        { field: "Tehran", title: "فعال در تهران", width: "150px", filterable: false, values: yesNo },
+                        { field: "OtherCity", title: "فعال در شهرستان ها", width: "150px", filterable: false, values: yesNo },
+                        { field: "TehranPrice", title: "قیمت برای تهران", width: "150px" },
+                        { field: "OtherPrice", title: "قیمت برای شهرستان", width: "150px", filterable: false },
+                        { command: ["edit", "destroy"], title: "&nbsp;", width: "200px" }],
+                    editable: "inline"
+                });
+            });
+            var yesNo = [{ value: true, text: "بله" }, { value: false, text: "خیر" }];
+            propertyTypeDropdownEditor = function (container, options) {
+                $('<input data-bind="value:' + options.field + '"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    dataValueField: "PropertyType",
+                    dataTextField: "PropertyType",
+                    dataSource:propertyTypes
+                });
+            }
+            loadChild = function () {
+                var entityGrid = $("#grid").data("kendoGrid");
+                var selectedItem = entityGrid.dataItem(entityGrid.select());
+                if (selectedItem != null) {
+                }
+            }
+                </script>
+    }

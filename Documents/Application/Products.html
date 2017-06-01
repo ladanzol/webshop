@@ -1,0 +1,526 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/Site.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="Scripts/skdslider.js"></script>
+    <link href="Styles/skdslider.css" rel="stylesheet">
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mainSlider').skdslider({ delay: 5000, animationSpeed: 2000, showNextPrev: true, showPlayButton: false, autoSlide: true, shownav: false, animationType: 'fading' });
+        });
+
+
+        $(window).load(function () {
+            var $flippers = $(".divContainer"),
+                qtFlippers = $flippers.length;
+
+            setInterval(function () {
+                $flippers.eq(Math.floor(Math.random() * qtFlippers)).toggleClass('hover');
+            }, 8000);
+
+            var child1Height = $(".divCenterFrameContainer").height();
+            $(".divFooter").css('top', child1Height - 40);
+            $(".divFooter").css('-ms-opacity', '1');
+            $(".divFooter").css('opacity', '1');
+
+            var child2Height = $(".divCenterFrame .divLeft").height();
+            $(".divCenterFrame .divRight .divProductFilters").css('height', child2Height - 46);
+        });
+    </script>
+</head>
+<body>
+    <div class="divMain">
+        <div class="divTopMenu">
+            <ul>
+                <li>صفحه اصلی</li>
+                <li>خدمات</li>
+                <li>قوانین و مقررات</li>
+                <li>سوالات متداول</li>
+                <li>تماس با ما</li>
+            </ul>
+        </div>
+        <div class="divHeader">
+            <div class="divHeaderInner">
+                <div class="divLogo">
+                </div>
+                <div class="divMenu">
+                    <ul>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu1">
+                                    <br />
+                                    <p>پوشاک</p>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu2">
+                                    <br />
+                                    <p>کفش</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu3">
+                                    <br />
+                                    <p>جوراب و شال</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu4">
+                                    <br />
+                                    <p>لوازم آشپزخانه</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu5">
+                                    <br />
+                                    <p>لوازم دکوری</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="divNotificationArea">
+                    <div class="divCart">
+                        <input type="submit" name="btnLogin" class="btnLogin" value="ورود کاربران" /> <input type="submit" name="btnCart" class="btnCart" value="" /><input type="text" name="txtCart" placeholder="3 محصول اضافه شده" class="txtCart" readonly />
+                    </div>
+                    <div class="divSearch">
+                        <input type="submit" name="btnSearch" class="btnSearch" value="" /><input type="text" name="txtSearch" placeholder="جستجوی محصول مورد نظر" class="txtSearch" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divCenterFrameContainer">
+            <div class="divCenterFrame">
+                <div class="divRight">
+                    <div class="divSiteMap"></div>
+                    <div class="divProductFilters">
+                        <p><img src="Styles/Images/imgFilterTitle.jpg" />فیلتر محصولات</p>
+                        <div class="divSeprator"></div>
+                        <p>انتخاب برند</p>
+                        <div class="divItems">
+                            <ul>
+                                <li>
+                                    <div class="divBrand">
+                                        <input id="chkBrand1" type="checkbox" /><label for="chkBrand1"><img src="Styles/Images/Brand1.png" /></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divBrand">
+                                        <input id="chkBrand2" type="checkbox" /><label for="chkBrand2"><img src="Styles/Images/Brand2.png" /></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divBrand">
+                                        <input id="chkBrand3" type="checkbox" /><label for="chkBrand3"><img src="Styles/Images/Brand3.png" /></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divBrand">
+                                        <input id="chkBrand4" type="checkbox" /><label for="chkBrand4"><img src="Styles/Images/Brand4.png" /></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divBrand">
+                                        <input id="chkBrand5" type="checkbox" /><label for="chkBrand5"><img src="Styles/Images/Brand5.png" /></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divBrand">
+                                        <input id="chkBrand6" type="checkbox" /><label for="chkBrand6"><img src="Styles/Images/Brand6.png" /></label>
+                                    </div>
+
+                                </li>
+                            </ul>
+                            <br class="clear">
+                        </div>
+                        <p>انتخاب رنگ</p>
+                        <div class="divItems">
+                            <ul>
+                                <li>
+                                    <div class="divColor"><input id="chkColor1" type="checkbox" /><label for="chkColor1">آبی</label></div>
+                                    <img src="Styles/Images/cBlue.png" class="imgColor" />
+                                </li>
+                                <li>
+                                    <div class="divColor"><input id="chkColor2" type="checkbox" /><label for="chkColor2">قرمز</label></div>
+                                    <img src="Styles/Images/cRed.png" class="imgColor" />
+                                </li>
+                                <li>
+                                    <div class="divColor"><input id="chkColor3" type="checkbox" /><label for="chkColor3">سبز</label></div>
+                                    <img src="Styles/Images/cGreen.png" class="imgColor" />
+                                </li>
+                                <li>
+                                    <div class="divColor"><input id="chkColor4" type="checkbox" /><label for="chkColor4">مشکی</label></div>
+                                    <img src="Styles/Images/cBlack.png" class="imgColor" />
+                                </li>
+                                <li>
+                                    <div class="divColor"><input id="chkColor5" type="checkbox" /><label for="chkColor5">سفید</label></div>
+                                    <img src="Styles/Images/cWhite.png" class="imgColor" />
+                                </li>
+                                <li>
+                                    <div class="divColor"><input id="chkColor6" type="checkbox" /><label for="chkColor6">نارنجی</label></div>
+                                    <img src="Styles/Images/cOrange.png" class="imgColor" />
+                                </li>
+                                <li>
+                                    <div class="divColor"><input id="chkColor7" type="checkbox" /><label for="chkColor7">بنفش</label></div>
+                                    <img src="Styles/Images/cPurple.png" class="imgColor" />
+                                </li>
+                            </ul>
+                            <br class="clear" />
+                        </div>
+                        <p>انتخاب نوع کالا</p>
+                        <div class="divItems"></div>
+                        <p>قیمت</p>
+                        <div class="divItems"></div>
+                        <p>سایزبندی</p>
+                        <div class="divItems"></div>
+                    </div>
+                    <div class="divSpace"></div>
+                </div>
+                <div class="divLeft">
+                    <div class="divProductTopOptions"></div>
+                    <div class="divProducts">
+                        <ul>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product1.png" />
+                                    </div>
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - زارا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">140000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">120000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product2.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ بلند زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">موجود نیست.</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product3.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">شلوار زنانه - چیبو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice"></p>
+                                        </span>
+                                        <p class="pPrice">125000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product4.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ زنانه - بونیتا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">140000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product5.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">170000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">160000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product1.png" />
+                                    </div>
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - زارا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">140000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">120000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product2.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ بلند زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">موجود نیست.</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product3.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">شلوار زنانه - چیبو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice"></p>
+                                        </span>
+                                        <p class="pPrice">125000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product4.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ زنانه - بونیتا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">140000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product5.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">170000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">160000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product1.png" />
+                                    </div>
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - زارا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">140000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">120000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product2.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ بلند زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">موجود نیست.</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product2.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ بلند زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">موجود نیست.</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product3.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">شلوار زنانه - چیبو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice"></p>
+                                        </span>
+                                        <p class="pPrice">125000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product4.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ زنانه - بونیتا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">140000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product5.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">170000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">160000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="divProductsPager">
+                        <a href="http://faraweb.ir"><div class="divPreviousPage"></div></a>
+                        <a href="http://faraweb.ir"><div class="divPageNumber">1</div></a>
+                        <a href="http://faraweb.ir"><div class="divPageNumber">2</div></a>
+                        <a href="http://faraweb.ir"><div class="divPageNumber">3</div></a>
+                        <a href="http://faraweb.ir"><div class="divPageNumber">4</div></a>
+                        <a href="http://faraweb.ir"><div class="divPageNumber">5</div></a>
+                        <a href="http://faraweb.ir"><div class="divNextPage"></div></a>
+                    </div>
+                </div>
+                <br class="clear" />
+            </div>
+        </div>
+
+        <div class="divFooter">
+            <div class="divFooterInner">
+                <div class="divRight">
+                    <div class="divFooterMenu">
+                        <div class="divRight">
+                            راهنمای مشتریان
+                            <ul>
+                                <li><a href="http://faraweb.ir">مرکز پشتیبانی</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای ثبت نام، خرید و پرداخت</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای ارسال</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای گارانتی</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای استفاده از امتیازات</a></li>
+                            </ul>
+                        </div>
+                        <div class="divLeft">
+                            درباره عمده سرا
+                            <ul>
+                                <li><a href="http://faraweb.ir">درباره ما</a></li>
+                                <li><a href="http://faraweb.ir">ضوابط استفاده و حریم کاربران</a></li>
+                                <li><a href="http://faraweb.ir">عمده سرا در رسانه ها</a></li>
+                                <li><a href="http://faraweb.ir">آرشیو خبرنامه های عمده سرا</a></li>
+                                <li><a href="http://faraweb.ir">گواهینامه های عمده سرا</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="divSocial">
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialG.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialF.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialT.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialL.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialI.png" /></a>
+                    </div>
+                    <div class="divFaraweb">Design By <a href="http://faraweb.ir">Faraweb</a></div>
+                </div>
+                <div class="divCenter">
+                    <p>تمامی حقوق این سایت محفوظ می باشد.</p>
+                </div>
+                <div class="divLeft">
+                    <div class="divBank">
+                        <p>
+                            <img src="Styles/Images/Namad.png" />
+                            <br />
+                            <img src="Styles/Images/Mellat.png" />
+                            <img src="Styles/Images/Parsian.png" />
+                        </p>
+                    </div>
+                    <div class="divPoll">
+                        <p class="pPollTitle">نظرسنجی</p>
+                        <p class="pPollQuestion">نظر شما در مورد خدمات این سایت چیست؟</p>
+                        <input type="radio" name="poll" value="VeryGood" checked>بسیار خوب است.
+                        <br />
+                        <input type="radio" name="poll" value="Good">خوب است.
+                        <br />
+                        <input type="radio" name="poll" value="Bad">ضعیف است.
+                        <br />
+                        <input type="radio" name="poll" value="VeryBad">بسیار ضعیف است.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

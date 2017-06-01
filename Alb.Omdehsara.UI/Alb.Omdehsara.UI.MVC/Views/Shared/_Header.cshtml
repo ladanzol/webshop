@@ -1,0 +1,85 @@
+﻿@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.Common
+@model IEnumerable<TblCategory>
+
+@Html.Action("TopMenu")
+
+<div class="divHeader ">
+    <div class="divHeaderInner">
+        <a href="http://omdehsara.com" title="عمده فروشی عمده سرا">
+            <div class="divLogo" >
+            </div>
+        </a>
+        <div class="divMenu">
+            <ul>
+                @foreach (TblCategory cat in Model.Where(c=>c.ID <100))
+                {
+                    <li>
+                        <a href="@Url.Content(Helper.GetCategoryUrl(cat.ID))">
+                            <div class="divImageMenu">
+                                @if (!string.IsNullOrEmpty(cat.IconUrl))
+                                {
+                                    <img id="imgMenu@cat.ID" src="@Url.Content(cat.IconUrl)">
+                                }
+                                <!--<br />-->
+                                <p>
+                                @cat.CategoryName</p>
+                            </div>
+                        </a>
+
+                        <div class="divSubMenu">
+                            <div class="divRight">
+                                @if (!string.IsNullOrEmpty(cat.ImageUrl1))
+                                {
+                                    <img src="@Url.Content(cat.ImageUrl1)">
+                                }
+                            </div>
+                            <div class="divCenter">
+                                <ul>
+                                    @foreach (TblCategory childCat in Model.Where(c => cat.ID == c.ID / 100))
+                                    {
+                                        <p>
+                                            <a href="@Url.Content(Helper.GetCategoryUrl(childCat.ID))">
+                                                @childCat.CategoryName
+                                            </a>
+                                        </p>
+                                        foreach (TblCategory childCat2 in Model.Where(c => childCat.ID == c.ID / 100))
+                                        {
+                                            <li>
+                                                <a href="@Url.Content(Helper.GetCategoryUrl(childCat2.ID))">
+                                                    @childCat2.CategoryName
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="divLeft">
+                                @if (!string.IsNullOrEmpty(cat.ImageUrl2))
+                                {
+                                    <img src="@Url.Content(cat.ImageUrl2)">
+                                }
+                            </div>
+                            <div class="clear" ></div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="divNotificationArea">
+            <div class="divCart">
+
+                @*<a name="btnLogin" class="btn btnLogin" href="@Url.Content("~/account/login")" >ورود کاربران</a>*@
+                @Html.Partial("_LoginRegister")
+                <span ng-include="shoppingCartHtmlUrl"> </span>
+
+            </div>
+            <div class="divSearch">
+@using (Html.BeginForm("index", "search", FormMethod.Get, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+                    <input Id="btnSearch" class="btnSearch" value="" type="submit"><input name="q" placeholder="جستجوی محصول مورد نظر" class="txtSearch" type="text">
+}
+      </div>
+        </div>
+    </div>
+</div>

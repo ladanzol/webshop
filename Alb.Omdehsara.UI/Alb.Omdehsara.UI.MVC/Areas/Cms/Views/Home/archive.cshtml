@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "لیست خبرها و مطالب خواندنی املاک";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@using Alb.Tools.UI.MVC.BootstrapHelper;
+@using Alb.Omdehsara.Common;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Models;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Controllers;
+@using Alb.Tools.Utility;
+@model PageListViewModel
+<div style="border:1px solid silver" >
+    @foreach (TblPage page in Model.PageList)
+    {
+        <div class="page-list">
+            <h4><a href="@Helper.GetCmsPageUrl(Url, page.ID, page.Title)">@page.Title</a></h4>
+            <p>@page.Introduction</p>
+            <div>
+
+                <span>
+                    @DateTools.GetPersianDateString(@page.InsDate)
+                </span>
+            </div>
+        </div>
+    }
+</div>
+@Html.Pager((int)Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)
+

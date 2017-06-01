@@ -1,0 +1,94 @@
+﻿@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.Common.Orders
+@model OrderViewModel
+<div class="row" style="background-color:#e6dddd;padding:10px">
+    <div class="col-sm-2">
+        کد رهگیری سفارش : @Model.ID
+    </div>
+    @if (!string.IsNullOrEmpty(Model.PersianOrderDate))
+    {
+        <div class="col-sm-2">
+            تاریخ سفارش :  @Model.PersianOrderDate
+        </div>
+    }
+    <div class="col-sm-2">
+        وضعیت سفارش :  @Helper.GetOrderStatus((OrderStatus)Model.Status)
+    </div>
+    <div class="col-sm-2">
+        تحویل گیرنده :  
+        @Model.CustomerName
+    </div>
+    <div class="col-sm-2">
+        تماس :  
+        @Model.Phone
+    </div>
+</div>
+<div style="border:1px solid #e6dddd;">
+    <table class="table table-striped">
+        <tr>
+            <th>محصول</th>
+            <th>تعداد</th>
+            <th>قیمت واحد</th>
+            <th>قیمت کل</th>
+            <th>تحویل گیرنده</th>
+            <th>تماس</th>
+        </tr>
+        @foreach (OrderDetail detail in Model.OrderDetails)
+        {
+            <tr>
+                <td style="min-width:150px">
+                    @detail.ProductTitle - کد (@detail.ProductTypeID)
+                    @if (User.IsInRole(Alb.Omdehsara.Common.ProjectRoles.Admin.ToString()))
+                    {
+                        <a href="~/Product/manage/create/#/addproduct/@detail.CategoryID/@detail.ProductTypeID/@detail.ProductID">مکانیابی</a>
+                    }
+                    @if (!string.IsNullOrEmpty(detail.ColorName))
+                    {
+                        <div>
+                            رنگ : @detail.ColorName
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(detail.SizeName))
+                    {
+                    <div>
+                        سایز: @detail.SizeName
+                    </div>
+                    }
+                </td>
+                <td style="max-width:50px">
+                    @detail.Quantity
+                </td>
+                <td>
+                    @detail.UnitPrice
+                </td>
+                <td>
+                    @(detail.UnitPrice * detail.Quantity)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="row" style="background-color:#e4fbaa">
+    <div class="col-sm-3">
+        قیمت سفارش: @Model.OrderPrice
+    </div>
+    <div class="col-sm-3">
+        تخفیف: @Model.OrderDiscount
+    </div>
+    <div class="col-sm-3">
+        قیمت نهایی: @Model.OrderFinalPrice
+    </div>
+</div>
+<div class="row" style="background-color:#c5e0f7">
+    <div class="col-sm-2">
+        استان: @Model.CityName
+    </div>
+    <div class="col-sm-10">
+        شهر @Model.CityName - @Model.Address
+        - کدپستی
+        @Model.PostalCode - تلفن @Model.OrderPhone
+    </div>
+</div>
+

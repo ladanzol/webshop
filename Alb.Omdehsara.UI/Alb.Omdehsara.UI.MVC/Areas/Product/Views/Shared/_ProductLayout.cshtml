@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@section css
+{
+<link href="~/Content/kendoui/kendo.common.min.css" rel="stylesheet">
+<link href="~/Content/kendoui/kendo.rtl.min.css" rel="stylesheet">
+<link href="~/Content/kendoui/kendo.default.min.css" rel="stylesheet">
+<link href="~/Content/kendoui/kendo.dataviz.min.css" rel="stylesheet">
+<link href="~/Content/kendoui/kendo.dataviz.default.min.css" rel="stylesheet">
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+   <style>
+       
+       .k-ff input.k-textbox {height: 3.17em;}
+
+    </style>
+    @RenderSection("css", required: false)
+}
+<div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-2" style="padding-right: 0px;">
+            @Html.Partial("_ProductRightColumn")
+            @Html.Partial("_SiteRightColumn")
+        </div>
+        <div class="col-xs-12 col-sm-10 " style="padding:0;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+                <div class="col-xs-12 col-sm-12 specialgolchin ">
+                    <div class="k-rtl">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+@Scripts.Render("~/bundles/site")
+<script src="~/Scripts/KendoUI/kendo.all.min.js"></script>
+<script src="~/Scripts/alb/tools.js"></script>
+<script src="~/Scripts/toastr.js"></script>
+    @RenderSection("scripts", required: false)
+}
+

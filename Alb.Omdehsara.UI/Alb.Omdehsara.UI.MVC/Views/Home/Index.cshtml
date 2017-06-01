@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "عمده فروشی لباس- لوازم خانگی ";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    ViewBag.description = "عمده سرا اولین و بزرگترین سایت عمده فروشی لباس های برند معتبر جهانی ، لوازم خانگی و دکوری است.";
+}
+@section css{
+<link href="~/Content/lush.animations.min.css" rel="stylesheet" />
+<link href="~/Content/lush.min.css" rel="stylesheet" />
+}
+
+<div class="divCenterFrame">
+    <div class="divSliderNews">
+        @Html.Action("MainPageNews")
+        @Html.Action("MainPageSlider")
+    </div>
+
+    <div class="divMagenta">
+        <ul>
+            <li>
+                <a href="http://google.com">
+                    <div class="divMidMenu1">
+                        <br>
+                        <p class="pTitle">شرایط و مقررات</p>
+                        <p class="pText">نحوه خرید از سایت</p>
+                    </div>
+                </a>
+
+            </li>
+            <li>
+                <a href="http://google.com">
+                    <div class="divMidMenu2">
+                        <br>
+                        <p class="pTitle">پرسش و پاسخ</p>
+                        <p class="pText">سوالات خود را مطرح کنید</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="http://google.com">
+                    <div class="divMidMenu3">
+                        <br>
+                        <p class="pTitle">حمل و نقل</p>
+                        <p class="pText">نحوه و زمان ارسال کالا</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="http://google.com">
+                    <div class="divMidMenu4">
+                        <br>
+                        <p class="pTitle">خبرنامه</p>
+                        <p class="pText">دریافت آخرین اطلاعات</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    @Html.Action("MainPageBrand")
+    @Html.Action("HotProducts")
+
+    <div class="divSpace"></div>
+</div>
+
+@section scripts{
+<script src="~/Scripts/jquery.lush.min.js"></script>
+<script src="~/Scripts/jquery.easing.1.3.min.js"></script>
+<script>
+        @Html.Raw(ViewBag.SliderScript)
+
+
+</script>
+}

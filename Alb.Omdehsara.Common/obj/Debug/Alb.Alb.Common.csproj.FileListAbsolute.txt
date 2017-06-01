@@ -1,0 +1,9 @@
+﻿D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\bin\Debug\Alb.Alb.Common.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\bin\Debug\Alb.Alb.Common.pdb
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\bin\Debug\Alb.Tools.Common.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\bin\Debug\Alb.Tools.Common.pdb
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\bin\Debug\Microsoft.Web.Infrastructure.xml
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\obj\Debug\Alb.Alb.Common.csprojResolveAssemblyReference.cache
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\obj\Debug\Alb.Alb.Common.dll
+D:\Alb\AlbMVC\Alb.Alb\Alb.Alb.Common\obj\Debug\Alb.Alb.Common.pdb

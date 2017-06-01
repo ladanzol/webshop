@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.Common.Product;
+@using Alb.Omdehsara.UI.MVC.Models;
+@using Alb.Omdehsara.UI.MVC.Api.Models;
+@model SearchViewModel
+<h1>@Model.Title</h1>
+
+
+<div ng-controller="MainPageController" class="divProducts">
+    <ul>
+        @foreach (ProductTypeViewModel product in Model.ProductList)
+        {
+            <li>
+                @Html.Partial("_SingleProductType", product)
+            </li>
+        }
+    </ul>
+    <div style="height:40px;"></div>
+</div>

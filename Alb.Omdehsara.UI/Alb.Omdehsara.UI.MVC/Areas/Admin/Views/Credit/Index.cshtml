@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "لیست پرداخت ها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models
+@using Alb.Omdehsara.Common.Orders
+@using Alb.Tools.UI.MVC.BootstrapHelper
+@model CreditSearchViewModel
+<br />
+<br />
+<div style="padding:10px;">
+@using (Html.BeginForm("Search", "Credit", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">نام کاربر</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.UserName, new {@class="form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="جستجو" style="width:150px;" class="btn btn-primary">
+        </div>
+    </div>
+}
+    <table class="table table-striped">
+        <tr>
+            <th>کد</th>
+            <th>کاربر</th>
+            <th>مبلغ</th>
+            <th>کد پیگیری</th>
+            <th>تاریخ</th>
+            <th>تاریخ</th>
+            <th>موجودی</th>
+            <th>وضعیت</th>
+            <th>تایید</th>
+            <th>حذف</th>
+        </tr>
+        @foreach (CreditView credit in Model.Credits)
+        {
+            <tr>
+                <td>@credit.ID</td>
+                <td>@credit.FullName</td>
+                <td>@credit.Price</td>
+                <td>@credit.PaymentRef</td>
+                <td>@credit.PayDate</td>
+                <td>@credit.PersianDate</td>
+                <td>@credit.CurrentAmount</td>
+                <td>@((credit.Enabled) ? "تایید شده" : "در انتظار تایید")</td>
+                @if (credit.Enabled)
+                {
+                    <td>@Html.ActionLink("عدم تایید", "changestatus", new { Id = credit.ID }) </td>
+                }
+                else
+                {
+                <td>@Html.ActionLink("تایید", "changestatus", new { Id = credit.ID }) </td>
+                }
+                <td>@Html.ActionLink("حذف", "delete", new { Id = credit.ID }) </td>
+            </tr>
+        }
+    </table>
+    @Html.Pager(Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)
+</div>

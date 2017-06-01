@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF11EE47-5B15-4F93-B43A-772A19A45AB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alb.Omdehsara.Common</RootNamespace>
+    <AssemblyName>Alb.Omdehsara.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alb.Common.Common">
+      <HintPath>..\..\Alb.Common\Alb.Common.Common\bin\Debug\Alb.Common.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Alb.Tools.Common">
+      <HintPath>..\..\Alb.Tools\Alb.Tools.Common\bin\Debug\Alb.Tools.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Alb.Tools.Utility">
+      <HintPath>..\..\Alb.Tools\Alb.Tools.Utility\bin\Debug\Alb.Tools.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.1\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.1\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Orders\OrderStatus.cs" />
+    <Compile Include="Orders\CreditView.cs" />
+    <Compile Include="Orders\TblCredit.cs" />
+    <Compile Include="Orders\OrderView.cs" />
+    <Compile Include="Orders\TblOrder.cs" />
+    <Compile Include="Orders\OrderDetail.cs" />
+    <Compile Include="Orders\TblOrderDetail.cs" />
+    <Compile Include="Polling\PollingResult.cs" />
+    <Compile Include="Polling\TblOption.cs" />
+    <Compile Include="Polling\TblQuestion.cs" />
+    <Compile Include="Polling\TblUserAnswer.cs" />
+    <Compile Include="Product\StoreProduct.cs" />
+    <Compile Include="Product\TblBrandCategory.cs" />
+    <Compile Include="Product\SizeProduct.cs" />
+    <Compile Include="Product\TblUnit.cs" />
+    <Compile Include="Product\TblSizeCategory.cs" />
+    <Compile Include="Product\TblColorCategory.cs" />
+    <Compile Include="Product\TblSize.cs" />
+    <Compile Include="Product\TblColor.cs" />
+    <Compile Include="Product\SizeCategories.cs" />
+    <Compile Include="Product\ColorCategories.cs" />
+    <Compile Include="Product\ImageSize.cs" />
+    <Compile Include="Product\ProductLocation.cs" />
+    <Compile Include="Product\ProductSearchProperty.cs" />
+    <Compile Include="Product\ProductPropertyList.cs" />
+    <Compile Include="Product\ProductView.cs" />
+    <Compile Include="Product\ProductTypeView.cs" />
+    <Compile Include="Product\PropertySearch.cs" />
+    <Compile Include="Product\BrandCategories.cs" />
+    <Compile Include="Product\TblBrand.cs" />
+    <Compile Include="Product\TblProductImage.cs" />
+    <Compile Include="Product\TblProduct.cs" />
+    <Compile Include="Product\TblProductProperty.cs" />
+    <Compile Include="Product\ProductLocationSearchOption.cs" />
+    <Compile Include="Product\TblProductType.cs" />
+    <Compile Include="TblCategory.cs" />
+    <Compile Include="CmnConstant.cs" />
+    <Compile Include="ProjectRoles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TblCategoryProperty.cs" />
+    <Compile Include="TblConnection.cs" />
+    <Compile Include="TblConstant.cs" />
+    <Compile Include="TblProductLocation.cs" />
+    <Compile Include="TblShelf.cs" />
+    <Compile Include="TblStore.cs" />
+    <Compile Include="Cms\TblImage.cs" />
+    <Compile Include="Cms\TblPage.cs" />
+    <Compile Include="Cms\TblPageType.cs" />
+    <Compile Include="TblRefreshToken.cs" />
+    <Compile Include="TblTransportType.cs" />
+    <Compile Include="TblUserComment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

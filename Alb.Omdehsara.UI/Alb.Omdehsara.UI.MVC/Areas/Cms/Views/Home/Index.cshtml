@@ -1,0 +1,14 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    ViewBag.keywords = Model.Tags;
+    ViewBag.description = Model.Introduction;
+    ViewBag.Title = Model.Title;
+}
+@using Alb.Omdehsara.Common;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Models;
+@model TblPage
+<div class="blog">
+    <h1>@Model.Title</h1>
+   @Html.Raw(Model.Body)
+</div>

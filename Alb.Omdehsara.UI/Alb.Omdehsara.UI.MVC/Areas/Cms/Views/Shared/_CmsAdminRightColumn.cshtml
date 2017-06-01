@@ -1,0 +1,17 @@
+﻿<div class="list-group">
+    <a class="list-group-item" href="@Url.Action("create", "home", new {Id=""})">
+        درج مطلب جدید
+    </a>
+    <a class="list-group-item" href="@Url.Action("pagelist","home",new {Area="Cms"})">
+        لیست مطالب
+    </a>
+    <a class="list-group-item" href="@Url.Action("uploadimage","file",new {Area="Cms"})">
+        آپلود عکس
+    </a>
+    <a class="list-group-item" href="@Url.Action("imagelist","file",new {Area="Cms"})">
+        لیست عکس ها
+    </a>
+    @*<a class="list-group-item" href="@Url.Action("index", "NewsLetter", new { Area = "Cms" })">
+        ارسال خبر نامه
+    </a>*@
+</div>

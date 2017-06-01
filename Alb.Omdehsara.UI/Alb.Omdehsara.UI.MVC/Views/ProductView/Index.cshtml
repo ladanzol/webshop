@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = Model.Product.ProductTitle + " "+Convert.ToString(Model.Product.BrandName);
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@using Alb.Omdehsara.Common.Product;
+@using Alb.Omdehsara.UI.MVC.Models;
+@using Alb.Omdehsara.UI.MVC.Api.Models;
+@model ProductTypeViewModel
+<input type="hidden" name="Id" id="Id" value="@Model.Product.ID" />
+<div class="divProductDetailsTitleContainer">
+    <div class="divSiteMap"></div>
+    <div class="divProductDetailsTitle">
+        <h1>
+            @(Model.Product.ProductTitle+ " "+Convert.ToString(Model.Product.BrandName))
+        </h1>
+    </div>
+</div>
+<div class="divProductDetailsInfo">
+
+    <div dir="ltr" id="countdown" style="padding:0 0 0 20px;"></div>
+    <div class="divInfoBox">
+        <span class="pTitle">عنوان محصول :&nbsp;</span><span class="pText">@Model.Product.ProductTitle</span><span class="pText" style="float: left">@Model.Product.ID</span><span class="pTitle" style="float: left">کد محصول :&nbsp;</span>
+    </div>
+    <div class="divInfoBox">
+        <span class="pTitle">قیمت :&nbsp;</span><span class="product-price">@Model.Product.Price تومان </span>
+    </div>
+    <div class="divInfoBox">
+        <span class="pTitle">برند :&nbsp;</span><span class="pText">@Model.Product.BrandName</span>
+        @if (!string.IsNullOrEmpty(Model.Product.BrandImageUrl))
+        {
+            <img src="@Url.Content(Model.Product.BrandImageUrl)" style="padding-top:6px;" />
+        }
+    </div>
+    <div class="divInfoBox">
+        <span class="pTitle">کشور تولیدکننده :&nbsp;</span><span class="pText">@Model.Product.Country </span>@*<img src="Styles/Images/Germany.png" />*@
+    </div>
+        @if (Model.Product.Quantity > 0)
+        {
+            <div class="divInfoBox">
+                <span class="pTitle">موجودی :&nbsp;</span><span class="pText">@Model.Product.Quantity عدد</span>
+            </div>
+        }
+    <div class="divInfoBox">
+        <div class="divTitle"><span class="pTitle">سایز های موجود  :&nbsp;</span></div>
+        <div class="divSize">
+            <ul>
+                <li>
+                    @foreach (var s in Model.AvailableSizes)
+                    {
+                        <div class="divSizeItem" title="موجودی  @s.SizeCount">@s.SizeName</div>
+                    }
+                </li>
+            </ul>
+        </div>
+        <div class="divSizeText">
+            <span class="pText" style="line-height: 20px;">لطفا راهنمای <a href="http://faraweb.ir"><span class="pTitle" style="line-height: 20px;">انتخاب سایز</span></a> را مطالعه نمایید.</span>
+        </div>
+    </div>
+    <div class="divInfoBox">
+        <div class="divTitle"><span class="pTitle">رنگ های موجود :&nbsp;</span></div>
+        <div class="divSize">
+            <ul>
+                <li>
+                    @foreach (var c in Model.AvailableColors)
+                    {
+                        <div class="divColorItem"><div class="divColorItemInner" title="@c.ColorName" style="background: #@c.ColorCode"></div></div>
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="divOrderContainer" ng-controller="ProductViewController">
+        @if (Model.Product.Quantity > 0)
+        {
+            <input type="submit" name="btnOrder" ng-click="addToCart()" class="btnOrder" value="افزودن به سبد خرید">
+        }
+        else
+        {
+            <div style="font-size:14px;padding:8px">موجود نمی باشد</div>
+        }
+    </div>
+</div>
+
+<div class="divProductDetailsGallery">
+    @*<div class="divMainImage">
+            <img src="@Url.Content(Model.Product.MainImageUrl)">
+        </div>*@
+    @if (Model.ProductImages != null)
+    {
+        @*<ul>
+                foreach (string imgUrl in Model.ProductImages)
+                {
+                <li>
+                    <div class="divThumbnail">
+                        <img src="@Url.Content(imgUrl)">
+                    </div>
+                </li>
+                }
+            </ul>*@
+        @Html.Partial("_ProductImageSlider", Model)
+    }
+</div>
+<div class="divMoreInfo">
+    @Html.Raw(Model.Product.Description)
+</div>
+<div class="divMaintenance"></div>
+<div class="divComments"></div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jssor-js")
+    <script src="~/Scripts/Alb/imageslider.js?v=1"></script>
+    @if (Model.Product.PriceDate.HasValue)
+    {
+        <script>
+    $('#countdown').timeTo({
+        timeTo: new Date('@Model.Product.PriceDate.Value.ToString("yyyy-MM-ddTHH:mm", new System.Globalization.CultureInfo("en-US"))'),
+                displayDays: 2,
+                theme: "black",
+                displayCaptions: false,
+                fontSize: 20,
+                captionSize: 10
+            },function ()
+            {
+                tools.showMessage("پایان زمان تخفیف");
+                var url = tools.ajax.apiBaseUrl + "api/product/setpriceforproduct/"+'@Model.Product.ID';
+                tools.ajax.post(url, {}).then(function(){
+
+                });
+                location.reload();
+            });
+        </script>
+    }
+    else
+    {
+        <script>
+            $("#countdown").remove();
+        </script>
+    }
+}

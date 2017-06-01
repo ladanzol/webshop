@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css
+{
+    @RenderSection("css", required: false)
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+}
+<br />
+<br />
+
+<div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-2" style="padding-left: 0px;">
+            @Html.Partial("_CmsAdminRightColumn")
+        </div>
+        <div class="col-xs-12 col-sm-10 " style="padding:0;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+                <div class="col-xs-12 col-sm-12 specialgolchin ">
+                    <div class="k-rtl">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+@Scripts.Render("~/bundles/site")
+<script src="~/Scripts/tinymce/tinymce.min.js"></script>
+<script src="~/Scripts/alb/tools.js"></script>
+<script src="~/Scripts/toastr.js"></script>
+    @RenderSection("scripts", required: false)
+}
+

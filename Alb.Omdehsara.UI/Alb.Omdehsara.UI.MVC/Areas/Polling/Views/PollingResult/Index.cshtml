@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "پاسخ کاربران به نظرسنجی";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@model dynamic
+@using Alb.Omdehsara.UI.MVC.Areas.Polling.Models;
+@using Alb.Omdehsara.Common.Polling;
+
+@foreach (var p in Model)
+{
+    <h3>@p.Question</h3>
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>گزینه</th>
+            <th>تعداد</th>
+        </tr>
+        @{var i = 0;}
+        @foreach (var a in p.Answers)
+        {
+            <tr>
+                <td>@(++i)</td>
+                <td>
+                    @a.OptionText
+                </td>
+                <td>
+                    @a.Count
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <br />
+}

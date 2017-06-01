@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/Site.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="Scripts/skdslider.js"></script>
+    <link href="Styles/skdslider.css" rel="stylesheet">
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mainSlider').skdslider({ delay: 5000, animationSpeed: 2000, showNextPrev: true, showPlayButton: false, autoSlide: true, shownav: false, animationType: 'fading' });
+        });
+
+
+        $(window).load(function () {
+            var $flippers = $(".divContainer"),
+                qtFlippers = $flippers.length;
+
+            setInterval(function () {
+                $flippers.eq(Math.floor(Math.random() * qtFlippers)).toggleClass('hover');
+            }, 8000);
+
+            var child1Height = $(".divCenterFrameContainer").height();
+            $(".divFooter").css('top', child1Height - 40);
+            $(".divFooter").css('-ms-opacity', '1');
+            $(".divFooter").css('opacity', '1');
+        });
+    </script>
+</head>
+<body>
+    <div class="divMain">
+        <div class="divTopMenu">
+            <ul>
+                <li>صفحه اصلی</li>
+                <li>خدمات</li>
+                <li>قوانین و مقررات</li>
+                <li>سوالات متداول</li>
+                <li>تماس با ما</li>
+            </ul>
+        </div>
+        <div class="divHeader">
+            <div class="divHeaderInner">
+                <div class="divLogo">
+                </div>
+                <div class="divMenu">
+                    <ul>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu" onmouseover="imgMenu1.src = 'Styles/Images/Shirt-H.png'" onmouseout="imgMenu1.src = 'Styles/Images/Shirt.png'">
+                                    <img id="imgMenu1" src="Styles/Images/Shirt.png" />
+                                    <!--<br />-->
+                                    <p>پوشاک</p>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu" onmouseover="imgMenu2.src = 'Styles/Images/Shoes-H.png'" onmouseout="imgMenu2.src = 'Styles/Images/Shoes.png'">
+                                    <img id="imgMenu2" src="Styles/Images/Shoes.png" />
+                                    <!--<br />-->
+                                    <p>کفش</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu" onmouseover="imgMenu3.src = 'Styles/Images/Socks-H.png'" onmouseout="imgMenu3.src = 'Styles/Images/Socks.png'">
+                                    <img id="imgMenu3" src="Styles/Images/Socks.png" />
+                                    <!--<br />-->
+                                    <p>جوراب و شال</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu" onmouseover="imgMenu4.src = 'Styles/Images/Kitchen-H.png'" onmouseout="imgMenu4.src = 'Styles/Images/Kitchen.png'">
+                                    <img id="imgMenu4" src="Styles/Images/Kitchen.png" />
+                                    <!--<br />-->
+                                    <p>لوازم آشپزخانه</p>
+                                </div>
+                            </a>
+                            <div class="divSubMenu">
+                                <div class="divRight">
+                                    <img src="Styles/Images/backSubMenu.png" />
+                                </div>
+                                <div class="divCenter">
+                                    <ul>
+                                        <p>لوازم آشپزخانه</p>
+                                        <li>یخچال و فریزر</li>
+                                        <li>ماشین لباس شویی</li>
+                                        <li>ماشین ظرف شویی</li>
+                                        <li>خشک کن لباس</li>
+                                        <li>مایکروویو</li>
+                                        <li>اجاق توکار</li>
+                                        <li>تصفیه آب</li>
+                                        <li>خشک کن لباس</li>
+                                        <li>یخچال و فریزر</li>
+                                        <li>ماشین لباس شویی</li>
+                                        <p>لوازم منزل</p>
+                                        <li>ماشین ظرف شویی</li>
+                                        <li>خشک کن لباس</li>
+                                        <li>مایکروویو</li>
+                                        <li>اجاق توکار</li>
+                                        <li>تصفیه آب</li>
+                                        <li>خشک کن لباس</li>
+                                        <li>یخچال و فریزر</li>
+                                        <li>ماشین لباس شویی</li>
+                                        <li>ماشین ظرف شویی</li>
+                                        <li>خشک کن لباس</li>
+                                        <li>مایکروویو</li>
+                                        <li>اجاق توکار</li>
+                                        <li>تصفیه آب</li>
+                                        <li>خشک کن لباس</li>
+                                    </ul>
+                                </div>
+                                <div class="divLeft">
+                                    <img src="Styles/Images/backSubMenu1.png" />
+                                </div>
+
+                                <br class="clear" />
+                            </div>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu" onmouseover="imgMenu5.src = 'Styles/Images/Decoration-H.png'" onmouseout="imgMenu5.src = 'Styles/Images/Decoration.png'">
+                                    <img id="imgMenu5" src="Styles/Images/Decoration.png" />
+                                    <!--<br />-->
+                                    <p>لوازم دکوری</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="divNotificationArea">
+                    <div class="divCart">
+                        <input type="submit" name="btnLogin" class="btnLogin" value="ورود کاربران" /> <input type="submit" name="btnCart" class="btnCart" value="" /><input type="text" name="txtCart" placeholder="3 محصول اضافه شده" class="txtCart" readonly />
+                    </div>
+                    <div class="divSearch">
+                        <input type="submit" name="btnSearch" class="btnSearch" value="" /><input type="text" name="txtSearch" placeholder="جستجوی محصول مورد نظر" class="txtSearch" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divCenterFrameContainer">
+            <div class="divCenterFrame">
+                <div class="divSliderNews">
+                    <div class="divNews">
+                        <div class="divNewsTitle">آخرین اخبار</div>
+                        <div class="divNewsInner">
+                            <ul>
+                                <li>
+                                    <div class="divNewsItem">
+                                        <div class="divNewsImage">
+                                            <img src="Uploaded/News/A.jpg" />
+                                        </div>
+                                        <div class="divNewsText">
+                                            <p>کیف های با کیفیت چیبو به سایت اضافه شد. این کیف ها در سایزها و رنگ های مختلف موجود می باشد و شما می توانید...</p>
+                                            <!--<a>ادامه...</a>-->
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="divNewsItem">
+                                        <div class="divNewsImage">
+                                            <img src="Uploaded/News/B.jpg" />
+                                        </div>
+                                        <div class="divNewsText">
+                                            <p>کیف های با کیفیت چیبو به سایت اضافه شد. این کیف ها در سایزها و رنگ های مختلف موجود می باشد و شما می توانید...</p>
+                                            <!--<a>ادامه...</a>-->
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divNewsItem">
+                                        <div class="divNewsImage">
+                                            <img src="Uploaded/News/A.jpg" />
+                                        </div>
+                                        <div class="divNewsText">
+                                            <p>کیف های با کیفیت چیبو به سایت اضافه شد. این کیف ها در سایزها و رنگ های مختلف موجود می باشد و شما می توانید...</p>
+                                            <!--<a>ادامه...</a>-->
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="divNewsItem">
+                                        <div class="divNewsImage">
+                                            <img src="Uploaded/News/B.jpg" />
+                                        </div>
+                                        <div class="divNewsText">
+                                            <p>کیف های با کیفیت چیبو به سایت اضافه شد. این کیف ها در سایزها و رنگ های مختلف موجود می باشد و شما می توانید...</p>
+                                            <!--<a>ادامه...</a>-->
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="divNewsMoreTitle">
+                            آرشیو مطالب
+                        </div>
+                    </div>
+                    <div class="divSlider">
+                        <div class="skdslider">
+                            <ul id="mainSlider" class="slides">
+                                <li>
+                                    <img src="Uploaded/Slides/1.jpg" />
+                                    <!--Slider Description example-->
+                                    <div class="slide-desc">
+                                        <h2>Slider Title 1</h2>
+                                        <p>Demo description here. Demo description here. Demo description here. Demo description here. Demo description here. <a class="more" href="#">more</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="Uploaded/Slides/2.jpg" />
+                                    <div class="slide-desc">
+                                        <h2>Slider Title 2</h2>
+                                        <p>Demo description here. Demo description here. Demo description here. Demo description here. Demo description here. <a class="more" href="#">more</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="Uploaded/Slides/3.jpg" />
+                                    <!--NO Description Here-->
+                                </li>
+                                <li>
+                                    <img src="Uploaded/Slides/4.jpg" />
+                                    <div class="slide-desc">
+                                        <h2>Slider Title 4</h2>
+                                        <p>Demo description here. Demo description here. Demo description here. Demo description here. Demo description here. <a class="more" href="#">more</a></p>
+                                    </div>
+                                </li>
+                                <li><img src="Uploaded/Slides/5.jpg" /></li>
+                                <li>
+                                    <img src="Uploaded/Slides/6.jpg" />
+                                    <div class="slide-desc">
+                                        <h2>Slider Title 6</h2>
+                                        <p>Demo description here. Demo description here. Demo description here. Demo description here. Demo description here. <a class="more" href="#">more</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="divMagenta">
+                    <ul>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divMidMenu1">
+                                    <br />
+                                    <p class="pTitle">شرایط و مقررات</p>
+                                    <p class="pText">نحوه خرید از سایت</p>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divMidMenu2">
+                                    <br />
+                                    <p class="pTitle">پرسش و پاسخ</p>
+                                    <p class="pText">سوالات خود را مطرح کنید</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divMidMenu3">
+                                    <br />
+                                    <p class="pTitle">حمل و نقل</p>
+                                    <p class="pText">نحوه و زمان ارسال کالا</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divMidMenu4">
+                                    <br />
+                                    <p class="pTitle">خبرنامه</p>
+                                    <p class="pText">دریافت آخرین اطلاعات</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="divAdv">
+
+                    <div id="divAdv1" class="divContainer">
+                        <div class="divCard">
+                            <div class="front divAdvInner">
+                                <img src="Uploaded/Adv/1.jpg" />
+                            </div>
+                            <div class="back divAdvInner center">
+                                <img src="Uploaded/Adv/5.jpg" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divAdvContainer">
+                        <div id="divAdv2" class="divContainer">
+                            <div class="divCard">
+                                <div class="front divAdvInner">
+                                    <img src="Uploaded/Adv/2.jpg" />
+                                </div>
+                                <div class="back divAdvInner center">
+                                    <img src="Uploaded/Adv/3.jpg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="divAdv3" class="divContainer">
+                            <div class="divCard">
+                                <div class="front divAdvInner">
+                                    <img src="Uploaded/Adv/3.jpg" />
+                                </div>
+                                <div class="back divAdvInner center">
+                                    <img src="Uploaded/Adv/2.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divAdv4" class="divContainer">
+                            <div class="divCard">
+                                <div class="front divAdvInner">
+                                    <img src="Uploaded/Adv/4.jpg" />
+                                </div>
+                                <div class="back divAdvInner center">
+                                    <img src="Uploaded/Adv/6.jpg" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="divAdv5" class="divContainer">
+                        <div class="divCard">
+                            <div class="front divAdvInner">
+                                <img src="Uploaded/Adv/5.jpg" />
+                            </div>
+                            <div class="back divAdvInner center">
+                                <img src="Uploaded/Adv/1.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divAdv6" class="divContainer">
+                        <div class="divCard">
+                            <div class="front divAdvInner">
+                                <img src="Uploaded/Adv/6.jpg" />
+                            </div>
+                            <div class="back divAdvInner center">
+                                <img src="Uploaded/Adv/4.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divAdv7" class="divContainer">
+                        <div class="divCard">
+                            <div class="front divAdvInner">
+                                <img src="Uploaded/Adv/7.jpg" />
+                            </div>
+                            <div class="back divAdvInner center">
+                                <img src="Uploaded/Adv/6.jpg" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="divProductRotator">
+                    <div class="divProductRotatorInner">
+                        <ul>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product1.png" />
+                                    </div>
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - زارا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">140000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">120000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product2.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ بلند زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">130000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product3.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">شلوار زنانه - چیبو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice"></p>
+                                        </span>
+                                        <p class="pPrice">125000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product4.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">تاپ زنانه - بونیتا</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">150000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">140000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divProductItem">
+                                    <div class="divProductImage">
+                                        <img src="Uploaded/Products/product5.png" />
+                                    </div>
+
+                                    <div class="divProductInfo">
+                                        <p class="pProductName">پیراهن زنانه - تاکو</p>
+                                        <span class="Strike">
+                                            <p class="pDiscountedPrice">170000 ریال</p>
+                                        </span>
+                                        <p class="pPrice">160000 ریال</p>
+                                    </div>
+                                    <input type="submit" name="btnAddToCart" class="btnAddToCart" value="" /> <input type="submit" name="btnMoreInfo" class="btnMoreInfo" value="اطلاعات بیشتر" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="divSpace"></div>
+            </div>
+        </div>
+
+        <div class="divFooter">
+            <div class="divFooterInner">
+                <div class="divRight">
+                    <div class="divFooterMenu">
+                        <div class="divRight">
+                            راهنمای مشتریان
+                            <ul>
+                                <li><a href="http://faraweb.ir">مرکز پشتیبانی</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای ثبت نام، خرید و پرداخت</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای ارسال</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای گارانتی</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای استفاده از امتیازات</a></li>
+                            </ul>
+                        </div>
+                        <div class="divLeft">
+                            درباره عمده سرا
+                            <ul>
+                                <li><a href="http://faraweb.ir">درباره ما</a></li>
+                                <li><a href="http://faraweb.ir">ضوابط استفاده و حریم کاربران</a></li>
+                                <li><a href="http://faraweb.ir">عمده سرا در رسانه ها</a></li>
+                                <li><a href="http://faraweb.ir">آرشیو خبرنامه های عمده سرا</a></li>
+                                <li><a href="http://faraweb.ir">گواهینامه های عمده سرا</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="divSocial">
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialG.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialF.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialT.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialL.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialI.png" /></a>
+                    </div>
+                    <div class="divFaraweb">Design By <a href="http://faraweb.ir">Faraweb</a></div>
+                </div>
+                <div class="divCenter">
+                    <p>تمامی حقوق این سایت محفوظ می باشد.</p>
+                </div>
+                <div class="divLeft">
+                    <div class="divBank">
+                        <p>
+                            <img src="Styles/Images/Namad.png" />
+                            <br />
+                            <img src="Styles/Images/Mellat.png" />
+                            <img src="Styles/Images/Parsian.png" />
+                        </p>
+                    </div>
+                    <div class="divPoll">
+                        <p class="pPollTitle">نظرسنجی</p>
+                        <p class="pPollQuestion">نظر شما در مورد خدمات این سایت چیست؟</p>
+                        <input type="radio" name="poll" value="VeryGood" checked>بسیار خوب است.
+                        <br />
+                        <input type="radio" name="poll" value="Good">خوب است.
+                        <br />
+                        <input type="radio" name="poll" value="Bad">ضعیف است.
+                        <br />
+                        <input type="radio" name="poll" value="VeryBad">بسیار ضعیف است.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

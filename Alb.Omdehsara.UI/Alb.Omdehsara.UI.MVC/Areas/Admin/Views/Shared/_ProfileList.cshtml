@@ -1,0 +1,9 @@
+﻿@using Alb.Omdehsara.Common;
+@model IEnumerable<TblCategory>
+
+@foreach (TblCategory cat in Model)
+{
+    <div>
+        <a href="@Url.Action("changeprofile", new {Id= cat.CategoryId})">گروه @cat.Text </a>
+    </div>
+}

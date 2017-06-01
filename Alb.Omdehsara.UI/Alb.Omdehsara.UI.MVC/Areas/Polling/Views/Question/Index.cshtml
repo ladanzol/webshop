@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "واحد کالاها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Areas.Polling.Models;
+@using Alb.Omdehsara.Common.Polling;
+
+@model QuestionViewModel
+@using (Html.BeginForm("AddQuestion", "Question", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.Question.ID)
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-2 col-xs-12">پرسش</label>
+        <div class="col-xs-12 col-sm-10">
+            @Html.TextBoxFor(m => m.Question.Question, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-2 col-xs-12">فعال</label>
+        <div class="col-xs-12 col-sm-10">
+            @Html.CheckBoxFor(m => m.Question.Enabled, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="ثبت" style="width:150px;" class="btn btn-primary">
+        </div>
+    </div>
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>کد</th>
+        <th>پرسش</th>
+        <th>فعال</th>
+        <th>options</th>
+    </tr>
+    @foreach (TblQuestion question in Model.Questions)
+    {
+        <tr>
+            <td>@question.ID</td>
+            <td>@question.Question</td>
+            <td>@question.Enabled</td>
+            <td><a class="" href="@Url.Action("Index","Option",new {Area="Polling", questionId=question.ID})">Options</a></td>
+            <td><a class="btn btn-primary" href="@Url.Action("Index", new { Id = question.ID })">ویرایش</a></td>
+            <td><a class="btn btn-danger" href="@Url.Action("Delete", new { Id = question.ID })">حذف</a></td>
+        </tr>
+        }
+    </table>

@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "ثبت عکس های محصول";
+    Layout = "~/Areas/Product/Views/Shared/_ProductLayout.cshtml";
+}
+
+@using Alb.Omdehsara.UI.MVC.Areas.Product.Models;
+@using Alb.Omdehsara.Common;
+@using Alb.Omdehsara.Common.Product;
+@model UploadProductImageViewModel
+@using (Html.BeginForm("Index", "Image", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.ProductTypeID)
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">عنوان</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Description" class="control-label col-sm-3 col-xs-12">توضیحات</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="file" id="Image" name="Image" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ImageSize" class="control-label col-sm-3 col-xs-12">نوع عکس</label>
+        <div class="col-xs-12 col-sm-9">
+            <select id="ImageSize" name="ImageSize" class="form-control">
+                <option value="1">بزرگ</option>
+                <option value="2" selected>متوسط</option>
+                <option value="3" >کوچک</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="ثبت" style="width:150px;" class="btn btn-primary">
+            <a href="@Url.Content("~/product/manage/create/#/addproduct/"+Model.CategoryID+"/" + Model.ProductTypeID)" class="btn btn-success">ثبت موارد کالا</a>
+        </div>
+    </div>
+}
+@foreach(TblProductImage img in Model.Images.Where(i=>i.ImageSize ==1)){
+    <div style="border-bottom:2px solid #ff6a00;padding:5px;">
+        <h2>@img.Title - @Helper.GetImageSizeName(img.ImageSize)</h2>
+        <a href="@Url.Content(img.ImageUrl)">
+            <img src="@Url.Content(img.ImageUrl)" title="@img.Title" alt="@img.Title" style="max-width:150px;" />
+        </a>
+        <br />
+         <br />
+       @Html.ActionLink("حذف", "delete", new { ID = img.ImageID , productID=img.ProductID}, new {@class="btn btn-danger" })
+    </div>
+}
+@foreach (TblProductImage img in Model.Images.Where(i => i.ImageSize == 2))
+{
+    <div style="border-bottom:2px solid #ff6a00;padding:5px;">
+        <h2>@img.Title - @Helper.GetImageSizeName(img.ImageSize)</h2>
+        <a href="@Url.Content(img.ImageUrl)">
+            <img src="@Url.Content(img.ImageUrl)" title="@img.Title" alt="@img.Title" style="max-width:150px;" />
+        </a>
+        <br />
+        <br />
+        @Html.ActionLink("حذف", "delete", new { ID = img.ImageID, productID = img.ProductID }, new { @class = "btn btn-danger" })
+    </div>
+}
+@foreach (TblProductImage img in Model.Images.Where(i => i.ImageSize == 3))
+{
+    <div style="border-bottom:2px solid #ff6a00;padding:5px;">
+        <h2>@img.Title - @Helper.GetImageSizeName(img.ImageSize)</h2>
+        <a href="@Url.Content(img.ImageUrl)">
+            <img src="@Url.Content(img.ImageUrl)" title="@img.Title" alt="@img.Title" style="max-width:150px;" />
+        </a>
+        <br />
+        <br />
+
+            @Html.ActionLink("حذف", "delete", new { ID = img.ImageID, productID = img.ProductID }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("عکس اصلی باشد", "mailImage", new { ID = img.ImageID, productID = img.ProductID }, new { @class = "btn btn-primary" })
+      
+    </div>
+}
+
+
+
+

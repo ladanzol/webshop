@@ -1,0 +1,227 @@
+﻿
+body {
+    font-family:Tahoma !important;
+    font: 400 12px/1.55 tahoma;
+}
+.container.main-content {
+    background: none repeat scroll 0 0 white;
+    box-shadow: 0 5px 7px 0 #a4bb93;
+    padding: 0px 10px 0px 10px;
+}
+.loading {}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.sidebar li {
+    padding: 5px;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+h1{
+    margin:0px 20px;
+    padding:5px;
+}
+.sidebar { background: #fff; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; border-top: 1px solid #ccc; margin-top: 10px; }
+.sidebar li:last-child { border-bottom: medium none; }
+.sidebar li:hover { background: #E8E8E8;border-right:3px solid #dd0000; }
+.sidebar i { margin-left: 10px; }
+.sidebar.list-unstyled a { color: #404040; font-family: Tahoma; font-size: 12px; text-decoration: none; display: block; }
+.live-stats:nth-child(even){
+    padding-bottom:10px;
+    background-color:#ecfcdf;
+    padding:5px;
+    border-top :1px solid #a4bb93;
+    border-bottom :1px solid #a4bb93;
+}
+.live-stats:nth-child(odd){
+    padding-bottom:10px;
+    background-color:#f2fbeb;
+    padding:5px;
+    border-bottom :1px solid #a4bb93;
+    border-top :1px solid #a4bb93;
+}
+
+.header .fa-shopping-cart{
+    font-size:30px;
+    cursor:pointer;
+}
+.green-cart{
+    background-color:#91c44e!important;
+}
+.header li{
+    font-size:11px;
+}
+.header .dropdown-menu {
+    min-width:600px;
+}
+.shopping-dropdown{
+    color:#666;
+}
+.shopping-dropdown .row{
+    border-bottom:1px solid #d6dbff;
+    padding:5px 0 5px 0;
+}
+.shopping-dropdown .row:first-child{
+font-weight:bold;
+}
+.shopping-dropdown  .dropdown-menu{
+    min-width:600px;
+}
+.shopping-dropdown .no-item-basket{
+    padding:20px;
+}
+.shopping-dropdown .items-basket{
+    padding:10px;
+}
+.reverse{
+    -moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+-ms-transform: scale(-1, 1);
+transform: scale(-1, 1);
+}
+@media (max-width: 900px) {
+    .footer-bg { background: none; }
+    .fa.fa-thumbs-up.golchin { display: none; }
+}
+.product-form input.ng-invalid{
+   border-color: #A94442;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.page-list {
+    border-bottom: 3px solid #CCC;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.search-right-column{
+    background-color:#CCC;
+}
+
+.limit{
+    display:none;
+}
+rzslider span.bubble{
+    color:#2c703c!important;
+}
+rzslider span.bubble{
+    top :-35px!important;
+}
+rzslider span.bar.selection{
+    background-color:#A94442!important;
+}
+.btn {
+    font-size: 15px;
+}
+.btn a{
+    color:white;
+}
+.btn a:hover{
+    text-decoration:none;
+}
+.btn-primary{
+    background-color:#E10250;
+    color:#f7e2e9;
+    border:0px;
+    border-radius:0px;
+}
+.btn-primary:hover {
+    background-color: #E10250;
+    color: #f7e2e9;
+}
+.btn-warning {
+    border: 0px;
+    border-radius: 0px;
+}
+.product-price{
+
+}
+.center{
+    text-align:center;
+}
+.search-item{
+    background-color:#EAE9E9;
+    padding:2px;
+}
+.rtl  input[type="checkbox"]{
+    position:relative;
+    top:5px;
+}
+.search-item > div{
+    background-color:#FAFAFA;
+    border:1px solid #dbd2d2;
+    text-align:right;
+}
+.search-item > div ul{
+   padding:5px 5px 0 5px!important;
+   text-align:right;
+   margin-bottom:0px!important;
+}
+.search-item > div ul li{
+   display:inline-block;
+   margin-right:0px !important;
+   padding-left:10px;
+   list-style:none;
+}
+.search-item > div ul li label{
+    font-size:inherit;
+    font-weight:inherit;
+}
+.search-item p{
+    padding-bottom:4px;
+}
+rzslider span.pointer{
+    background-color:#E40E58!important;
+}
+rzslider span.pointer:hover:after {
+  background-color: #fff!important;
+}
+rzslider span.pointer:after{
+  background-color: #e9e8e8!important;
+}
+#countdown{
+    text-align:left;
+}
+.blog{
+    min-height:300px;
+    padding:10px;
+}
+    .blog h1 {
+        padding: 20px;
+    }
+.login-dropdown .dropdown-menu {
+    padding:10px 10px 0 10px;
+  width: 400px;
+}
+.login-dropdown .tab-content {
+    padding:10px 10px 0 10px;
+}
+.dropdown-menu {
+    font-size: 13px!important;
+}
+.dropdown-menu label{
+    font-weight:normal;
+}
+.fa-remove{
+    color:#dd0000;
+    cursor:pointer;
+}
+.polling{
+    padding:5px;
+}
+.polling li{
+    color:#a53450;
+    margin-right:-20px;
+}
+.polling .polling-header{
+    font-size:14px;
+    color:#655d5d;
+}
+.polling .polling-btn{
+    border:1px solid #CCC;
+}

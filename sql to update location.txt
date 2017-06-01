@@ -1,0 +1,6 @@
+﻿update dbo.IP2LOCATION_LITE_DB11 set region_name = city_name where country_code like 'IR'
+update dbo.IP2LOCATION_LITE_DB11 set city_name = latitude where country_code like 'IR'
+update dbo.IP2LOCATION_LITE_DB11 set latitude = longitude where country_code like 'IR'
+update dbo.IP2LOCATION_LITE_DB11 set longitude = zip_code where country_code like 'IR'
+update dbo.IP2LOCATION_LITE_DB11 set zip_code = '-' where country_code like 'IR'
+

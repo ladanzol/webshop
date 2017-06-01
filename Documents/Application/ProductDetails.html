@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/Site.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="Scripts/skdslider.js"></script>
+    <link href="Styles/skdslider.css" rel="stylesheet">
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mainSlider').skdslider({ delay: 5000, animationSpeed: 2000, showNextPrev: true, showPlayButton: false, autoSlide: true, shownav: false, animationType: 'fading' });
+        });
+
+
+        $(window).load(function () {
+            var $flippers = $(".divContainer"),
+                qtFlippers = $flippers.length;
+
+            setInterval(function () {
+                $flippers.eq(Math.floor(Math.random() * qtFlippers)).toggleClass('hover');
+            }, 8000);
+
+            var child1Height = $(".divCenterFrameContainer").height();
+            $(".divFooter").css('top', child1Height - 40);
+            $(".divFooter").css('-ms-opacity', '1');
+            $(".divFooter").css('opacity', '1');
+
+            //var child2Height = $(".divCenterFrame .divLeft").height();
+            //$(".divCenterFrame .divRight .divProductFilters").css('height', child2Height - 46);
+        });
+    </script>
+</head>
+<body>
+    <div class="divMain">
+        <div class="divTopMenu">
+            <ul>
+                <li>صفحه اصلی</li>
+                <li>خدمات</li>
+                <li>قوانین و مقررات</li>
+                <li>سوالات متداول</li>
+                <li>تماس با ما</li>
+            </ul>
+        </div>
+        <div class="divHeader">
+            <div class="divHeaderInner">
+                <div class="divLogo">
+                </div>
+                <div class="divMenu">
+                    <ul>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu1">
+                                    <br />
+                                    <p>پوشاک</p>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu2">
+                                    <br />
+                                    <p>کفش</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu3">
+                                    <br />
+                                    <p>جوراب و شال</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu4">
+                                    <br />
+                                    <p>لوازم آشپزخانه</p>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="http://google.com">
+                                <div class="divImageMenu5">
+                                    <br />
+                                    <p>لوازم دکوری</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="divNotificationArea">
+                    <div class="divCart">
+                        <input type="submit" name="btnLogin" class="btnLogin" value="ورود کاربران" /> <input type="submit" name="btnCart" class="btnCart" value="" /><input type="text" name="txtCart" placeholder="3 محصول اضافه شده" class="txtCart" readonly />
+                    </div>
+                    <div class="divSearch">
+                        <input type="submit" name="btnSearch" class="btnSearch" value="" /><input type="text" name="txtSearch" placeholder="جستجوی محصول مورد نظر" class="txtSearch" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divCenterFrameContainer">
+            <div class="divCenterFrame">
+                <div class="divProductDetailsTitleContainer">
+                    <div class="divSiteMap"></div>
+                    <div class="divProductDetailsTitle"></div>
+                </div>
+                <div class="divProductDetailsInfo">
+                    <div class="divInfoBox">
+                        <span class="pTitle">عنوان محصول :&nbsp;</span><span class="pText">پیراهن زنانه طرح گلدار</span><span class="pText" style="float: left">003224</span><span class="pTitle" style="float: left">کد محصول :&nbsp;</span>
+                    </div>
+                    <div class="divInfoBox">
+                        <span class="pTitle">قیمت :&nbsp;</span><span class="pText">145000</span><span class="pText" style="float: left">10:35:04:340(ساعت) 7 روز</span><span class="pTitle" style="float: left"> حراج به مدت :&nbsp;</span>
+                    </div>
+                    <div class="divInfoBox">
+                        <span class="pTitle">برند :&nbsp;</span><span class="pText">تاکو</span><img src="Styles/Images/Takko.png" />
+                    </div>
+                    <div class="divInfoBox">
+                        <span class="pTitle">کشور تولیدکننده :&nbsp;</span><span class="pText">آلمان</span><img src="Styles/Images/Germany.png" />
+                    </div>
+                    <div class="divInfoBox">
+                        <span class="pTitle">موجودی :&nbsp;</span><span class="pText">12 عدد</span>
+                    </div>
+                    <div class="divInfoBox">
+                        <div class="divTitle"><span class="pTitle">انتخاب سایز (اروپایی) :&nbsp;</span></div>
+                        <div class="divSize">
+                            <ul>
+                                <li>
+                                    <div class="divSizeItem">44</div>
+                                    <div class="divSizeItem">42</div>
+                                    <div class="divSizeItem">40</div>
+                                    <div class="divSizeItem">38</div>
+                                    <div class="divSizeItem">36</div>
+                                    <div class="divSizeItem">34</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="divSizeText">
+                            <span class="pText" style="line-height: 20px;">لطفا راهنمای <a href="http://faraweb.ir"><span class="pTitle" style="line-height: 20px;">انتخاب سایز</span></a> را مطالعه نمایید.</span>
+                        </div>
+                    </div>
+                    <div class="divInfoBox">
+                        <div class="divTitle"><span class="pTitle">انتخاب رنگ :&nbsp;</span></div>
+                        <div class="divSize">
+                            <ul>
+                                <li>
+                                    <div class="divColorItem"><div class="divColorItemInner" style="background: #3d7995"></div></div>
+                                    <div class="divColorItem"><div class="divColorItemInner" style="background: #cdb8a7"></div></div>
+                                    <div class="divColorItem"><div class="divColorItemInner" style="background: #ed6d99"></div></div>
+                                    <div class="divColorItem"><div class="divColorItemInner" style="background: #333333"></div></div>
+                                    <div class="divColorItem"><div class="divColorItemInner" style="background: #123456"></div></div>
+                                    <div class="divColorItem"><div class="divColorItemInner" style="background: #652536"></div></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="divInfoBox">
+                        <span class="pTitle">تعداد درخواستی :&nbsp;</span>
+                        <input type="submit" id="btnIncrease" value="" /> <input type="text" id="txtCount" value="1" /> <input type="submit" id="btnDecrease" value="" />
+                    </div>
+                    <div class="divOrderContainer">
+                        <input type="submit" name="btnOrder" class="btnOrder" value="افزودن به سبد خرید" />
+                    </div>
+                </div>
+
+                <div class="divProductDetailsGallery">
+                    <div class="divMainImage">
+                        <img src="Uploaded/Products/Gallery/pdBig.jpg" />
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="divThumbnail">
+                                <img src="Uploaded/Products/Gallery/pd1.jpg" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="divThumbnail">
+                                <img src="Uploaded/Products/Gallery/pd2.jpg" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="divThumbnail">
+                                <img src="Uploaded/Products/Gallery/pd3.jpg" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="divThumbnail">
+                                <img src="Uploaded/Products/Gallery/pd4.jpg" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="divThumbnail">
+                                <img src="Uploaded/Products/Gallery/pd5.jpg" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="divThumbnail">
+                                <img src="Uploaded/Products/Gallery/pd6.jpg" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="divThumbnail">
+                                <img src="Uploaded/Products/Gallery/pd7.jpg" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="divMoreInfo">
+                    <div class="divLongText">
+                        دارای دو جیب در دو سمت یک جیب در پشت لوگوی US POLO ASSN بر روی جیب سمت  نوشته لاتین در پایین جیب سمت چپ بند تنظیم شلوارک قد تا بالای زانو کاملا راحت
+
+                        و با دوام در مقابل شستشو
+                    </div>
+                    <div class="divSizeGuide"></div>
+                    <div class="divMaterial">
+                        <div class="divTitle">مواد تشکیل دهنده:</div>
+                        <div class="divText">
+                            98% Baumwolle, 2% Elastan
+                            Futter 90% Polyester, 10% Baumwolle
+                        </div>
+                    </div>
+                    <div class="divSpecifications">
+                        <div class="divTitle">مشخصات محصول:</div>
+                        <span class="pTitle">عرض شانه :&nbsp;</span><span class="pText">25 سانتی متر</span>
+                        <br />
+                        <span class="pTitle">طول لباس :&nbsp;</span><span class="pText">56 سانتی متر</span>
+                        <br />
+                        <span class="pTitle">طول آستین :&nbsp;</span><span class="pText">20 سانتی متر</span>
+                    </div>
+                </div>
+                <div class="divMaintenance">
+                    <div class="divRight">
+                        <ul>
+                            <li>
+                                <div class="divContainer">
+                                    <div class="divImage">
+                                        <img src="Styles/Images/m1.png" />
+                                    </div>
+                                    <div class="divText">در ماشین لباسشویی شسته نشود.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divContainer">
+                                    <div class="divImage">
+                                        <img src="Styles/Images/m2.png" />
+                                    </div>
+                                    <div class="divText">بعد از شستشو آبگیری شود.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divContainer">
+                                    <div class="divImage">
+                                        <img src="Styles/Images/m3.png" />
+                                    </div>
+                                    <div class="divText">اتوکشی با دمای 150 درجه انجام شود.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divContainer">
+                                    <div class="divImage">
+                                        <img src="Styles/Images/m4.png" />
+                                    </div>
+                                    <div class="divText">در ماشین لباسشویی شسته نشود.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divContainer">
+                                    <div class="divImage">
+                                        <img src="Styles/Images/m5.png" />
+                                    </div>
+                                    <div class="divText">در ماشین لباسشویی شسته نشود.</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="divCenter"></div>
+                    <div class="divLeft"></div>
+                </div>
+                <div class="divComments"></div>
+            </div>
+        </div>
+
+        <div class="divFooter">
+            <div class="divFooterInner">
+                <div class="divRight">
+                    <div class="divFooterMenu">
+                        <div class="divRight">
+                            راهنمای مشتریان
+                            <ul>
+                                <li><a href="http://faraweb.ir">مرکز پشتیبانی</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای ثبت نام، خرید و پرداخت</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای ارسال</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای گارانتی</a></li>
+                                <li><a href="http://faraweb.ir">راهنمای استفاده از امتیازات</a></li>
+                            </ul>
+                        </div>
+                        <div class="divLeft">
+                            درباره عمده سرا
+                            <ul>
+                                <li><a href="http://faraweb.ir">درباره ما</a></li>
+                                <li><a href="http://faraweb.ir">ضوابط استفاده و حریم کاربران</a></li>
+                                <li><a href="http://faraweb.ir">عمده سرا در رسانه ها</a></li>
+                                <li><a href="http://faraweb.ir">آرشیو خبرنامه های عمده سرا</a></li>
+                                <li><a href="http://faraweb.ir">گواهینامه های عمده سرا</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="divSocial">
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialG.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialF.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialT.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialL.png" /></a>
+                        <a href="http://faraweb.ir"><img src="Styles/Images/socialI.png" /></a>
+                    </div>
+                    <div class="divFaraweb">Design By <a href="http://faraweb.ir">Faraweb</a></div>
+                </div>
+                <div class="divCenter">
+                    <p>تمامی حقوق این سایت محفوظ می باشد.</p>
+                </div>
+                <div class="divLeft">
+                    <div class="divBank">
+                        <p>
+                            <img src="Styles/Images/Namad.png" />
+                            <br />
+                            <img src="Styles/Images/Mellat.png" />
+                            <img src="Styles/Images/Parsian.png" />
+                        </p>
+                    </div>
+                    <div class="divPoll">
+                        <p class="pPollTitle">نظرسنجی</p>
+                        <p class="pPollQuestion">نظر شما در مورد خدمات این سایت چیست؟</p>
+                        <input type="radio" name="poll" value="VeryGood" checked>بسیار خوب است.
+                        <br />
+                        <input type="radio" name="poll" value="Good">خوب است.
+                        <br />
+                        <input type="radio" name="poll" value="Bad">ضعیف است.
+                        <br />
+                        <input type="radio" name="poll" value="VeryBad">بسیار ضعیف است.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

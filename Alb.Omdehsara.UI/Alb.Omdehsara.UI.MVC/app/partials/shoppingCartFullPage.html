@@ -1,0 +1,90 @@
+﻿<div style="padding: 5px 5px 20px 5px;" ng-init="fullPage=true">
+    <div style="border:1px solid #e6dddd;">
+        <table class="table table-striped">
+            <tr>
+                <th>محصول</th>
+                <th>تعداد</th>
+                <th>قیمت واحد</th>
+                <th>قیمت کل</th>
+                <th>حذف</th>
+            </tr>
+            <tr ng-repeat="orderDetail in orderDetails">
+                <td style="min-width:150px">
+                    {{orderDetail.ProductTitle}} - {{orderDetail.BrandName}}
+                    <div ng-show="orderDetail.ColorName">
+                        رنگ : {{orderDetail.ColorName}}
+                    </div>
+                    <div ng-show="orderDetail.SizeName">
+                        سایز: {{orderDetail.SizeName}}
+                    </div>
+
+                </td>
+                <td style="max-width:50px">
+                    <select class="form-control" id="orderDetail.Quantity" ng-model="orderDetail.Quantity" ng-change="calculateOrderDetailPrice()">
+                        <option ng-repeat="q in [] | range:getQuantityRange(orderDetail)" value="{{q+1}}" ng-selected="(orderDetail.Quantity == (q+1))">{{q+1}}</option>
+                    </select>
+                </td>
+                <td>
+                    {{orderDetail.UnitPrice}}
+
+                </td>
+                <td>
+                    {{orderDetail.Price }}
+                </td>
+                <td>
+                    <div class="btn btn-danger" ng-click="removeOrderDetail(orderDetail)">
+                        <i class="fa fa-remove"></i>حذف
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div style="background-color:#c4ffcb;border:1px solid #bce2c0;border-radius:3px;width:450px;float:left;margin-top:10px;font-weight:bold;padding:5px;">
+        <table style="width:100%">
+            <tr>
+                <td></td>
+                <td>
+                    <div>
+                        جمع کل خرید شما: {{orderPrice}}
+                    </div>
+                    <div>
+                        هزینه ارسال: {{order.selectedTransport.Price}}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    جمع تخفیف
+                    {{orderDiscount}}
+                </td>
+                <td>
+                    <div>
+                        مبلغ قابل پرداخت: {{orderFinalPrice}}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <h3>لطفا نحوه ارسال مورد نظر خود را انتخاب نمایید.</h3>
+        <br />
+        <div data-ng-repeat="trans in transportTypes">
+            <label>
+                <input type="radio" name="transport" data-ng-model="order.selectedTransport" data-ng-value="trans" ng-change="calculateOrderDetailPrice()" />
+                {{trans.Name}}
+                <span ng-if="trans.Price>0"> - هزینه  {{trans.Price}} تومان</span>
+                <span ng-if="trans.Price == 0"> - ارسال رایگان</span>
+            </label>
+        </div>
+    </div>
+    <!--<div>
+        {{ {'name':order.selectedTransport} | json }}
+    </div>-->
+    <div>
+        <div style="margin-top:10px;">
+            <input type="button" class="btn btn-success" value="خرید خود را نهایی کنید" ng-click="setAddressOrder()" />
+        </div>
+    </div>
+</div>

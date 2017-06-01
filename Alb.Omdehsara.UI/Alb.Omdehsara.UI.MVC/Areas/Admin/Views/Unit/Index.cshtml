@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "واحد کالاها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.Common.Product;
+@model UnitViewModel
+@using (Html.BeginForm("AddUnit", "Unit", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m=>m.Unit.ID)
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">نام واحد</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Unit.UnitName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Title" class="control-label col-sm-3 col-xs-12">تعداد معادل</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Unit.UnitQuantity, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="ثبت" style="width:150px;" class="btn btn-primary">
+        </div>
+    </div>
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>کد</th>
+        <th>نام واحد</th>
+        <th>معادل تعداد</th>
+    </tr>
+@foreach (TblUnit unit in Model.Units)
+{
+   <tr>
+       <td>@unit.ID</td>
+       <td>@unit.UnitName</td>
+       <td>@unit.UnitQuantity</td>
+       <td><a class="btn btn-primary" href="@Url.Action("Index", new {Id=unit.ID })">ویرایش</a></td>
+       <td><a class="btn btn-danger" href="@Url.Action("Delete", new {Id=unit.ID })">حذف</a></td>
+   </tr>
+}
+</table>
+@section scripts{
+<script>
+</script>
+}

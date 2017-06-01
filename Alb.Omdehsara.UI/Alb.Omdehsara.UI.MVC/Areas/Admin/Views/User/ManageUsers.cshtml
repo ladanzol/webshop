@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "لیست کاربران";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="form-group">
+    <label for="Subject">موضوع</label>
+    <input type="text" class="form-control" id="userName" />
+</div>
+<input type="button" class="btn btn-primary" value="Search" id="Search" />
+<br />
+<br />
+<br />
+    <div id="grid"></div>
+    @section scripts
+{
+        <script>
+            $(document).ready(function () {
+                var filterOption = {
+                    extra: false,
+                    operators: {
+                        string: {
+                            eq: "Is Equal To",
+                            startswith: "Starts With",
+                            contains: "Contains",
+                            endswith: "Ends With"
+                        }
+                    }
+                };
+
+                var crudServiceBaseUrl = tools.ajax.apiBaseUrl,
+                    dataSource = new kendo.data.DataSource({
+                        pageSize: 20,
+                        transport: {
+                            read: function (options) {
+                                tools.ajax.get(tools.ajax.apiBaseUrl + "admin/user/?pageSize=" + options.data.pageSize + "&pageIndex=" + options.data.page + "&userName=" + $("#userName").val()).then(function (data) {
+                                    options.success(data);
+                                });
+                            },
+                            update: function (options) {
+                                $.ajax({
+                                    url: crudServiceBaseUrl + "admin/user/edit",
+                                    type: "PUT",
+                                    data: options.data.models[0],
+                                    success: function (result) {
+                                        options.success(result);
+                                    },
+                                    error: function (result) {
+                                        options.error(result);
+                                    }
+                                })
+                            },
+                            //destroy: function (options) {
+                            //    $.ajax({
+                            //        url: crudServiceBaseUrl + "admin/constant/delete",
+                            //        type: "DELETE",
+                            //        data: options.data.models[0],
+                            //        success: function (result) {
+                            //            options.success(result);
+                            //        },
+                            //        error: function (result) {
+                            //            options.error(result);
+                            //        }
+                            //    })
+                            //},
+                            //create: function (options) {
+                            //    $.ajax({
+                            //        url: crudServiceBaseUrl + "admin/constant/create",
+                            //        type: "POST",
+                            //        data: options.data.models[0],
+                            //        success: function (result) {
+                            //            options.success(result);
+                            //        },
+                            //        error: function (result) {
+                            //            options.error(result);
+                            //        }
+                            //    })
+                            //},
+                            parameterMap: function (options, operation) {
+                                if (operation !== "read" && options.models) {
+                                    return   options.models[0] ;
+                                }
+                            }
+                        },
+                        batch: true,
+                        serverPaging: true,
+                        serverSorting: true,
+                        serverFiltering: true,
+                        schema: {
+                            data: 'Data',
+                            total: function(response) {
+                                return response.TotalCount;
+                            },
+                            model: {
+                                id: "ID",
+                                fields: {
+                                    ID: { editable: true, nullable: false },
+                                    FirstName: { validation: { required: true } },
+                                    LastName: { validation: { required: true, min: 1 } },
+                                    EMail: { validation: { required: false } },
+                                    Phone: { validation: { required: false } },
+                                    Pass: { validation: { required: false } },
+                                    IsApproved: { validation: { required: false } },
+                                    Discount: { validation: { required: false } }
+                                }
+                            }
+                        }
+                    });
+
+                $("#grid").kendoGrid({
+                    dataSource: dataSource,
+                    filterable: false,
+                    sortable: true,
+                    pageable: true,
+                    height: 550,
+                   // selectable: "single",
+                  //  toolbar: ["create"],
+                    columns: [
+                        { field: "ID", title: "کد", width: "50px", filterable: filterOption },
+                        { field: "FirstName", title: "نام", width: "80px", filterable: filterOption },
+                        { field: "LastName", title: "نام خانوادگی", width: "150px", filterable: false },
+                        { field: "Email", title: "ایمیل", width: "120px", filterable: false },
+                        { field: "Phone", title: "تلفن", width: "120px", filterable: false },
+                        { field: "Pass", title: "رمز عبور", width: "120px", filterable: false },
+                        { field: "IsApproved", title: "تایید شده", width: "120px", filterable: false, editor: yesNoEditor },
+                        { field: "Discount", title: "تخفیف", width: "120px", filterable: false },
+                        { command: ["edit"], title: "&nbsp;", width: "200px" }],
+                    editable: "inline",
+                });
+            });
+            var yesNo = [{ value: "true", text: "بله" }, { value: "false", text: "خیر" }];
+            yesNoEditor = function (container, options) {
+                $('<input data-bind="value:' + options.field + '"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    dataValueField: "value",
+                    dataTextField: "text",
+                    dataSource: yesNo
+                });
+            }
+            $("#Search").click(function () {
+                var grid = $("#grid").data("kendoGrid");
+                grid.dataSource.read();
+            });
+        </script>
+    }

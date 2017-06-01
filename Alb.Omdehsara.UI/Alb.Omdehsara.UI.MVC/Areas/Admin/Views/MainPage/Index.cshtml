@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "عکس های صفحه اصلی قیمت پایین";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.Common.Product;
+@model MainPageBrandsAdminViewModel
+@using (Html.BeginForm("Index", "MainPage", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس اول کادر اول</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img1_1" name="Img1_1" class="form-control" />
+            <input type="text" class="form-control" id="Url1_1" name="Url1_1" value="@Model.Url1_1" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img1_1_Url" style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس دوم کادر اول</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img1_2" name="Img1_2" class="form-control" />
+            <input type="text" class="form-control" id="Url1_2" name="Url1_2" value="@Model.Url1_2" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img1_2_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس اول کادر دوم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img2_1" name="Img2_1" class="form-control" />
+            <input type="text" class="form-control" id="Url2_1" name="Url2_1" value="@Model.Url2_1" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img2_1_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس دوم کادر دوم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img2_2" name="Img2_2" class="form-control" />
+            <input type="text" class="form-control" id="Url2_2" name="Url2_2" value="@Model.Url2_2" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img2_2_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس اول کادر سوم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img3_1" name="Img3_1" class="form-control" />
+            <input type="text" class="form-control" id="Url3_1" name="Url3_1" value="@Model.Url3_1" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img3_1_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس دوم کادر سوم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img3_2" name="Img3_2" class="form-control" />
+            <input type="text" class="form-control" id="Url3_2" name="Url3_2" value="@Model.Url3_2" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img3_2_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس اول کادر چهارم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img4_1" name="Img4_1" class="form-control" />
+            <input type="text" class="form-control" id="Url4_1" name="Url4_1" value="@Model.Url4_1" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img4_1_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس دوم کادر چهارم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img4_2" name="Img4_2" class="form-control" />
+            <input type="text" class="form-control" id="Url4_2" name="Url4_2" value="@Model.Url4_2" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img4_2_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس اول کادر پنجم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img5_1" name="Img5_1" class="form-control" />
+            <input type="text" class="form-control" id="Url5_1" name="Url5_1" value="@Model.Url5_1" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img5_1_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس دوم کادر پنجم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img5_2" name="Img5_2" class="form-control" />
+            <input type="text" class="form-control" id="Url5_2" name="Url5_2" value="@Model.Url5_2" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img5_2_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس اول کادر ششم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img6_1" name="Img6_1" class="form-control" />
+            <input type="text" class="form-control" id="Url6_1" name="Url6_1" value="@Model.Url6_1" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img6_1_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس دوم کادر ششم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img6_2" name="Img6_2" class="form-control" />
+            <input type="text" class="form-control" id="Url6_2" name="Url6_2" value="@Model.Url6_2" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img6_2_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس اول کادر هفتم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img7_1" name="Img7_1" class="form-control" />
+            <input type="text" class="form-control" id="Url7_1" name="Url7_1" value="@Model.Url7_1" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img7_1_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image" class="control-label col-sm-3 col-xs-12">عکس دوم کادر هفتم</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="file" id="Img7_2" name="Img7_2" class="form-control" />
+            <input type="text" class="form-control" id="Url7_2" name="Url7_2" value="@Model.Url7_2" style="margin-top:3px;" />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <img src="@Model.Img7_2_Url"  style="height:70px;" />
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="ثبت" class="btn btn-primary" style="width:150px;" />
+    </div>
+}

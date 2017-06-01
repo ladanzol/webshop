@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "فوتر سایت";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.Common.Product;
+@using Alb.Omdehsara.Common;
+@model TblConstant
+<div >
+    @using (Html.BeginForm("SetFooter", "MainPage", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+        @Html.HiddenFor(m => m.Subject)
+        @Html.HiddenFor(m => m.ID)
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="Text">HTML</label>
+            <div class="col-xs-12 col-sm-12">
+                @Html.TextAreaFor(m => m.Text, new { @class = "form-control page-body" })
+            </div>
+        </div>
+        <div>
+            <div class="col-xs-12 col-sm-12">
+                <input type="submit" value="ثبت" class="btn btn-primary" style="width:150px;" />
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts{
+
+
+
+    <script>
+        tinymce.init({
+            selector: 'textarea.page-body',
+            directionality: "rtl",
+            height: 100,
+            extended_valid_elements :"polling[id]",
+            plugins: [
+     "advlist autolink lists link image charmap print preview anchor",
+     "searchreplace visualblocks code fullscreen",
+     "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        });
+    </script>
+}
+

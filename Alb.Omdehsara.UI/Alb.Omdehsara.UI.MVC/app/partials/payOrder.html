@@ -1,0 +1,117 @@
+﻿<div style="padding:20px;margin:auto;border:3px solid#d1c8c8;max-width:500px;">
+    <h3>لطفا گزینه خود برای پرداخت را انتخاب نمایید</h3>
+    <br />
+    <div class="row">
+        <h4>
+            مبلغ قابل پرداخت
+            {{payment.Price}}
+        </h4>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            <!--<a class="btn btn-success" href="/paybank/index?amount={{payment.Price}}">پرداخت آنلاین از طریق درگاه بانک</a>-->
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>در صورتی که از پرداخت آنلاین استفاده نکرده اید لطفا فرم زیر را تکمیل نمایید</h4>
+        </div>
+    </div>
+    <form id="payOrderForm" name="payOrderForm" enctype="multipart/form-data" class="form-horizontal product-form" style="max-width:680px;" ng-submit="submitPayOrder()">
+        <div class="form-group">
+            <label class="col-xs-12 col-sm-4" for="payment.PaymentTypeID">
+                روش پرداخت
+            </label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="payment.PaymentTypeID" ng-model="payment.PaymentTypeID">
+                    <option selected="selected">لطفا انتخاب کنید</option>
+                    <option value="2">کارت به کارت</option>
+                    <option value="3">واریز حساب</option>
+                    <option value="4">اعتبار موجود در سایت</option>
+                    <option value="5">پرداخت در محل</option>
+                </select>
+                <div ng-show="payment.PaymentTypeID == 4">
+                    موجودی شما : {{userCreditAcount}}
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-show="payment.PaymentTypeID == 2 || payment.PaymentTypeID == 3">
+            <label class="col-xs-12 col-sm-4" for="payment.BankID">
+                نام بانک
+            </label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="payment.BankID" ng-options="c.ID as c.Text for c in banks" ng-model="payment.BankID">
+                    <option>لطفا انتخاب کنید</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="payment.PaymentTypeID == 2 || payment.PaymentTypeID == 3">
+            <label class="col-xs-12 col-sm-4" for="payment.Price">
+                مبلغ واریزی
+            </label>
+            <div class="col-xs-12 col-sm-6">
+                <input type="text" ng-model="payment.Price" id="payment.Price" class="form-control" ng-disabled="true" />
+            </div>
+            <div class="col-xs-12 col-sm-2">
+                تومان
+            </div>
+         </div>
+        <div class="form-group" ng-show="payment.PaymentTypeID == 2 || payment.PaymentTypeID == 3">
+            <label class="col-xs-12 col-sm-4" for="payment.paymentref">
+                شماره پیگیری
+            </label>
+            <div class="col-xs-12 col-sm-8">
+                <input type="text" ng-model="payment.paymentref" id="payment.PaymentRef" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12" style="text-align:center">
+                <input type="button" value="ثبت" ng-click="setCredit()" class="btn btn-primary" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <h3>
+                شماره کارت
+            </h3>
+            <table>
+                <tr>
+                    <th>نام بانک</th>
+                    <th>شماره حساب</th>
+                    <th>صاحب حساب</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+
+        <div class="row">
+            <h3>
+                شماره کارت ها
+            </h3>
+            <table>
+                <tr>
+                    <th>نام بانک</th>
+                    <th>شماره کارت</th>
+                    <th>صاحب حساب</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div class="row">
+            <a href="#/cart/1" style="width:250px" class="btn btn-warning">می خواهم لیست خرید را تغییر دهم</a>
+        </div>
+    </form>
+</div>

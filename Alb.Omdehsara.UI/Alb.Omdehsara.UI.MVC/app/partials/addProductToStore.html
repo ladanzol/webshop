@@ -1,0 +1,136 @@
+﻿<h1>جاگذاری محصول</h1>
+<br />
+<div ng-if="showSearhForm">
+    <form id="productForm" name="productForm" ng-app="app" enctype="multipart/form-data" class="form-horizontal product-form" style="max-width:680px;" ng-submit="storeProduct()">
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="Product.StoreID">انبار</label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="productLocation.StoreID" ng-options="c.ID as c.Title for c in stores" ng-model="productLocation.StoreID" ng-change="getShelves()">
+                    <option>لطفا انتخاب کنید</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.ShelfID">قفسه</label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="productLocation.ShelfID" ng-options="s as s.Code for s in shelves" ng-model="productLocation.Shelf">
+                    <option>لطفا انتخاب کنید</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.Row">ردیف</label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="productLocation.Row" ng-model="productLocation.Row">
+                    <option value="">لطفا انتخاب کنید</option>
+                    <option ng-repeat="row in [] | range:productLocation.Shelf.Rows">{{row+1}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.Column">ستون</label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="productLocation.Column" ng-model="productLocation.Column">
+                    <option value="">لطفا انتخاب کنید</option>
+                    <option ng-repeat="col in [] | range:productLocation.Shelf.Columns">{{col+1}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.ColorID">رنگ</label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="Product.ColorID" ng-options="c.ID as c.ColorName for c in colors" ng-model="productLocation.ColorID">
+                    <option>لطفا انتخاب کنید</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.SizeID">اندازه</label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="Product.SizeID" ng-options="c.ID as c.SizeName for c in sizes" ng-model="productLocation.SizeID">
+                    <option>لطفا انتخاب کنید</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.InOut">ورودی /خروجی </label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control" id="InOut" ng-model="productLocation.InOut">
+                    <option>لطفا انتخاب کنید</option>
+                    <option value="1">ورودی</option>
+                    <option value="2">خروجی</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group" ng-if="productLocation.InOut==2">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.OrderID">کد سفارش </label>
+            <div class="col-xs-12 col-sm-8">
+                <input type="text" ng-model="productLocation.OrderID" class="form-control" id="productLocation.OrderID">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="productLocation.Quantity">تعداد </label>
+            <div class="col-xs-12 col-sm-8">
+                <input type="text" ng-model="productLocation.Quantity" class="form-control" id="productLocation.Quantity">
+            </div>
+        </div>
+        <input type="submit" value="ثبت" class="btn btn-primary" ng-disabled="productForm.$invalid" />
+    </form>
+    <hr />
+</div>
+<input type="text" class="form-control" ng-model="productSearch" />
+<table class="table">
+    <tr>
+        <th>کد</th>
+        <th>ایمیل کاربر</th>
+        <th>رنگ</th>
+        <th>سایز</th>
+        <th>انبار</th>
+        <th>قفسه</th>
+        <th>سطر</th>
+        <th>ستون</th>
+        <th>تاریخ</th>
+        <th>تعداد </th>
+        <th>حذف</th>
+    </tr>
+    <tr ng-repeat="product in products | filter:productSearch" class="">
+        <td>
+            {{product.ProductTypeID}}
+        </td>
+        <td>
+            {{product.Email }}
+        </td>
+        <td>
+            {{product.ColorName }}
+        </td>
+        <td>
+            {{product.SizeName }}
+        </td>
+        <td>
+            {{product.StoreTitle}}
+        </td>
+        <td>
+            {{product.ShelfCode}}
+        </td>
+        <td>
+            {{product.Row}}
+        </td>
+        <td>
+            {{product.Column}}
+        </td>
+        <td>
+            {{product.InsDatePersian}}
+        </td>
+        <td>
+            {{product.Quantity}}
+        </td>
+        <td>
+            <a target="_blank" class="btn btn-info" href="{{baseUrl+'product/store/Barcode/'+product.ProductID}}">بارکد</a>
+        </td>
+    </tr>
+</table>
+<br />
+<!--<pre dir="ltr">{{ productLocation | json }}</pre>-->
+<pagination total-items="totalRecords" items-per-page="itemPerPage" ng-model="pageIndex" ng-change="getProductTypes()"></pagination>
+

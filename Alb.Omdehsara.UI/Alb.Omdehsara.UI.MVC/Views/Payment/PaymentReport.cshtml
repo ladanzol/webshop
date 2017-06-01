@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "گزاش حساب ";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.Common.Orders
+@using Alb.Tools.UI.MVC.BootstrapHelper
+@model CreditReportViewModel
+<br />
+<br />
+<h1>@ViewBag.Title</h1>
+    <div style="padding:10px;">
+        <table class="table table-striped">
+            <tr>
+                <th>کد</th>
+                <th>مبلغ</th>
+                <th>کد پیگیری</th>
+                <th>تاریخ</th>
+                <th>موجودی</th>
+                <th>وضعیت</th>
+            </tr>
+            @foreach (CreditView credit in Model.Credits)
+            {
+                <tr>
+                    <td>@credit.ID</td>
+                    <td>@credit.Price</td>
+                    <td>@credit.PaymentRef</td>
+                    <td>@credit.PersianDate</td>
+                    <td>@credit.CurrentAmount</td>
+                    <td>@((credit.Enabled)?"تایید شده":"در انتظار تایید")</td>
+                </tr>
+            }
+        </table>
+        @Html.Pager(Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)
+
+    </div>

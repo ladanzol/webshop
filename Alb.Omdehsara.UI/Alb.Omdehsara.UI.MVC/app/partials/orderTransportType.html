@@ -1,0 +1,18 @@
+﻿<h3>لطفا نوع ارسال کالای سفارش داده خود انتخاب نمایید.</h3>
+<br />
+<div data-ng-repeat="trans in transportTypes">
+    <label>
+        <input type="radio" name="trnasport" data-ng-model="selectedTransport.ID" data-ng-value="trans.ID" />
+        {{trans.Name}} 
+        <span ng-if="trans.Price>0"> - هزینه  {{trans.Price}} تومان</span>
+        <span ng-if="trans.Price == 0"> - ارسال رایگان</span>
+    </label>
+</div>
+
+<div class="modal-footer">
+    <input type="button" ng-click="setOrderTransPort()" class="btn btn-primary" value="ثبت آدرس" />
+</div>
+
+
+
+

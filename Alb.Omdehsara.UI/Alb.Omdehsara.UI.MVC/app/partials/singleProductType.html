@@ -1,0 +1,24 @@
+﻿<div class="divProductItem">
+    <div class="divProductImage">
+        <img ng-show="model.Product.MainImageUrl" ng-src="{{model.Product.MainImageUrl}}" />
+        <img ng-show="!model.Product.MainImageUrl" src="../../Content/images/loading.png" />
+    </div>
+    <div class="divProductInfo">
+        <div class="divProductInfo">
+            <p class="pProductName">
+                <a ng-href="{{model.Product.ProductUrl}}">
+                    {{model.Product.ProductTitle}} - {{model.Product.BrandName}}
+                </a>
+            </p>
+            <span class="Strike" ng-show="model.Product.PreviousPrice>0">
+                <p class="pDiscountedPrice">{{model.Product.PreviousPrice}}  تومان</p>
+            </span>
+            <p class="pPrice" ng-show="model.Product.Price>0">{{model.Product.Price}}  تومان</p>
+        </div>
+
+    </div>
+    <input name="btnAddToCart" class="btnAddToCart" ng-click="addToCart(model.Product)" value="" type="button">
+    <a name="btnMoreInfo" class="btnMoreInfo" ng-href="{{model.Product.ProductUrl}}">
+        اطلاعات بیشتر
+    </a>
+</div>

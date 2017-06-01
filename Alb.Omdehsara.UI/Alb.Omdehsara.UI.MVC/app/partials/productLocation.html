@@ -1,0 +1,55 @@
+﻿<div style="margin-top:10px;">
+    <table class="table table-striped">
+        <tr>
+            <th>کد</th>
+            <th>عنوان نوع کالا</th>
+            <th>برند</th>
+            <th>رنگ</th>
+            <th>اندازه</th>
+            <th>انبار</th>
+            <th>فقسه</th>
+            <th>سطر</th>
+            <th>ستون</th>
+            <th>تعداد</th>
+            <th>تعداد کل</th>
+        </tr>
+        <tr ng-repeat="product in products" class="">
+            <td>
+                {{product.ProductID}}
+            </td>
+            <td>
+                {{product.ProductTitle}}
+            </td>
+           
+            <td>
+                {{product.BrandName}}
+            </td>
+            <td>
+                {{product.ColorName}}
+            </td>
+            <td>
+                {{product.SizeName}}
+            </td>
+            <td>
+                {{product.StoreTitle}}
+            </td>
+            <td>
+                {{product.ShelfCode}}
+            </td>
+            <td>
+                {{product.Row}}
+            </td>
+            <td>
+                {{product.Column}}
+            </td>
+            <td>
+                {{product.Quantity}}
+            </td>
+            <td>
+                {{product.ProductQuantity}}
+            </td>
+        </tr>
+    </table>
+</div>
+<pagination total-items="totalRecords" items-per-page="itemPerPage" ng-model="pageIndex" ng-change="getProductTypes()"></pagination>
+

@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "ثبت نام";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@model Alb.Common.Common.TblUser
+<div style="max-width:600px;padding:30px;margin:auto">
+    <h2>ثبت نام در عمده سرا</h2>
+    <br />
+   @Html.Partial("_register", Model)
+</div>

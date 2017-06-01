@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "لیست سفارشات شما";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    
+}
+@using Alb.Omdehsara.UI.MVC.Models
+@using Alb.Omdehsara.Common.Orders
+@using Alb.Tools.UI.MVC.BootstrapHelper
+
+@model OrderListViewModel
+@foreach (var o in Model.Orders)
+{
+    <div style="padding:20px 10px 40px 10px; border-top:5px solid #808080">
+        @Html.Partial("_SingleOrder", o)
+    </div>
+}
+@Html.Pager(Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)

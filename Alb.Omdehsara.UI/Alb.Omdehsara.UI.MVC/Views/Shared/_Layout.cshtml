@@ -1,0 +1,32 @@
+﻿@using Alb.Tools.UI.MVC.Security
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title - عمده سرا</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/content/toolscss")
+    @Styles.Render("~/content/sitecss")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", required: false)
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <meta name="keywords" content="@ViewBag.keywords" />
+    <meta name="description" content="@ViewBag.description" />
+    <script type="text/javascript">
+        window.applicationBaseUrl = @Html.Raw(HttpUtility.JavaScriptStringEncode(new Uri(new Uri(this.Context.Request.Url.GetLeftPart(UriPartial.Authority)), Url.Content("~/")).ToString(), true));
+    </script>
+</head>
+<body>  
+
+    <div class="divMain">
+        @RenderBody()
+        <input type="hidden" value="@TempData["msgMessage"]" id="msgMessage" />
+        <input type="hidden" value="@TempData["msgType"]" id="msgType" />
+        <input type="hidden" value="@TempData["msgTitle"]" id="msgTitle" />
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/common-js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

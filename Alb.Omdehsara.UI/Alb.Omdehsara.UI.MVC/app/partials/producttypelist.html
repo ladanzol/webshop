@@ -1,0 +1,97 @@
+﻿<h1>لیست محصولات</h1>
+<form id="searchProductLocationForm" name="searchProductLocationForm" enctype="multipart/form-data" class="form-horizontal product-form" style="max-width:680px;" ng-submit="submitSearchProductLocationForm()">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-4" for="productModel.Product.ProductTitle">عنوان کالا</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" ng-model="productModel.Product.ProductTitle" />
+        </div>
+    </div>
+    <div ng-repeat="catlevel in categories" class="form-group">
+        <label ng-if="catlevel.Categories.length > 0" class="control-label col-xs-12 col-sm-4" for="{{'c'+$index}}">گروه {{$index+1}}</label>
+        <div class="col-xs-12 col-sm-8">
+            <select ng-if="catlevel.Categories.length > 0" id="{{'c'+$index}}" class="form-control" ng-options="cat.CategoryName for cat in catlevel.Categories" ng-model="selectedCategories[$index]" ng-change="getCategories(selectedCategories[$index].ID, $index + 1,true)">
+                <option value="">-- لطفا انتخاب کنید --</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-4" for="productModel.BrandID">برند</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" id="productModel.BrandID" ng-options="c.ID as c.BrandName for c in brands" ng-model="productModel.Product.BrandID">
+                <option value="">-- لطفا انتخاب کنید --</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-4" for="productModel.Product.StoreID">انبار</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" id="productModel.Product.StoreID" ng-options="c.ID as c.Title for c in stores" ng-model="productModel.Product.StoreID" ng-change="getShelves(productModel.Product.StoreID)">
+                <option>لطفا انتخاب کنید</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-4" for="productModel.Product.Shelf">قفسه</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" id="productModel.Product.Shelf" ng-options="s as s.Code for s in shelves" ng-model="productModel.Product.Shelf">
+                <option>لطفا انتخاب کنید</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-4" for="productModel.Product.Row">ردیف</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" id="productModel.Product.Rows" ng-model="productModel.Product.Rows">
+                <option>لطفا انتخاب کنید</option>
+                <option ng-repeat="row in [] | range:productModel.Product.Shelf.Rows">{{row+1}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-4" for="productModel.Product.Column">ستون</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" id="productModel.Product.Column" ng-model="productModel.Product.Column">
+                <option>لطفا انتخاب کنید</option>
+                <option ng-repeat="col in [] | range:productModel.Product.Shelf.Columns">{{col+1}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <input type="submit" value="جستجو" class="btn btn-primary" ng-disabled="searchProductLocationForm.$invalid" />
+    </div>
+    </form>
+
+    <input type="text" class="form-control" ng-model="productSearch" />
+    <div style="margin-top:10px;">
+        <table class="table">
+            <tr>
+                <th>کد</th>
+                <th>عنوان نوع کالا</th>
+                <th>جاگذاری</th>
+                <th>ویرایش</th>
+                <th>عکس ها</th>
+            </tr>
+            <tr ng-repeat="product in productTypes | filter:productSearch" class="">
+                <td>
+                    {{product.ID}}
+                </td>
+                <td>
+                    {{product.ProductTitle}}
+                </td>
+                <td>
+                    <a href="#addproduct/{{product.CategoryID}}/{{product.ID}}">جاگذاری</a>
+                </td>
+                <td>
+                    <a href="#/producttype/{{product.ID}}">ویرایش</a>
+                </td>
+                <td>
+                    <a href="../../../product/image/index?productid={{product.ID}}">عکس ها</a>
+                </td>
+                <td>
+                    <input type="button" value="غیر فعال  کن" ng-show="product.Enabled == 1" class="btn btn-primary" ng-click="disableProduct(product)" />
+                    <input type="button" value="فعال کن" ng-show="product.Enabled== 0" class="btn btn-primary" ng-click="enableProduct(product)" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <pagination total-items="totalRecords" items-per-page="itemPerPage" ng-model="pageIndex" ng-change="getProductTypes()"></pagination>

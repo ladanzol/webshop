@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Builder for Lush &middot; Content Slider</title>
+		<meta name="description" content="Lush Slider Builder">
+		<meta name="author" content="geedmo">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="builder/css/bootstrap.min.css">
+		<!-- Interface styles -->
+		<link type="text/css" rel="stylesheet" href="builder/css/jquery-ui-1.10.3.custom.min.css" />
+		<link type="text/css" rel="stylesheet" href="builder/css/lush.builder.css" />
+		<!-- Google prettify -->
+		<link type="text/css" rel="stylesheet" href="builder/js/google-code-prettify/prettify.css" />
+
+		<!-- Lush slider styles -->
+		<link type="text/css" rel="stylesheet" href="css/lush.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/lush.animations.min.css" />
+		<link type="text/css" rel="stylesheet" href="flexslider/flexslider.css">
+		
+		<!-- Items styles -->
+		<link type="text/css" rel="stylesheet" href="builder/css/lush.items.css" id='lush-items-css'/>
+
+	</head>
+
+	<body>
+
+		<div class="container bar">
+
+			<div class="minimize" ><em class="icon icon-angle-up"></em> </div>
+			<!-- start controls bar -->
+
+			<div class="row" style="padding-top: 20px">
+				<div class="span1">
+					<label>Element</label>
+					<div class="btn-group">
+						<button data-toggle="dropdown" class="btn btn-info dropdown-toggle">
+							Add <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#" id="add-image">Image</a>
+							</li>
+							<li>
+								<a href="#" id="add-text">Text</a>
+							</li>
+							<li>
+								<a href="#" id="add-link">Link</a>
+							</li>
+							<li>
+								<a href="#" id="add-imglink">Image Link</a>
+							</li>
+							<li>
+								<a href="#" id="add-block">Block</a>
+							</li>
+							<li>
+								<a href="#" id="add-video">Video</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span2">
+					<label>Slider size</label>
+					<input type="text" class="span1" placeholder="Width" id="slider-width" value="1140"/>
+					x
+					<input type="text" class="span1" placeholder="Height" id="slider-height" value="450"/>
+				</div>
+				<div class="span1">
+					<label>Grid size</label>
+					<div class="input-append">
+						<input type="text" id="grid-size" style="width: 40px;" value="30">
+						<div class="btn-group">
+							<button data-toggle="dropdown" class="btn dropdown-toggle">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+									<div class="dd-item no-bubble">
+										<span class="checkbox">
+											<input type="checkbox" id="snap-grid" />Snap to grid </span> 
+									</div>
+								</li>
+								<li>
+									<div class="dd-item no-bubble">
+										<span class="checkbox">
+										<input type="checkbox" id="snap-item" />Snap to elements </span> 
+									</div>
+								</li>
+								<li>
+									<div class="dd-item no-bubble"> <span class="checkbox">
+										<input type="checkbox" id="show-grid" />
+										Show grid </span> </div>
+								</li>
+								<li>
+									<div class="dd-item no-bubble"> <span class="checkbox">
+										<input type="checkbox" id="drag-x" />
+										Drag X</span> </div>
+								</li>									
+								<li>
+									<div class="dd-item no-bubble"> <span class="checkbox">
+										<input type="checkbox" id="drag-y" />
+										Drag Y</span> </div>
+								</li>									
+							</ul>
+						</div><!-- /btn-group -->
+					</div>
+				</div>
+				<div class="span1"></div>
+				<div class="span2">
+						<label>Preview Slider</label>
+						<a href="#" class="btn btn-warning preview hidden">Preview</a>
+						<div class="muted">Plugin not detected</div>
+				</div>
+				<div class="span3 ">
+					<label>Actions</label>
+					<a href="#" class="btn btn-info" id="add-slide">New Slide</a> &nbsp; <a href="#" class="btn btn-danger" id="remove-slide">Remove Slide</a>  &nbsp;
+				</div>
+				<div class="span2 ">
+					<label>Markup</label>
+					<div class="btn-group ">
+						<button class="btn btn-success" id="generate" style="width: 140px" >
+							Generate
+						</button>
+						<button data-toggle="dropdown" class="btn btn-success dropdown-toggle">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li>
+								<div class="dd-item no-bubble"> <span class="checkbox">
+									<input type="checkbox" id="flexslider-mode" />
+									Flexslider Mode </span> </div>
+							</li>
+							<li>
+								<div class="dd-item no-bubble"> <span class="checkbox">
+									<input type="checkbox" id="carousel-mode" />
+									Carousel Mode </span> </div>
+							</li>
+							<li>
+								<div class="dd-item no-bubble"> <span class="checkbox">
+									<input type="checkbox" id="manual-mode" />
+									Manual Mode </span> </div>
+							</li>
+							<li>
+								<div class="dd-item no-bubble"> <span class="checkbox">
+									<input type="checkbox" id="base64-image" />
+									Base64 Images </span> </div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end controls bar -->
+
+			<div class="row subbar">
+				<div class="span2">
+					<label>Path to image folder</label>
+					<input type="text" placeholder="images/location" class="span2" id="image-location">
+				</div>
+				<div class="span2">
+					<label>Skin</label>
+					<select class="span2" id="skin-class">
+						<option value="">default</option>
+						<option value="lush-skin-dark">dark</option>
+						<option value="lush-skin-silver">silver</option>
+						<option value="lush-skin-flat">flat</option>
+						<option value="lush-skin-default-mini">default-mini</option>
+						<option value="lush-skin-dark-mini">dark-mini</option>
+						<option value="lush-skin-silver-mini">silver-mini</option>
+						<option value="lush-skin-borderless">no border</option>
+					</select>						
+				</div>
+				<div class="span2">
+					<label>Shadow</label>
+					<select class="span2" id="shadow-class">
+						<option value="shadow-a">shadow-a</option>
+						<option value="shadow-b">shadow-b</option>
+						<option value="shadow-c">shadow-c</option>
+						<option value="shadow-d">shadow-d</option>
+						<option value="">no-shadow</option>
+					</select>						
+				</div>
+				
+				<div class="span1">
+					<label>Fullwidth</label>
+					<button class="btn btn-block"  data-toggle="button" id="do-fw" >Toggle</button>
+				</div>
+				
+				<div class="span2">
+					<label>Slider background</label>
+					<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-bottom: 0">
+						<span class="fileupload-preview thumbnail " style="display: none;"></span>
+						<div>
+							<div class="btn btn-file pull-left">
+								<span class="fileupload-new">Select Image</span>
+								<span class="fileupload-exists">Select Image</span>
+								<input type="file" class="fileup" id="bg-image" style="cursor: pointer;"/>
+							</div>
+						</div>
+					</div>
+					<a title=""
+					data-id="#pover-bgimage"
+					data-placement="bottom"
+					data-toggle="popover"
+					class="btn"
+					href="#"
+					data-original-title="Settings"><em class="icon-cog"></em></a>	
+				</div>
+				<div class="span1">
+                    <label>Flexslider</label>
+						<a title="Flexslider Settings"
+						data-id="#pover-flexslider"
+						data-placement="bottom"
+						data-toggle="popover"
+						class="btn"
+						href="#"
+						data-original-title="Settings">Settings</a>	
+				</div>					
+				<div class="span2">
+					<label> Slide data</label>
+					<button class="btn" id="ieport">Import / Export</button>
+				</div>
+			</div>
+
+		</div>
+		<div class="container tabs">
+
+			<ul class="nav nav-tabs sortable" id="slide-tabs">
+				<!-- Slide tabs will be created here -->
+			</ul>
+		</div>
+		<div class="container slider">
+			<!-- The slider -->
+			<div class="tab-content" id="slide-content">
+				<!-- Slide content with elements will be created here -->
+			</div>
+
+			<!-- Image popover content -->
+			<div id="pover-image" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<div class="fileupload fileupload-new" data-provides="fileupload">
+					<span class="fileupload-preview thumbnail " style="display: none;"></span>
+					<div>
+						<div class="btn btn-file">
+							<span class="fileupload-new">Select Image</span>
+							<span class="fileupload-exists">Select Image</span>
+							<input type="file" class="fileup" />
+						</div>
+					</div>
+				</div>
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+				<label class="checkbox">
+					<input type="checkbox" data-bind="ignore" />
+					Flexslider background </label>
+				<label class="checkbox">
+					<input type="checkbox" data-bind="clip" id="image-clip"/>
+					Clip Image </label>
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Text popover content -->
+
+			<div id="pover-text" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label>Content</label>
+				<textarea class="span2" data-bind='content' data-trigger="focusout"></textarea>
+
+				<label class="control-label">Class</label>
+				<div class="controls">
+					<select data-bind='clase' class="span2 text-classes">
+						<option value="">Select</option>
+					</select>
+				</div>
+
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Anchor popover content -->
+			<div id="pover-link" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label>Content</label>
+				<textarea class="span2" data-bind='content' data-trigger="focusout"></textarea>
+				<label>URL</label>
+				<input type="text" placeholder="" class="span2" data-bind="href"/>
+				<label class="control-label">Class</label>
+				<div class="controls">
+					<select data-bind='clase' class="span2 link-classes">
+						<option value="">Select</option>
+					</select>
+				</div>
+				<label class="control-label">Taget</label>
+				<div class="controls">
+					<select data-bind='target' class="span2">
+						<option>_top</option>
+						<option>_blank</option>
+						<option>_self</option>
+						<option>_parent</option>
+					</select>
+				</div>
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Anchor Image popover content -->
+			<div id="pover-imglink" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<div class="fileupload fileupload-new" data-provides="fileupload">
+					<span class="fileupload-preview thumbnail " style="display: none;"></span>
+					<div>
+						<div class="btn btn-file">
+							<span class="fileupload-new">Select Image</span>
+							<span class="fileupload-exists">Select Image</span>
+							<input type="file" class="fileup" />
+						</div>
+					</div>
+				</div>
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+
+				<label>URL</label>
+				<input type="text" placeholder="" class="span2" data-bind="href"/>
+				<label class="control-label">Taget</label>
+				<div class="controls">
+					<select data-bind='target' class="span2">
+						<option>_top</option>
+						<option>_blank</option>
+						<option>_self</option>
+						<option>_parent</option>
+					</select>
+				</div>
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Solid Block popover content -->
+
+			<div id="pover-block" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label class="control-label">Class</label>
+				<div class="controls">
+					<select class="span2 block-classes" data-bind='clase' >
+						<option value="">Select</option>
+					</select>
+				</div>
+				<label>Opacity</label>
+				<!--<input type="range" min="0" max="1" step="0.1" data-bind="opacity" class="span2" />-->
+				<div class="ui-slider"></div>
+				
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+
+				<!--<label>Style</label>
+				<input type="text" placeholder="Class1 Class2..." class="" id="pref-text-style"/> -->
+				<label>Extras</label>
+
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Image popover content -->
+			<div id="pover-video" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label>Video Id</label>
+				<input type="text" placeholder="Video Id" value=""  class="span2" data-bind='videoid' data-trigger="focusout" />
+				<label>Video Source</label>
+				<label class="radio" for="videotype1">
+				  <input type="radio" name="videotype" id="videotype1" value="youtube" data-bind='videotype' checked="checked">
+				  Youtube
+				</label>
+				<label class="radio" for="videotype2">
+				  <input type="radio" name="videotype" id="videotype2" value="vimeo" data-bind='videotype'>
+				  Vimeo
+				</label>
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+
+				<label>Extras</label>
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Animation in popover -->
+			<div id="animation-in" class="hidden">
+				<form class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label inline" >at</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='at'>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label inline">plus</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='plus'>
+						</div>
+					</div>
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">from</label>
+						<div class="controls">
+							<select class="input-small effect-list" data-bind='from'>
+							</select>
+						</div>
+
+					</div>
+
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">use</label>
+						<div class="controls">
+							<select class="input-small easing-list" data-bind='use'>
+							</select>
+						</div>
+
+					</div>
+					<div class="control-group">
+
+						<label class="control-label" >during</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='during'>
+						</div>
+					</div>
+					<div class="control-group only-element">
+						<label class="control-label" >override global </label>
+						<div class="controls">
+							<input type="checkbox" data-bind="override" />
+						</div>
+					</div>
+
+				</form>
+			</div>
+
+			<!-- Animation out popover -->
+			<div id="animation-out" class="hidden">
+				<form class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label inline" >at</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='at'>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label inline" >plus</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='plus'>
+						</div>
+					</div>
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">to</label>
+						<div class="controls">
+							<select class="input-small effect-list" data-bind='to'>
+							</select>
+						</div>
+
+					</div>
+
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">use</label>
+						<div class="controls">
+							<select class="input-small easing-list" data-bind='use'>
+							</select>
+						</div>
+
+					</div>
+					<div class="control-group">
+
+
+						<label class="control-label" >during</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='during'>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" >force </label>
+						<div class="controls">
+							<input type="checkbox" data-bind="force" />
+						</div>
+					</div>					
+					<div class="control-group only-element">
+						<label class="control-label" >override global </label>
+						<div class="controls">
+							<input type="checkbox" data-bind="override" />
+						</div>
+					</div>
+										
+				</form>
+			</div>
+
+			<!-- Current Slide setting popover  -->
+			<div id="pover-slide" class="hidden" >
+				<a class="clone-slide" href="#">Clone</a>
+				<form class="form-horizontal" style="margin-bottom: 9px;">
+					<div class="control-group">
+						<label class="control-label inline">Deadtime</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='deadtime'>
+						</div>
+					</div>
+					<!--
+					<div class="control-group">
+						<label class="control-label">Use globals</label>
+						<div class="controls">
+							<input type="checkbox" data-bind="globals" />
+						</div>
+					</div>
+					-->
+				</form>
+			</div>
+
+
+			<!-- Background image setting popover  -->
+			<div id="pover-bgimage" class="hidden">
+				<a id="remove-bg"  href="#">Remove</a>
+				<label>Position</label>
+				<input type="text" placeholder="0 0" value=""  class="span2" data-bind='position'/>
+				<label>Repeat</label>
+				<input type="text" placeholder="no-repeat" value=""  class="span2" data-bind='repeat'/>
+				<label>Size</label>
+				<input type="text" placeholder="100% auto" value=""  class="span2" data-bind='size'/>
+			</div>
+
+
+			<!-- Flexslider setting popover  -->
+			<div id="pover-flexslider" class="hidden">
+
+				<form class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label">Animation</label>
+						<div class="controls">
+							<select data-bind="animation" class="input-small ">
+								<option>slide</option>
+								<option>fade</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" >Direction</label>
+						<div class="controls">
+							<select data-bind="direction" class="input-small">
+								<option>horizontal</option>
+								<option>vertical</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label  class="control-label">Speed</label>
+						<div class="controls">
+							<input type="text" data-bind="speed" class="input-mini" placeholder="(ms)" value="600">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Easing</label>
+						<div class="controls">
+							<select class="input-small easing-list" data-bind='easing'>
+							</select>
+						</div>
+
+					</div>					
+					<div class="control-group">
+						<label  class="control-label">pausable</label>
+						<div class="controls">
+							<input type="checkbox" data-bind="pauseonhover">
+						</div>
+					</div>					
+										
+				</form>				
+			</div>
+			<!-- Custom CSS popover  -->
+			<div id="pover-style" class="hidden">
+				<textarea class="span2 custom-css" rows="6" data-bind='style' placeholder="Write your custom rules..."></textarea>
+			</div>
+
+			<!-- Tools popover -->
+			<div id="tools" class="hidden">
+
+				<label>Resize</label>
+				<div class="text-center">
+					<a class="btn" id="tool-resize-h" title="Full Width" ><em class="icon icon-resize-horizontal"></em> </a>
+					<a class="btn" id="tool-resize-v" title="Full Height" ><em class="icon icon-resize-vertical"></em> </a>
+					<a class="btn" id="tool-resize-f" title="Full Size" ><em class="icon icon-fullscreen"></em> </a>
+					<a class="btn" id="tool-resize-r" title="Restore" ><em class="icon icon-undo"></em> </a>
+				</div>
+				<label>Position</label>
+				<div class="tool-position text-center">
+					<a class="btn btn-mini" id="tool-align-tl" title="Top Left corner" ><em class="icon-2x icon-caret-left icon-rotate-45"></em></a>
+					<a class="btn btn-mini" id="tool-align-tt" title="Top border" ><em class="icon-2x icon-caret-up"></em></a>
+					<a class="btn btn-mini" id="tool-align-tr" title="Top Right corner" ><em class="icon-2x icon-caret-up icon-rotate-45"></em></a>
+					<br>
+					<a class="btn btn-mini" id="tool-align-ll" title="Left border" ><em class="icon-2x icon-caret-left"></em></a>
+					<a class="btn btn-mini" id="tool-align-cc" title="Slider center" ><em class="icon-circle"></em></a>
+					<a class="btn btn-mini" id="tool-align-rr" title="Right border" ><em class="icon-2x icon-caret-right"></em></a>
+					<br>
+					<a class="btn btn-mini" id="tool-align-bl" title="Bottom Left corner" ><em class="icon-2x icon-caret-down icon-rotate-45"></em></a>
+					<a class="btn btn-mini" id="tool-align-bb" title="Bottom border" ><em class="icon-2x icon-caret-down"></em></a>
+					<a class="btn btn-mini" id="tool-align-br" title="Bottom Right corner" ><em class="icon-2x icon-caret-right icon-rotate-45"></em></a>
+				</div>
+				<br>
+				<div class="text-center">
+					<a class="btn btn-mini" id="tool-align-vc" title="Vertical center" >V-Center</a>
+					<a class="btn btn-mini" id="tool-align-hc" title="Horizontal center " >H-Center</a>
+				</div>
+				<br />
+				<!--
+				<label>Arrangement</label>
+				<a class="btn btn-mini" id="tool-order-up" title="Bring forward" >Forward</a>
+				<a class="btn btn-mini" id="tool-order-down" title="Send backward" >Backward</a>
+				-->
+			</div>
+			
+			<!-- Generated Code Modal -->
+			<div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="mod-label" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h3 id="mod-label">Lush Slider Markup</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+						Paste this markup into your page
+					</p>
+					<pre class="prettyprint" id="generated-markup"></pre>
+					<p>
+						Minimun JavaScript required
+					</p>
+					<pre class="prettyprint" id="generated-js"></pre>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal">
+						Close
+					</button>
+					<button class="btn btn-info" id="format-markup">
+						Format
+					</button>
+				</div>
+			</div>
+			
+			
+			<!-- Preview Modal -->
+
+			<div id="prev-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="prev-mod-label" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h3 id="prev-mod-label">Lush Slider Preview</h3>
+				</div>
+				<div class="modal-body" id="prev-container">
+				</div>
+			</div>
+
+
+			<!-- Import / Export Modal -->
+
+			<div id="ieport-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ieport-mod-label" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h3 id="ieport-mod-label">Import / Export</h3>
+				</div>
+				<div class="modal-body clearfix" id="ieport-container">
+					<!-- IMPORT AREA -->
+					<p>Paste here the exported string</p>
+					<textarea id="import-target" style="width: 90%;"></textarea>
+					<br />
+					<button class="btn btn-primary" id="do-import">Import</button> 
+					<span id="import-status"></span> 
+					<br />
+					<br />
+					<!-- EXPORT AREA -->
+					<p>Save this in a plain text file.</p>
+					<textarea id="export-target" class="uneditable-textarea" style="width: 90%;"></textarea>
+					<br />
+					<button class="btn btn-primary" id="do-export">Export</button>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal">
+						Close
+					</button>
+				</div>
+			</div>
+			
+		</div>
+
+		<!-- Table of elements -->
+		<div id="toe">
+
+			<div class="toe-data form-inline">
+
+				<fieldset class="preview-slider" data-title="Slider Preview">
+					<button class="btn btn-warning preview hidden">Preview</button>
+					<div class="muted text-center">Plugin not detected</div>
+				</fieldset>
+				
+				<fieldset class="toe-data-in" data-title="animation-in">
+					<label for="in-at"> at <br>
+						<input id="in-at" type="number" placeholder="(ms)" class="input-mini" data-bind='at' data-trigger="focusout">
+					</label>
+
+					<label for="in-from"> from <br>
+						<select id="in-from" class="input-small effect-list" data-bind='from'></select>
+					</label>
+
+					<label for="in-use"> use <br>
+						<select id="in-use" class="input-small easing-list" data-bind='use'></select>
+					</label>
+
+					<label for="in-during"> during <br>
+						<input id="in-during" type="number" placeholder="(ms)" class="input-mini" data-bind='during' data-trigger="focusout">
+					</label>
+				</fieldset>
+				<fieldset class="toe-data-out" data-title="animation-out">
+					<label for="out-at"> at <br>
+						<input id="out-at" type="number" placeholder="(ms)" class="input-mini" data-bind='at' data-trigger="focusout">
+					</label>
+
+					<label for="out-to"> to <br>
+						<select id="out-to" class="input-small effect-list" data-bind='to'></select>
+					</label>
+
+					<label for="out-use"> use <br>
+						<select id="out-use" class="input-small easing-list" data-bind='use'></select>
+					</label>
+
+					<label for="out-during"> during <br>
+						<input id="out-during" type="number" placeholder="(ms)" class="input-mini" data-bind='during' data-trigger="focusout">
+					</label>
+					<label for="out-force"> force<br>
+						<input id="out-force" type="checkbox" data-bind="force" />
+					</label>
+				</fieldset>
+			</div>
+
+			<div class="toe-item">
+			<!--
+				<div class="toe-item-timeline">
+				
+						<a href="#" class="toe-item-action action-visibility"><em class="icon-eye-open"></em></a>
+						<a href="#" class="toe-item-action action-clone"><em class="icon-copy"></em></a>
+						<a href="#" class="toe-item-action action-remove"><em class="icon-remove"></em></a>
+						<div class="toe-item-type">
+							Image
+						</div>
+					    <div class="timeline-wrapper">
+					      <div class="timeline-slider"></div>
+					    </div>
+				
+				</div>
+			-->
+			</div>
+
+		</div>
+
+		<!-- Scripts
+		================================================== -->
+		<script src="builder/js/jquery.js"></script>
+		<script src="builder/js/bootstrap.min.js"></script>
+		<!-- Extra plugins -->
+		<script src="builder/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="builder/js/dragslider.js"></script>
+		<script src="builder/js/google-code-prettify/prettify.js"></script>
+		<script src="builder/js/style-html.min.js"></script>
+		<!-- Lush Slider Scripts -->
+		<script src="js/jquery.easing.1.3.min.js"></script>
+		<script src="js/jquery.lush.min.js"></script>
+		<script src="flexslider/jquery.flexslider-min.js"></script>
+		
+		<!-- Lush Builder Scripts -->
+		<script src="builder/js/lush.builder.min.js"></script>
+		
+
+	</body>
+</html>

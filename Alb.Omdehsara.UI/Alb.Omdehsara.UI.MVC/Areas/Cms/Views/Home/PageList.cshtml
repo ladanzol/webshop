@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "لیست مطالب";
+    Layout = "~/Areas/Cms/Views/Shared/_CmsAdminLayout.cshtml";
+}
+
+@using Alb.Tools.UI.MVC.BootstrapHelper;
+@using Alb.Omdehsara.Common;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Models;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Controllers;
+@model PageListViewModel
+
+@using (Html.BeginForm("PageList", "Home", FormMethod.Get, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label for="IsApproved" class="control-label col-sm-2 col-xs-12">وضعیت تایید</label>
+        <div class="col-xs-12 col-sm-3">
+            <select name="IsApproved" id="IsApproved">
+                <option value="" >وضعیت تایید</option>
+                <option value="False" selected="@(!Model.IsApproved)">تایید نشده</option>
+                <option value="True" selected="@(Model.IsApproved)"> تایید شده</option>
+            </select>
+        </div>
+        <label for="PageTypeID" class="control-label col-sm-2 col-xs-12">نوع صفحه</label>
+        <div class="col-xs-12 col-sm-3">
+            <select name="PageTypeID" id="PageTypeID">
+                <option value="" selected="selected">انتخاب کنید</option>
+                <option value="1" selected="@(Model.PageTypeID == 1)">مقاله</option>
+                <option value="2" selected="@(Model.PageTypeID == 2)"> خبر</option>
+                <option value="3" selected="@(Model.PageTypeID == 3)"> صفحه داخلی</option>
+            </select>
+        </div>
+        <div class="col-xs-12 col-sm-2">
+            <input type="submit" value="جستجو" class="btn btn-primary" />
+        </div>
+    </div>
+}
+<div class="page-list" style="margin-top:50px;">
+</div>
+@foreach (TblPage page in Model.PageList)
+{
+    <div class="page-list">
+        <h4><a href="@Helper.GetCmsPageUrl(Url, page.ID, page.Title)">@page.Title</a></h4>
+        <p>@page.Introduction</p>
+        <div>
+            <span>
+                نویسنده : @page.Author
+            </span>
+            <span>
+                تاریخ: @page.InsDate
+            </span>
+        </div>
+        <div style="margin-top:10px;">
+            <a href="@Url.Action("Delete", new {Id = page.ID})" class="btn-danger" style="padding:5px;margin:10px;">حذف</a>
+            <a href="@Url.Action("Create", new {Id = page.ID})" class="btn-primary" style="padding:5px;margin:10px;">ویرایش</a>
+            @if (User.IsInRole(ProjectRoles.Admin.ToString()) || User.IsInRole(ProjectRoles.BlogApprover.ToString()))
+            {
+                if (!page.IsApproved)
+                {
+                    <a href="#" approvepage="@page.ID" class="btn-success" approved="0" style="padding:5px;margin:20px;">تایید</a>
+                }
+                else
+                {
+                    <a href="#" approvepage="@page.ID" class="btn-success" approved="1" style="padding:5px;margin:20px;">عدم تایید</a>
+                }
+            }
+        </div>
+    </div>
+
+}
+@Html.Pager((int)Model.PageIndex, (int)Model.TotalRecords, i => Helper.GetPageUrl(Url, i), Model.PageSize)
+
+@section scripts{
+    <script>
+        $("a[approvepage]").click(function (e) {
+            var from = e.target ? e.target : e.srcElement;
+            if ($(from).attr("approved") == "0") {
+                tools.ajax.post(tools.ajax.apiBaseUrl + 'cms/home/ApprovePage', { Id: $(from).attr("approvepage") }).then(function (data) {
+                    if (data && data.success == '1') {
+                        tools.showSuccess("تایید شد.");
+                        $(from).text('عدم تایید');
+                        $(from).attr("approved", "1");
+                    }
+                }, function (data) { tools.showError("عملیات انجام نشد"); });
+            } else {
+                tools.ajax.post(tools.ajax.apiBaseUrl + 'cms/home/rejectPage', { Id: $(from).attr("approvepage") }).then(function (data) {
+                    if (data && data.success == '1') {
+                        tools.showSuccess("عدم تایید صفحه انجام شد.");
+                        $(from).text('تایید');
+                        $(from).attr("approved", "0");
+                    }
+                }, function (data) { tools.showError("عملیات انجام نشد"); });
+            }
+        });
+    </script>
+}
+

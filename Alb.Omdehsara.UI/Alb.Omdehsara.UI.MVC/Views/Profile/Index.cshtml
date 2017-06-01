@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div style="padding:10px;">
+    <h3>خوش آمدید</h3>
+    <ul>
+        <li>
+           <a href="@Url.Content("~/order/list")" >سفارشات شما</a>
+        </li>
+        <li>
+            <a href="@Url.Content("~/payment/pay")">افزایش موجودی</a>
+        </li>
+        <li>
+            <a href="@Url.Content("~/payment/paymentreport")">گزارش موجودی</a>
+        </li>
+        <li>
+            <a href="@Url.Content("~/account/register/"+ViewBag.UserID)">ویرایش مشخصات فردی</a>
+        </li>
+    </ul>
+</div>
+

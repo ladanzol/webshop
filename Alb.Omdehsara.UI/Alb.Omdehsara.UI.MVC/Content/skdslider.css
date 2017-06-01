@@ -1,0 +1,169 @@
+.skdslider {
+    width: 727px;
+    height: 454px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0px auto;
+    padding-top: 15px;
+}
+
+    .skdslider:after {
+        content: '';
+        padding-top: 50%;
+        display: block;
+    }
+
+    .skdslider ul.slides {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+        .skdslider ul.slides li {
+            display: none;
+        }
+
+            .skdslider ul.slides li img {
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+
+    .skdslider ul.slide-navs {
+        bottom: 20px;
+        left: 50%;
+        position: absolute;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+        .skdslider ul.slide-navs li {
+            float: left;
+            background: url("image/slide-bg.png") no-repeat scroll 0 0 transparent;
+            height: 12px;
+            width: 12px;
+            margin-right: 4px;
+            cursor: pointer;
+        }
+
+            .skdslider ul.slide-navs li.current-slide {
+                background: url("image/slide-bg-active.png") no-repeat scroll 0 0 transparent;
+            }
+
+    .skdslider .slide-desc {
+        background: #000000 scroll;
+        background: rgba(0,0,0,0.5) scroll;
+        left: 0;
+        top: 0;
+        padding: 0 15px 0 15px;
+        position: absolute;
+        bottom: 25%;
+        max-width: 35%;
+        display: inline-block;
+        direction: ltr;
+        text-align: justify;
+    }
+
+.skdslider .slide-desc > h2 {
+            color: #CFDB0C;
+            font-family: RobotoCondensed-Light;
+            font-size: 25px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .skdslider .slide-desc > p {
+            color: #FFFFFF;
+            font-family: RobotoCondensed-Light;
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 5px;
+        }
+
+            .skdslider .slide-desc > p a.more {
+                color: #990000;
+                font-size: 20px;
+                text-decoration: none;
+            }
+
+                .skdslider .slide-desc > p a.more:hover {
+                    text-decoration: underline;
+                }
+
+    .skdslider a.prev {
+        background: url("Images/Left.png") no-repeat scroll 0 0 transparent;
+        width: 65px;
+        height: 55px;
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        bottom: 24px;
+        left: 10px;
+        /*margin-top: -17px;*/
+    }
+
+    .skdslider a.next {
+        background: url("Images/Right.png") no-repeat scroll 0 0 transparent;
+        width: 65px;
+        height: 55px;
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        bottom: 24px;
+        left: 80px;
+        /*margin-top: -17px;*/
+    }
+
+    .skdslider a.prev:hover {
+        background: url("Images/Left-H.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .skdslider a.next:hover {
+        background: url("Images/Right-H.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .skdslider a.play {
+        background: url("image/play.png") no-repeat scroll center center transparent;
+        width: 35px;
+        height: 35px;
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 48%;
+        margin-top: -17px;
+    }
+
+    .skdslider a.pause {
+        background: url("image/pause.png") no-repeat scroll center center transparent;
+        width: 35px;
+        height: 35px;
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 48%;
+        margin-top: -17px;
+    }
+/*Some Responsive CSS */
+@media screen and (max-width:767px) {
+    .skdslider .slide-desc > h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .skdslider .slide-desc > p {
+        font-size: 14px;
+        line-height: 15px;
+        margin-top: 5px;
+    }
+
+        .skdslider .slide-desc > p a.more {
+            font-size: 14px;
+        }
+}

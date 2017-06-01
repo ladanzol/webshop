@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css
+{
+    @RenderSection("css", required: false)
+}
+<div ng-app="app">
+    @{Html.RenderAction("Header");}
+    <div class="divCenterFrameContainer">
+        <div class="divCenterFrame">
+            @RenderBody()
+        </div>
+    </div>
+    @Html.Partial("_Footer")
+</div>
+@section scripts
+{
+ @Scripts.Render("~/bundles/site")
+@Scripts.Render("~/bundles/angularjs")
+<script src="~/Scripts/tinymce/tinymce.min.js"></script>
+@Scripts.Render("~/bundles/angularjs-app-tools")
+@Scripts.Render("~/bundles/angularjs-app")
+<script src="~/app/services/modalService.js"></script>
+@RenderSection("scripts", required: false)
+
+</script>
+}
+
+

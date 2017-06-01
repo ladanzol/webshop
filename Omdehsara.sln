@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Alb.Omdehsara", "Alb.Omdehsara", "{379773FA-86C8-4211-BD95-EDB033BE0C1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alb.Omdehsara.Common", "Alb.Omdehsara.Common\Alb.Omdehsara.Common.csproj", "{FF11EE47-5B15-4F93-B43A-772A19A45AB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alb.Omdehsara.DataAccess", "Alb.Omdehsara.DataAccess\Alb.Omdehsara.DataAccess.csproj", "{3946FC8E-E55D-4005-9FD9-B072F432E655}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alb.Omdehsara.UI.MVC", "Alb.Omdehsara.UI\Alb.Omdehsara.UI.MVC\Alb.Omdehsara.UI.MVC.csproj", "{2120D3D0-C185-451E-B989-004928794A83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF11EE47-5B15-4F93-B43A-772A19A45AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF11EE47-5B15-4F93-B43A-772A19A45AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF11EE47-5B15-4F93-B43A-772A19A45AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF11EE47-5B15-4F93-B43A-772A19A45AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3946FC8E-E55D-4005-9FD9-B072F432E655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3946FC8E-E55D-4005-9FD9-B072F432E655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3946FC8E-E55D-4005-9FD9-B072F432E655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3946FC8E-E55D-4005-9FD9-B072F432E655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2120D3D0-C185-451E-B989-004928794A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2120D3D0-C185-451E-B989-004928794A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2120D3D0-C185-451E-B989-004928794A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2120D3D0-C185-451E-B989-004928794A83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF11EE47-5B15-4F93-B43A-772A19A45AB0} = {379773FA-86C8-4211-BD95-EDB033BE0C1A}
+		{3946FC8E-E55D-4005-9FD9-B072F432E655} = {379773FA-86C8-4211-BD95-EDB033BE0C1A}
+		{2120D3D0-C185-451E-B989-004928794A83} = {379773FA-86C8-4211-BD95-EDB033BE0C1A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

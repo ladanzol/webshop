@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "ارسال خبرنامه";
+    Layout = "~/Areas/Cms/Views/Shared/_CmsAdminLayout.cshtml";
+}
+
+<div style="padding:20px;">
+   @using (Html.BeginForm("SendNewsLetter", "NewsLetter", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+   {
+       <input type="hidden" value="1" name="hid" />
+       <input type="submit" class="btn btn-primary" value="ارسال خبر نامه" />
+   }
+</div>

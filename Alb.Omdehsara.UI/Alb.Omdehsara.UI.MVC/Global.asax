@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Alb.Omdehsara.UI.MVC.AlbMvcApplication" Language="C#" %>

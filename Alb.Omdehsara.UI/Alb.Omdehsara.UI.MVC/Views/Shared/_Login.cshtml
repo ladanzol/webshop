@@ -1,0 +1,31 @@
+﻿@using (Html.BeginForm("login", "account", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label for="Username" class="col-sm-4 control-label">نام کاربری</label>
+        <div class="col-sm-8">
+            <input class="form-control" id="Username" name="Username" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Password" class="col-sm-4 control-label">رمز عبور</label>
+        <div class="col-sm-8">
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBox("RememberMe")
+                    مرا به یاد داشته باش.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8">
+            <button type="submit" class="btn btn-primary">ورود</button>
+        </div>
+    </div>
+
+}

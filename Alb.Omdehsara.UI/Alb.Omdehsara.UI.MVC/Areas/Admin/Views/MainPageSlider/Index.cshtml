@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "اسلایدر صفحه اصلی";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Alb.Omdehsara.UI.MVC.Areas.Admin.Models;
+@using Alb.Omdehsara.Common.Product;
+@using Alb.Omdehsara.Common;
+@model MainPageSliderViewModel
+<div dir="ltr">
+    @using (Html.BeginForm("Index", "MainPageSlider", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="Text">HTML</label>
+            <div class="col-xs-12 col-sm-12">
+                @Html.TextAreaFor(m => m.SliderHtml, new { @class = "form-control page-body", rows="6" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-4" for="Text">Script</label>
+            <div class="col-xs-12 col-sm-12">
+                @Html.TextAreaFor(m => m.SliderScript, new { @class = "form-control page-body", rows = "6" })
+            </div>
+        </div>
+        <div>
+            <div class="col-xs-12 col-sm-12">
+                <input type="submit" value="ثبت" class="btn btn-primary" style="width:150px;" />
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts{
+
+}
+
+
+
+

@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "ایجاد مطلب جدید";
+    Layout = "~/Areas/Cms/Views/Shared/_CmsAdminLayout.cshtml";
+}
+@using Alb.Omdehsara.Common;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Models;
+@model PageViewModel
+
+@using (Html.BeginForm("create", "home", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.Page.ID);
+    <div class="form-group">
+        <label for="Page_Title" class="control-label col-sm-3 col-xs-12">عنوان</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Page.Title, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Page_Description" class="control-label col-sm-3 col-xs-12">توضیحات</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextAreaFor(m => m.Page.Introduction, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Page_Author" class="control-label col-sm-3 col-xs-12">نویسنده</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextBoxFor(m => m.Page.Author, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Page_PageTypeID" class="control-label col-sm-3 col-xs-12">نوع صفحه</label>
+        <div class="col-xs-12 col-sm-9">
+            <select name="Page.PageTypeID" id="Page_PageTypeID" class="form-control">
+                <option value="1" selected="@((Model.Page.PageTypeID == (int)PageType.Article)?"selected":"")">مقاله</option>
+                <option value="2" selected="@((Model.Page.PageTypeID == (int)PageType.News)?"selected":"")"> خبر</option>
+                <option value="3" selected="@((Model.Page.PageTypeID == (int)PageType.InnerPage)?"selected":"")"> صفحه داخلی</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Page_Author" class="control-label col-sm-3 col-xs-12">عکس اصلی</label>
+        <div class="col-xs-12 col-sm-6">
+           <input type="file" class="form-control" name="MainImage" id="MainImage" />
+        </div>
+        <div class="col-xs-12 col-sm-3">
+            @if (!string.IsNullOrEmpty(Model.Page.MainImageUrl))
+            {
+                <img src="@Url.Content(Model.Page.MainImageUrl)" />
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Page_Text" class="control-label col-sm-3 col-xs-12">متن</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextAreaFor(m => m.Page.Body, new { @class = "form-control page-body" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Page_Tags" class="control-label col-sm-3 col-xs-12">کلمات کلیدی</label>
+        <div class="col-xs-12 col-sm-9">
+            @Html.TextAreaFor(m => m.Page.Tags, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 col-xs-10">
+            <input type="submit" value="ثبت" style="width:150px;" class="btn btn-primary">
+        </div>
+    </div>
+}
+@section scripts{
+
+
+ 
+    <script>
+        tinymce.init({
+            selector: 'textarea.page-body',
+            directionality: "rtl",
+            height: 600,
+            plugins: [
+     "advlist autolink lists link image charmap print preview anchor",
+     "searchreplace visualblocks code fullscreen",
+     "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        });
+    </script>
+}
+

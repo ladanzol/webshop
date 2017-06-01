@@ -1,0 +1,36 @@
+﻿@using Alb.Common.Common;
+@using Alb.Tools.UI.MVC.BootstrapHelper;
+@using Alb.Omdehsara.Common;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Models;
+@using Alb.Omdehsara.UI.MVC.Areas.Cms.Controllers;
+@{
+    ViewBag.Title = "لیست خطاها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@model IEnumerable<TblError>
+<div dir="ltr">
+    <div style="padding-bottom:40px" >
+        @Html.ActionLink("Delete All", "Delete", null, new { @class= "btn btn-primary" })
+    </div>
+    <table class="table table-striped ">
+        <tr>
+            <th>کد</th>
+            <th>آی پی</th>
+            <th>تاریخ</th>
+            <th>خطا</th>
+            <th>آدرس</th>
+        </tr>
+        @foreach (TblError err in Model)
+        {
+            <tr>
+                <td>@err.ID</td>
+                <td>@err.Ip</td>
+                <td>@err.ErrorDate</td>
+                <td>@err.ErrorMessage</td>
+                <td>@err.Url</td>
+            </tr>
+        }
+    </table>
+</div>
+@Html.Pager((int)ViewBag.PageIndex, (int)ViewBag.TotalRecords, i => Helper.GetPageUrl(Url, i), (int)ViewBag.PageSize)
+
